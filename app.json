@@ -1,0 +1,24 @@
+{
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-postgresql:basic",
+        "heroku-redis:mini",
+        "papertrail:choklad"
+      ],
+      "formation": {
+        "worker": {
+          "quantity": 1,
+          "size": "basic"
+        },
+        "web": {
+          "quantity": 1,
+          "size": "basic"
+        }
+      },
+      "scripts": {
+        "postdeploy": "REVIEW_APP=true DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:schema:load db:seed"
+      }
+    }
+  }
+}

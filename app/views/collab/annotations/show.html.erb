@@ -1,0 +1,184 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) { t(".title") } %>
+  <div class="px-4 sm:px-6 xl:px-8">
+    <%= render(Collab::DetailsComponent.new) do |t| %>
+      <% t.with_title { t(".details") } %>
+      <% t.with_detail(label: t("activerecord.attributes.annotation.status"), value: render("status", annotation: @annotation)) %>
+      <%
+        t.with_detail(
+          label: t(".eaten"),
+          value: link_to_if(
+            @annotation.last_intake.present?,
+            last_consumed_at_in_timezone(annotation: @annotation),
+            collab_user_intakes_path(@dish.user, query: @annotation.last_intake.consumed_at.to_date.to_s),
+            class: "text-brand hover:underline",
+            data: {
+              "tippy-content": t(".same_date_intakes_tooltip")
+            }
+          )
+        )
+      %>
+      <% t.with_detail(label: t("activerecord.models.user", count: 1), value: link_to_if(policy([:collab, @dish.user]).show?, @dish.user.email_or_id, collab_user_path(@dish.user), class: "text-brand hover:underline")) %>
+      <% t.with_detail(label: t("activerecord.attributes.user.note"), value: render("collab/note_forms/show", notable: @dish.user)) %>
+      <%
+        t.with_detail(
+          label: t("activerecord.models.cohort", count: 1),
+          value: link_to_if(policy([:collab, @annotation.cohort]).show?, @annotation.cohort.name, collab_cohort_path(@annotation.cohort), class: "text-brand hover:underline")
+        )
+      %>
+    <% end %>
+    <%= turbo_frame_tag(dom_id(@annotation)) do %>
+      <div
+        class="bg-white shadow mt-6 sm:rounded-lg"
+        data-controller="annotation"
+        data-annotation-canvas-outlet="canvas"
+        data-annotation-hidden-class="hidden">
+        <div class="flex flex-col flex-no-wrap lg:flex-row">
+          <div class="flex w-full flex-row  xl:flex-col lg:w-96 lg:max-w-[96px]">
+            <div class="p-2 flex flex-row justify-between space-x-6 lg:px-2 lg:py-4 lg:space-x-0 lg:h-full lg:grid lg:grid-cols-1 lg:gap-y-24 lg:content-between lg:pr-0">
+              <% @adjacent_annotations.each do |k, adjacent_annotations| %>
+                <div class="basis-1/2 flex flex-row justify-<%= (k == :previous) ? "start" : "end" %> space-x-1 lg:flex-col lg:space-x-0 lg:space-y-2">
+                  <% adjacent_annotations.each do |adjacent_annotation| %>
+                    <div class="basis-1/3 relative">
+                      <%= render("default_image", annotation: adjacent_annotation) do %>
+                        <%=
+                          tag.div(
+                            l(adjacent_annotation.last_intake.consumed_at, format: :short),
+                            class: "text-[10px] absolute bottom-0 bg-brand lg:text-xs text-white bg-opacity-50 text-center font-semibold m-auto w-full rounded-b-md",
+                            data: {turbo_frame: "_top"}
+                          )
+                        %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="flex flex-col flex-no-wrap w-full lg:flex-row">
+            <% if @dish.description.present? || @annotation.image %>
+              <div class="w-full px-2 xl:px-4 xl:pr-0 flex-none lg:w-1/2 space-y-2">
+                <div class="sticky top-0 lg:py-4">
+                  <% if @dish.description.present? %>
+                    <div class="relative lg:w-400">
+                      <div class="rounded-md w-full lg:object-contain bg-gray-100 px-4 py-3 text-gray-600">
+                        <%= @dish.description %>
+                      </div>
+                    </div>
+                  <% end %>
+                  <% if @annotation.image %>
+                    <div class="relative lg:w-800">
+                      <%= image_tag(@annotation.image, class: "annotation-img rounded-md w-full lg:object-contain") %>
+                      <% if @dish.dish_image.present? %>
+                        <%= render(Collab::Annotations::CanvasComponent.new(annotation: @annotation, annotation_item: nil, annotation_items: @annotation_items)) %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            <div class="flex flex-col md:w-full py-4">
+              <% if policy([:collab, @annotation]).annotatable? %>
+                <div id="annotation_items--title" class="border-b text-sm text-brand font-medium border-gray-200 mb-4 pb-4 px-6 md:px-5 flex justify-between">
+                  <div class="flex justify-start">
+                    <%= render("hide_polygons_link", annotation: @annotation) %>
+                    <% if @dish.dish_image&.data&.attached? %>
+                      <%= render("clear_polygons_button", annotation: @annotation, annotation_item: @annotation_item) %>
+                    <% end %>
+                  </div>
+                  <div class="flex justify-end">
+                    <%= button_to t(".add_food"), collab_annotation_annotation_foods_path(@annotation), class: "text-brand hover:underline" %>
+                    <%= button_to t(".add_product"), collab_annotation_annotation_products_path(@annotation), class: "ml-4 text-brand hover:underline" %>
+                    <span data-tippy-content="<%= t(".merge_tooltip") %>" tabindex="0">
+                      <%=
+                        button_to(
+                          t(".merge_items"),
+                          collab_annotation_annotation_items_merge_form_path(@annotation),
+                          method: :post,
+                          disabled: true,
+                          class: "ml-4 text-brand hover:underline disabled:opacity-50",
+                          id: "merge_annotation_items",
+                          data: {
+                            action: "click->annotation#mergeAnnotationItems"
+                          },
+                          form: {data: {turbo_confirm: t("helpers.are_you_sure")}}
+                        )
+                      %>
+                    </span>
+                    <span data-tippy-content="<%= t(".destroy_tooltip") %>" tabindex="0">
+                      <%=
+                        button_to(
+                          t(".destroy_items"),
+                          collab_annotation_annotation_items_destroy_form_path(@annotation),
+                          method: :delete,
+                          disabled: true,
+                          class: "ml-4 text-brand hover:underline disabled:opacity-50",
+                          id: "destroy_annotation_items",
+                          data: {
+                            action: "click->annotation#destroyAnnotationItems"
+                          },
+                          form: {data: {turbo_confirm: t("helpers.are_you_sure")}}
+                        )
+                      %>
+                    </span>
+                  </div>
+                </div>
+              <% end %>
+              <nav id="annotation_items" class="pb-2 flex-1 space-y-1 px-2 lg:pl-3">
+                <%= render(Collab::AnnotationItems::FormComponent.with_collection(@annotation_items, units: @units, collaborator: current_collaborator)) %>
+              </nav>
+              <div class="border-t text-sm font-medium border-gray-200 px-6 py-4 md:px-5">
+                <%= render("totals", annotation: @annotation) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if policy([:collab, @annotation]).annotatable? %>
+          <div class="px-4 py-3 bg-gray-50 text-right sm:px-7 sm:rounded-b-lg">
+            <%= button_to t(".confirm_button"), collab_annotation_confirmation_path(@annotation), data: {turbo_method: :post, turbo_frame: "_top"}, class: "ml-2 btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= render(Collab::PanelComponent.new(additional_classes: "mt-6")) do |t| %>
+      <% t.with_title { t("activerecord.models.comments", count: 2) } %>
+      <div class="border-t border-gray-200 px-4 sm:px-6">
+        <%= turbo_stream_from([@annotation, :comments]) %>
+        <%= turbo_frame_tag(dom_id(@annotation, :comments), src: collab_annotation_comments_path(@annotation, format: :turbo_stream)) do %>
+          <%= t("helpers.loading") %>
+        <% end %>
+      </div>
+      <% if policy([:collab, @comment]).create? %>
+        <%= render(Collab::Annotations::CommentFormComponent.new(annotation: @annotation, comment: @comment)) %>
+      <% end %>
+    <% end %>
+    <% if @intakes.any? %>
+      <div class="mt-6">
+        <%= render(Collab::TableComponent.new(striped: true)) do |tc| %>
+          <% tc.with_title do |title| %>
+            <%= t("activerecord.models.intake", count: 2) %>
+          <% end %>
+          <% tc.with_head_td { t("activerecord.attributes.intake.consumed_at_in_intake_timezone") } %>
+          <% tc.with_head_td { t("activerecord.attributes.intake.consumed_at_in_local_timezone") } %>
+          <% tc.with_head_td { t("activerecord.attributes.intake.id") } %>
+          <% @intakes.each do |intake| %>
+            <% tc.with_row do |r| %>
+              <% r.with_row_td(additional_classes: "text-gray-800") do %>
+                <%= l(intake.consumed_at.in_time_zone(intake.timezone), format: :long) %>
+                (<%= intake.timezone %>)
+              <% end %>
+              <% r.with_row_td(additional_classes: "text-gray-500") do %>
+                <%= l(intake.consumed_at, format: :long) %>
+                (<%= Time.zone.name %>)
+              <% end %>
+              <% r.with_row_td(additional_classes: "text-gray-500") do %>
+                <%= intake.id %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= render(PaginationComponent.new(pagy: @pagy_intakes)) %>
+      </div>
+    <% end %>
+  </div>
+</div>

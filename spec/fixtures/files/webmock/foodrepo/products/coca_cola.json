@@ -1,0 +1,179 @@
+{
+  "data": [{
+    "id": 22784,
+    "country": "CH",
+    "barcode": "5449000009500",
+    "name_translations": {
+      "en": "Coke",
+      "fr": "Coca-Cola"
+    },
+    "display_name_translations": {
+      "de": "Coke",
+      "fr": "Coca-Cola",
+      "it": "Coke",
+      "en": "Coke"
+    },
+    "ingredients_translations": {},
+    "status": "rescan",
+    "quantity": 330.0,
+    "unit": "ml",
+    "hundred_unit": "ml",
+    "portion_quantity": 330.0,
+    "portion_unit": "ml",
+    "alcohol_by_volume": 0.0,
+    "images": [{
+      "categories": ["Front"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/104479/thumb_5449000009500.jpg?v=1516972200",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/104479/medium_5449000009500.jpg?v=1516972200",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/104479/large_5449000009500.jpg?v=1516972200",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/104479/xlarge_5449000009500.jpg?v=1516972200"
+    }, {
+      "categories": ["Back"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173048/thumb_1564852701301-3.jpg?v=1565000266",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173048/medium_1564852701301-3.jpg?v=1565000266",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173048/large_1564852701301-3.jpg?v=1565000266",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173048/xlarge_1564852701301-3.jpg?v=1565000266"
+    }, {
+      "categories": ["Front"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173047/thumb_1564852701317-4.jpg?v=1565000266",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173047/medium_1564852701317-4.jpg?v=1565000266",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173047/large_1564852701317-4.jpg?v=1565000266",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173047/xlarge_1564852701317-4.jpg?v=1565000266"
+    }, {
+      "categories": ["Front"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173051/thumb_1564852701244-0.jpg?v=1565000266",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173051/medium_1564852701244-0.jpg?v=1565000266",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173051/large_1564852701244-0.jpg?v=1565000266",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173051/xlarge_1564852701244-0.jpg?v=1565000266"
+    }, {
+      "categories": ["Back", "Nutrients table"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173050/thumb_1564852701264-1.jpg?v=1565000266",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173050/medium_1564852701264-1.jpg?v=1565000266",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173050/large_1564852701264-1.jpg?v=1565000266",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173050/xlarge_1564852701264-1.jpg?v=1565000266"
+    }, {
+      "categories": ["Ingredients list", "Back"],
+      "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173049/thumb_1564852701283-2.jpg?v=1565000266",
+      "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173049/medium_1564852701283-2.jpg?v=1565000266",
+      "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173049/large_1564852701283-2.jpg?v=1565000266",
+      "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/173049/xlarge_1564852701283-2.jpg?v=1565000266"
+    }],
+    "nutrients": {
+      "energy": {
+        "name_translations": {
+          "de": "Energie",
+          "en": "Energy",
+          "fr": "Énergie",
+          "it": "Energia"
+        },
+        "unit": "kJ",
+        "per_hundred": 182.0,
+        "per_portion": 601.0,
+        "per_day": 7.0
+      },
+      "energy_kcal": {
+        "name_translations": {
+          "de": "Energie (kCal)",
+          "en": "Energy (kCal)",
+          "fr": "Énergie (kCal)",
+          "it": "Energia (kCal)"
+        },
+        "unit": "kCal",
+        "per_hundred": 43.0,
+        "per_portion": 142.0,
+        "per_day": 7.0
+      },
+      "fat": {
+        "name_translations": {
+          "de": "Fett",
+          "en": "Fat",
+          "fr": "Matières grasses",
+          "it": "Grassi"
+        },
+        "unit": "g",
+        "per_hundred": 0.0,
+        "per_portion": 0.0,
+        "per_day": 0.0
+      },
+      "saturated_fat": {
+        "name_translations": {
+          "de": "Gesättigte Fettsäuren",
+          "en": "Saturated fat",
+          "fr": "Acides gras saturés",
+          "it": "Acidi grassi saturi"
+        },
+        "unit": "g",
+        "per_hundred": 0.0,
+        "per_portion": 0.0,
+        "per_day": 0.0
+      },
+      "carbohydrates": {
+        "name_translations": {
+          "de": "Kohlenhydrate",
+          "en": "Carbohydrates",
+          "fr": "Glucides",
+          "it": "Carboidrati"
+        },
+        "unit": "g",
+        "per_hundred": 10.7,
+        "per_portion": 35.0,
+        "per_day": 14.0
+      },
+      "sugars": {
+        "name_translations": {
+          "de": "Zucker",
+          "en": "Sugars",
+          "fr": "Sucres",
+          "it": "Zuccheri"
+        },
+        "unit": "g",
+        "per_hundred": 10.7,
+        "per_portion": 35.0,
+        "per_day": 39.0
+      },
+      "fiber": {
+        "name_translations": {
+          "de": "Ballaststoffe",
+          "en": "Fiber",
+          "fr": "Fibres alimentaires",
+          "it": "Fibre"
+        },
+        "unit": "g",
+        "per_hundred": 0.0,
+        "per_portion": 0.0,
+        "per_day": null
+      },
+      "protein": {
+        "name_translations": {
+          "de": "Eiweiss",
+          "en": "Protein",
+          "fr": "Protéines",
+          "it": "Proteine"
+        },
+        "unit": "g",
+        "per_hundred": 0.0,
+        "per_portion": 0.0,
+        "per_day": 0.0
+      },
+      "salt": {
+        "name_translations": {
+          "de": "Salz",
+          "en": "Salt",
+          "fr": "Sel",
+          "it": "Sale"
+        },
+        "unit": "g",
+        "per_hundred": 0.0,
+        "per_portion": 0.0,
+        "per_day": 0.0
+      }
+    },
+    "created_at": "2018-01-26T13:09:35.261Z",
+    "updated_at": "2019-08-05T10:17:48.534Z"
+  }],
+  "links": {},
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 24
+  }
+}

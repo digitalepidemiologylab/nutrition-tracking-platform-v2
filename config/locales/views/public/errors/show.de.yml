@@ -1,0 +1,10 @@
+---
+de:
+  public:
+    errors:
+      show:
+        go_to_home_button: Zur Startseite
+        messages:
+          '404': Die Seite, die Sie suchen, scheint nicht zu existieren...
+          '422': Der Server war nicht in der Lage, die angeforderten Anweisungen auszuführen...
+          '500': Der Server ist auf ein unerwartetes Problem gestoßen...

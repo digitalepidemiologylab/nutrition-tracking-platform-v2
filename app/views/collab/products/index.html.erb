@@ -1,0 +1,55 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= t(".title") %>
+    <% t.with_action do %>
+      <%= form_with url: "", method: :get, builder: AppFormBuilder, class: "flex justify-between items-center md:justify-end md:space-x-4", data: {controller: "query-form", turbo_frame: "products", turbo_action: "advance"} do |f| %>
+        <div>
+          <%= f.label :items, t("helpers.items"), class: "text-sm font-medium text-gray-700" %>
+          <%= f.select :items, options_for_select([10, 25, 50, 100], selected: params[:items] || Pagy::DEFAULT[:items]), {}, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleCountChange"} %>
+        </div>
+        <div>
+          <%=
+            f.label(
+              :query,
+              t(".query.title"),
+              class: "text-sm font-medium text-gray-700",
+              data: {"tippy-content": t(".query.tooltip")}
+            )
+          %>
+          <%= f.search_field :query, value: params[:query], autofocus: true, class: "mt-1 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleSearchChange"} %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= turbo_frame_tag "products" do %>
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_head_td { t("activerecord.attributes.product.product_image") } %>
+        <% tc.with_head_td(column: :name, params: params) { t("activerecord.attributes.product.name") } %>
+        <% tc.with_head_td(column: :barcode, params: params) { t("activerecord.attributes.product.barcode") } %>
+        <% tc.with_head_td(column: :unit_id, params: params) { t("activerecord.attributes.product.unit") } %>
+        <% tc.with_head_td(column: :status, params: params) { t("activerecord.attributes.product.status") } %>
+        <% tc.with_head_td(column: :source, params: params) { t("activerecord.attributes.product.source") } %>
+        <% tc.with_head_td(column: :fetched_at, params: params) { t("activerecord.attributes.product.fetched_at") } %>
+        <% @products.each do |product| %>
+          <% tc.with_row(id: dom_id(product)) do |r| %>
+            <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+              <% if product_default_image_url(product: product) %>
+                <%= link_to(image_tag(product_default_image_url(product: product), class: "object-cover h-24 w-24 rounded-md"), collab_product_path(product), data: {turbo_frame: "_top"}) %>
+              <% end %>
+            <% end %>
+            <% r.with_row_td do %>
+              <%= link_to product.name, collab_product_path(product), data: {turbo_frame: "_top"} %>
+            <% end %>
+            <% r.with_row_td { product.barcode } %>
+            <% r.with_row_td { product.unit_id } %>
+            <% r.with_row_td { product.status } %>
+            <% r.with_row_td { product.source } %>
+            <% r.with_row_td { l(product.fetched_at) if product.fetched_at } %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= render(PaginationComponent.new(pagy: @pagy)) %>
+    <% end %>
+  </div>
+</div>

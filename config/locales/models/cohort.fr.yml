@@ -1,0 +1,12 @@
+---
+fr:
+  activerecord:
+    attributes:
+      cohort:
+        created_at: Créé
+        id: ID
+        name: Nom
+    models:
+      cohort:
+        one: Cohorte
+        other: Cohortes

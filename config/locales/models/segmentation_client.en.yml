@@ -1,0 +1,7 @@
+---
+en:
+  activerecord:
+    models:
+      segmentation_client:
+        one: Segmentation Client
+        other: Segmentation Clients

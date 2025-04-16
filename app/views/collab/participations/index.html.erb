@@ -1,0 +1,14 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) { t(".title") } %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= turbo_frame_tag(dom_id(@cohort, :participations)) do %>
+      <%=
+        render "collab/participations/participations",
+          cohort: @cohort,
+          participations: @participations,
+          participations_create_form: @participations_create_form,
+          pagy: @pagy_participations
+      %>
+    <% end %>
+  </div>
+</div>

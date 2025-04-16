@@ -1,0 +1,24 @@
+<div class="bg-gray-50 flex flex-col w-full text-center rounded-xl overflow-hidden md:w-1/3 transition-all hover:bg-white">
+  <div class="px-4 pt-4 pb-12 border-b md:px-7 md:pt-7 md:pb-14">
+    <span class="text-sm text-gray-800"><%= @journal %></span>
+  </div>
+  <div class="flex flex-col flex-grow p-4 md:p-7 md:pb-12">
+    <p class="text-md font-semibold leading-snug md:text-lg md:leading-snug">
+      <%= link_to @title, @url, class: "text-gray-800 transition-all hover:text-brand", target: :blank, rel: "noopener noreferrer" %>
+    </p>
+    <p class="text-sm text-gray-500 mt-4">
+      <%= @authors %>
+    </p>
+  </div>
+
+  <div class="p-4 flex justify-end">
+    <%= link_to(
+          @url,
+          class: "block w-10 h-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand hover:border-gray-400 transition-all sm:w-12 sm:h-12",
+          target: :blank,
+          rel: "noopener noreferrer"
+        ) do %>
+      <span class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"><i class="ph-arrow-up-right text-lg text-brand"><span class="sr-only"><%= t("home.paper_component.external_link") %></span></i></span>
+    <% end %>
+  </div>
+</div>

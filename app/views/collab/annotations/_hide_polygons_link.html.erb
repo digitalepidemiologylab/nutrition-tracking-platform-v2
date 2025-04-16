@@ -1,0 +1,13 @@
+<%=
+  link_to(
+    t(".hide_polygons"),
+    "#",
+    class: "text-brand hover:underline pr-4",
+    data: {
+      action: "click->annotation#hidePolygons",
+      "annotation-target": "hidePolygonsLink",
+      "i18n-hide": t(".hide_polygons"),
+      "i18n-show": t(".show_polygons")
+    }
+  )
+%>

@@ -1,0 +1,23 @@
+<% width ||= "full" %>
+<% if annotation.image %>
+  <%= link_to(collab_annotation_path(annotation), data: {turbo_frame: "_top"}) do %>
+    <%=
+      image_tag(annotation.image, class: "object-cover h-#{width} w-#{width} max-h-#{width} max-w-#{width} aspect-square rounded-md hover:border-brand hover:border-2")
+    %>
+    <%= yield %>
+  <% end %>
+<% else %>
+  <%= link_to(collab_annotation_path(annotation), class: "text-brand", data: {turbo_frame: "_top"}) do %>
+    <div class="relative pt-[100%] w-<%= width %>">
+      <div class="absolute top-0 right-0 left-0 bottom-0 flex items-center justify-center rounded-md bg-gray-100 hover:border-brand hover:border-2">
+        <%=
+          render(IconComponent.new(
+            "camera-slash",
+            classes: "text-4xl mt-2"
+          ))
+        %>
+      </div>
+    </div>
+    <%= yield %>
+  <% end %>
+<% end %>

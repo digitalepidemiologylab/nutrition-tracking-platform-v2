@@ -1,0 +1,31 @@
+<div data-controller="dropdown-component" class="relative inline-block text-left ml-6">
+  <div class="sm:mt-1">
+    <button
+      data-action="dropdown-component#toggle"
+      type="button"
+      class="inline-flex items-center justify-center w-full rounded-md py-2 <%= @button_size %> font-medium text-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brand"
+      aria-expanded="true"
+      aria-haspopup="true">
+      <%= icon %>
+      <%= text %>
+    </button>
+  </div>
+  <div
+    data-dropdown-component-target="menu"
+    data-transition-enter-active="transition ease-out duration-100"
+    data-transition-enter-from="transform opacity-0 scale-95"
+    data-transition-enter-to="transform opacity-100 scale-100"
+    data-transition-leave-active="transition ease-in duration-75"
+    data-transition-leave-from="transform opacity-100 scale-100"
+    data-transition-leave-to="transform opacity-0 scale-95"
+    class="hidden <%= @origin_classes %> absolute mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+    role="menu"
+    aria-orientation="vertical"
+    tabindex="-1">
+    <div class="py-1" role="none">
+      <% items.each do |item| %>
+        <%= item %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+---
+de:
+  activerecord:
+    attributes:
+      job_log:
+        duration: Dauer
+        job_id: Job ID
+        job_name: Job Name
+        logs: Logmeldungen
+        status: Status
+        updated_at: Letzte Hinrichtung
+    errors:
+      models:
+        job_log:
+          attributes:
+            end_at:
+              greater_than_start_at: muss größer sein als Anfang bei

@@ -1,0 +1,11 @@
+---
+fr:
+  collab:
+    products:
+      index:
+        query:
+          title: Recherche
+          tooltip: Recherche de produits par nom ou code-barres
+        title: Produits
+      show:
+        details: Details

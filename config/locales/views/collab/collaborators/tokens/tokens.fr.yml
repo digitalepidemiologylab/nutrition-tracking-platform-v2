@@ -1,0 +1,9 @@
+---
+fr:
+  collab:
+    collaborators:
+      tokens:
+        create:
+          success: Le jeton a été créé avec succès
+        destroy:
+          success: Le jeton a été supprimé avec succès

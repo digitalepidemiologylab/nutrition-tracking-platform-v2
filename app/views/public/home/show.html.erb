@@ -1,0 +1,140 @@
+<a href="#used-by" class="hidden absolute bottom-10 left-10 w-14 h-14 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand hover:border-gray-400 transition-all lg:block">
+  <span class="flex items-center justify-center w-14 h-14"><i class="ph-arrow-down text-gray-600"><span class="sr-only"><%= t(".scroll_down") %></span></i></span>
+</a>
+
+<div class="max-w-7xl mx-auto py-16 px-5 sm:py-24 sm:px-8">
+  <div class="text-center">
+    <h1 class="display-1 text-gray-800"><%= t(".hero.title_1") %><br>
+      <span class="text-brand"><%= t(".hero.title_2") %></span></h1>
+    <p class="max-w-xl mt-12 mx-auto text-lg text-gray-500 sm:text-xl"><%= t(".hero.subtitle") %></p>
+  </div>
+</div>
+
+<div class="max-w-4xl mx-auto px-5 sm:px-8 z-10">
+  <%= image_tag "home/home-1.png", class: "mx-auto max-w-full h-auto" %>
+</div>
+
+<div class="bg-gray-50 mx-2 -mt-20 pb-20 rounded-xl z-0 sm:mx-5 sm:-mt-40 sm:pb-60 sm:rounded-2xl">
+  <div class="pt-40 px-4 sm:pt-80 sm:px-6">
+    <div id="used-by" class="grid grid-cols-3 md:grid-cols-6">
+      <div class="col-span-1 flex items-center justify-center py-8 border-r">
+        <h3 class="text-gray-800 text-sm font-bold md:text-md sm:text-lg">Used by</h3>
+      </div>
+      <div class="col-span-1 flex items-center justify-center py-8 px-8 border-r">
+        <%= image_tag "home/logo-epfl.svg", class: "h-6 sm:h-7", alt: "EPFL" %>
+      </div>
+      <div class="col-span-1 flex items-center justify-center py-8 px-8 border-0 md:border-r">
+        <%= image_tag "home/logo-tum.svg", class: "h-7 sm:h-8", alt: "Technical University of Munich" %>
+      </div>
+      <div class="col-span-1 flex items-center justify-center py-8 px-8 border-r">
+        <%= image_tag "home/logo-unisante.svg", class: "h-5 sm:h-6", alt: "Centre universitaire de médecine générale et santé publique" %>
+      </div>
+      <div class="col-span-1 flex items-center justify-center py-8 px-8 border-r">
+        <%= image_tag "home/logo-hug.svg", class: "h-7 sm:h-8", alt: "Hôpitaux Universitaires de Genève" %>
+      </div>
+      <div class="col-span-1 flex items-center justify-center py-8 px-8">
+        <%= image_tag "home/logo-microsetta.svg", class: "h-8 sm:h-9", alt: "The Microsetta Initiative" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-20 px-4 sm:pt-60 sm:px-6">
+    <div class="flex flex-wrap items-center gap-7 md:flex-nowrap">
+      <div class="md:w-1/2">
+        <%= image_tag "home/home-2.png", class: "max-w-full h-auto lg:pr-14 xl:pr-20" %>
+      </div>
+
+      <div class="mx-auto md:w-1/2">
+        <h2 class="display-2 md:text-left"><%= t(".your_study_section.title_1") %><br>
+          <span class="text-brand"><%= t(".your_study_section.title_2") %></span></h2>
+        <p class="mx-auto max-w-md mt-6 text-md text-center text-gray-500 sm:mt-12 sm:text-lg md:mx-0 md:text-left"><%= t(".your_study_section.subtitle") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mx-2 py-20 sm:mx-5 sm:py-60">
+  <div class="px-4 sm:px-6">
+    <div class="pb-14 sm:pb-28">
+      <h2 class="display-2"><%= t(".made_by_researchers_section.title_1") %><br>
+        <span class="text-brand"><%= t(".made_by_researchers_section.title_2") %></span></h2>
+      <p class="mx-auto max-w-lg mt-6 text-md text-center text-gray-500 sm:mt-12 sm:text-lg"><%= t(".made_by_researchers_section.subtitle") %></p>
+    </div>
+
+    <div>
+      <h3 class="display-3"><%= t(".papers.title") %></h3>
+    </div>
+
+    <div class="mt-10 mx-auto max-w-sm flex flex-wrap gap-5 md:gap-7 md:max-w-5xl md:flex-nowrap sm:mt-20">
+      <%=
+        render(Home::PaperComponent.new(
+          journal: "Diabetes Technology & Therapeutics, 2021",
+          title: "Associations Between Device-Measured Physical Activity and Glycemic Control and Variability Indices Under Free-Living Conditions",
+          authors: "Douae El Fatouhi, Harris Héritier, Chloé Allémann, Laurent Malisoux, Nasser Laouali, Jean-Pierre Riveline, Marcel Salathé, Guy Fagherazzi",
+          url: "https://www.liebertpub.com/doi/10.1089/dia.2021.0294?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed"
+        ))
+      %>
+      <%=
+        render(Home::PaperComponent.new(
+          journal: "Frontiers in Nutrition, 2022",
+          title: "The Food Recognition Benchmark: Using Deep Learning to Recognize Food in Images",
+          authors: "Sharada Prasanna Mohanty, Gaurav Singhal, Eric Antoine Scuccimarra, Djilani Kebaili, Harris Héritier, Victor Boulanger, Marcel Salathé",
+          url: "https://www.frontiersin.org/articles/10.3389/fnut.2022.875143/full"
+        ))
+      %>
+      <%=
+        render(Home::PaperComponent.new(
+          journal: "Frontiers in Nutrition, 2018",
+          title: "FoodRepo: An Open Food Repository of Barcoded Food Products",
+          authors: "Gianrocco Lazzari, Yannis Jaquet, Djilani J Kebaili, Laura Symul, Marcel Salathé",
+          url: "https://www.frontiersin.org/articles/10.3389/fnut.2018.00057/full"
+        ))
+      %>
+      <%=
+        render(Home::PaperComponent.new(
+          journal: "MDPI Nutrients, 2022",
+          title: "Performance of the Digital Dietary Assessment Tool MyFoodRepo",
+          authors: "Claire Zuppinger, Patrick Taffé, Gerrit Burger, Wafa Badran-Amstutz, Tapio Niemi, Clémence Cornuz, Fabiën N. Belle, Angeline Chatelan, Muriel Paclet Lafaille, Murielle Bochud, Semira Gonseth Nusslé",
+          url: "https://www.mdpi.com/2072-6643/14/3/635"
+        ))
+      %>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-50 mx-2 py-20 rounded-xl sm:mx-5 sm:py-60 sm:rounded-2xl">
+  <div class="px-4 sm:px-6">
+    <div class="flex flex-wrap items-center gap-7 md:flex-nowrap">
+      <div class="mx-auto md:w-1/2 xl:pl-20">
+        <h2 class="display-2 md:text-left"><%= t(".all_in_one_section.title_1") %><br>
+          <span class="text-brand"><%= t(".all_in_one_section.title_2") %></span></h2>
+        <p class="mx-auto max-w-md mt-6 text-md text-center text-gray-500 sm:mt-12 sm:text-lg md:mx-0 md:text-left"><%= t(".all_in_one_section.subtitle") %></p>
+      </div>
+
+      <div class="w-full pt-7 md:w-1/2 md:pt-0">
+        <%= image_tag "home/home-3.png", class: "max-w-full h-auto lg:pr-14" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mx-2 py-20 sm:mx-5 sm:py-60">
+  <div class="px-4 sm:px-6">
+    <div class="text-center">
+      <i class="ph-lock-laminated-thin text-gray-400 text-6xl sm:text-8xl"></i>
+      <h2 class="mt-4 display-2 sm:mt-8"><%= t(".transparency_section.title_1") %><br>
+        <span class="text-brand"><%= t(".transparency_section.title_2") %></span></h2>
+      <p class="mx-auto max-w-lg mt-6 text-md text-center text-gray-500 sm:mt-12 sm:text-lg"><%= t(".transparency_section.subtitle") %></p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-50 mx-2 py-20 rounded-xl sm:mx-5 sm:py-60 sm:rounded-2xl">
+  <div class="px-4 sm:px-6">
+    <div class="text-center">
+      <h2 class="display-2 sm:mt-8"><%= t(".contact_section.title_1") %><br>
+        <span class="text-brand"><%= t(".contact_section.title_2") %></span></h2>
+      <p class="mx-auto max-w-lg mt-6 text-md text-center text-gray-500 sm:mt-6 sm:text-lg"><a href="mailto:contact@myfoodrepo.org" class="text-brand underline hover:no-underline">contact@myfoodrepo.org</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+---
+de:
+  collab:
+    intakes:
+      index:
+        query:
+          label: Suche
+          tooltip: Suche Einnahmen nach Datum oder Nahrungsmittelname

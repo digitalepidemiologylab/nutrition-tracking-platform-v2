@@ -1,0 +1,10 @@
+<div class="max-w-7xl mx-auto py-16 px-5 sm:py-24 sm:px-8">
+  <div class="text-center">
+    <h1 class="display-2 text-gray-800"><%= t(".title", locale: "en") %></h1>
+  </div>
+</div>
+<div class="mx-2 pb-10 px-4 sm:mx-5 sm:pb-30 sm:px-6">
+  <article class="mx-auto max-w-prose text-gray-500">
+    <%= md_to_html(t(".text", locale: "en"), render: PublicPagesMarkdownRender) %>
+  </article>
+</div>

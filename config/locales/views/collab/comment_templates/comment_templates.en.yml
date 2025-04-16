@@ -1,0 +1,18 @@
+---
+en:
+  collab:
+    comment_templates:
+      create:
+        success: Comment template created successfully
+      destroy:
+        failure: Unable to delete the Comment template
+        success: Comment template successfully deleted
+      edit:
+        title: Edit a Comment template
+      index:
+        add_button: Create a Comment template
+        title: Comment templates
+      new:
+        title: Create a Comment template
+      update:
+        success: Comment template updated successfully

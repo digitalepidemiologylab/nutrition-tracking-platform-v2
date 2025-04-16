@@ -1,0 +1,135 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= @collaborator.name %>
+    <% t.with_action { link_to(t("helpers.edit"), edit_collab_profile_path, class: "btn btn-secondary") } %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= render(Collab::DetailsComponent.new) do |t| %>
+      <% t.with_title { t(".details") } %>
+      <% t.with_detail(label: Collaborator.human_attribute_name(:id), value: @collaborator.id) %>
+      <% t.with_detail(label: Collaborator.human_attribute_name(:email), value: @collaborator.email) %>
+      <% t.with_detail(label: Collaborator.human_attribute_name(:name), value: @collaborator.name) %>
+      <% t.with_detail(label: Collaborator.human_attribute_name(:timezone), value: @collaborator.timezone) %>
+      <% t.with_detail(label: Collaborator.human_attribute_name(:created_at), value: l(@collaborator.created_at)) %>
+    <% end %>
+    <% if @collaborations.any? %>
+      <div class="mt-6">
+        <%= render(Collab::TableComponent.new) do |tc| %>
+          <% tc.with_title do |t| %>
+            <%= t("activerecord.models.collaboration", count: 2) %>
+          <% end %>
+          <% tc.with_head_td { "#{t("activerecord.models.cohort", count: 1)} #{t("activerecord.attributes.cohort.name")}" } %>
+          <% tc.with_head_td(align: :right) { t("activerecord.attributes.collaboration.role") } %>
+          <% @collaborations.each do |collaboration| %>
+            <% tc.with_row do |r| %>
+              <% r.with_row_td(additional_classes: "font-medium text-gray-800") do
+                   link_to_if(Collab::CohortPolicy.new(current_collaborator, collaboration.cohort).show?, collaboration.cohort.name, collab_cohort_path(collaboration.cohort), class: "text-brand hover:underline")
+                 end %>
+              <% r.with_row_td(additional_classes: "text-right text-gray-500") { t(collaboration.role, scope: "roles") } %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @webauthn_credentials.any? %>
+      <div class="mt-6">
+        <%= render(Collab::TableComponent.new) do |tc| %>
+          <% tc.with_title do |title| %>
+            <% title.with_additional_element do %>
+              <%=
+                form_with(
+                  model: WebauthnCredential.new,
+                  url: collab_webauthn_challenge_path,
+                  builder: AppFormBuilder,
+                  target: :_top,
+                  id: "new_webauthn_credential",
+                  class: "flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-2",
+                  data: {
+                    target: :_top,
+                    controller: "webauthn--register",
+                    action: "webauthn--register#handleSubmit",
+                    "webauthn--register-callback-value": collab_webauthn_credentials_url,
+                    "webauthn--register-successpath-value": root_url
+                  }
+                ) do |f|
+              %>
+                <%=
+                  f.text_field :nickname, label: false, required: true,
+                    data: {"webauthn--register-target": "nickname"},
+                    placeholder: "How it will be called?",
+                    class: "mt-1 w-200 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300"
+                %>
+                <%= f.submit(t("helpers.submit.create", model: "Passkey"), class: "btn btn-primary") %>
+                <%= turbo_frame_tag "webauthn_credential_error" %>
+              <% end %>
+            <% end %>
+            <%= t(".credentials") %>
+          <% end %>
+          <% @webauthn_credentials.each do |credential| %>
+            <% tc.with_row(id: dom_id(credential)) do |r| %>
+              <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+                <%= credential.nickname %>
+              <% end %>
+              <% r.with_row_td(additional_classes: "text-right text-gray-500") do %>
+                <%=
+                  button_to(
+                    collab_webauthn_credential_path(credential),
+                    method: :delete,
+                    class: "inline-flex items-center px-2.5 py-0.5 text-sm leading-5 font-medium text-red-700 hover:text-red-500",
+                    form: {data: {turbo_confirm: t("helpers.are_you_sure")}}
+                  ) do
+                %>
+                  <%= t("helpers.destroy") %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="mt-6">
+      <%= render(Collab::TableComponent.new(force_show_table: true, table_id: "tokens-table", tbody_id: "tokens-tbody")) do |tc| %>
+        <% tc.with_title do |title| %>
+          <% title.with_additional_element do %>
+            <%=
+              form_with(
+                url: collab_collaborator_tokens_path(@collaborator),
+                builder: AppFormBuilder,
+                class: "flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-2"
+              ) do |f|
+            %>
+              <%= f.submit(t("helpers.submit.create", model: t(".token")), class: "btn btn-primary") %>
+            <% end %>
+          <% end %>
+          <%= t(".api_tokens") %>
+        <% end %>
+        <%= tc.with_head_td { t(".uid") } %>
+        <%= tc.with_head_td { t(".client") } %>
+        <%= tc.with_head_td { t(".token") } %>
+        <%= tc.with_head_td { } %>
+        <% @tokens.each do |client, _| %>
+          <% tc.with_row(id: "token_client_#{client}") do |r| %>
+            <%= render "collab/collaborators/tokens/token_row_tds", r: r, collaborator: @collaborator, client: client, token: nil %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="mt-6">
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_title do |t| %>
+          <%= t(".documents") %>
+        <% end %>
+        <% tc.with_row do |r| %>
+          <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+            <%= link_to t("layouts.footer.terms_and_conditions"), terms_path, class: "text-brand hover:underline" %>
+          <% end %>
+        <% end %>
+        <% tc.with_row do |r| %>
+          <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+            <%= link_to t("layouts.footer.privacy_policy"), privacy_path, class: "text-brand hover:underline" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+de:
+  collab:
+    food_lists:
+      destroy:
+        failure: Die Lebensmittelliste konnte nicht gelöscht werden
+        success: Lebensmittelliste erfolgreich gelöscht
+      edit:
+        title: Lebensmittelliste bearbeiten
+      form:
+        metadata: Metadaten (JSON)
+      index:
+        query: Suche
+        title: Lebensmittellisten
+      show:
+        details: Details
+        query: Suche
+      update:
+        success: Lebensmittelliste erfolgreich aktualisiert

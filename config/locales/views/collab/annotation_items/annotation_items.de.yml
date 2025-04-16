@@ -1,0 +1,8 @@
+---
+de:
+  collab:
+    annotation_items:
+      destroy:
+        failure: Artikel kann nicht gelöscht werden
+      update:
+        failure: Artikel ungültig

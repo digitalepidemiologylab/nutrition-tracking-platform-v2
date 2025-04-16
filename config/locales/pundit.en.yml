@@ -1,0 +1,6 @@
+---
+en:
+  pundit:
+    errors:
+      messages:
+        collaborator_not_authorized: You are not authorized to perform this action.

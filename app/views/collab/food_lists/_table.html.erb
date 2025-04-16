@@ -1,0 +1,24 @@
+<% tc.with_head_td(column: :name, params: params) { t("activerecord.attributes.food_list.name") } %>
+<% tc.with_head_td(column: :country, params: params) { t("activerecord.models.country", count: 1) } %>
+<% tc.with_head_td { t("activerecord.attributes.food_list.source") } %>
+<% tc.with_head_td { t("activerecord.attributes.food_list.version") } %>
+<% tc.with_head_td(column: :editable, params: params, align: :right) { t("activerecord.attributes.food_list.editable") } %>
+<% food_lists.each do |food_list| %>
+  <% tc.with_row do |r| %>
+    <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+      <%= link_to food_list.name, collab_food_list_path(food_list), class: "text-brand hover:underline", data: {turbo_frame: "_top"} %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food_list.country.name %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food_list.source %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food_list.version %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500 text-right") do %>
+      <%= render(BooleanIconComponent.new(food_list.editable)) %>
+    <% end %>
+  <% end %>
+<% end %>

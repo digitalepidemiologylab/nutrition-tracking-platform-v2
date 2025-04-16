@@ -1,0 +1,47 @@
+---
+de:
+  activerecord:
+    attributes:
+      collaborator:
+        admin: Admin
+        confirmation_sent_at: Bestätigung gesendet am
+        confirmation_token: Bestätigungs-Token
+        confirmed_at: Bestätigt am
+        created_at: Erstellt am
+        current_password: Bisheriges Passwort
+        current_sign_in_at: Aktuelle Anmeldung vom
+        current_sign_in_ip: IP der aktuellen Anmeldung
+        email: E-Mail Adresse
+        encrypted_password: Verschlüsseltes Passwort
+        failed_attempts: Fehlversuche
+        id: ID
+        invited_to_sign_up: Eingeladen
+        last_sign_in_at: Letzte Anmeldung am
+        last_sign_in_ip: IP der letzten Anmeldung
+        locked_at: Gesperrt am
+        name: Name
+        password: Passwort
+        password_confirmation: Passwortbestätigung
+        remember_created_at: Angemeldet bleiben vom
+        remember_me: Angemeldet bleiben
+        reset_password_sent_at: Passwort-Zurücksetzen-E-Mail gesendet am
+        reset_password_token: Passwort-Zurücksetzen-Token
+        sign_in_count: Anzahl Anmeldungen
+        timezone: Zeitzone
+        unconfirmed_email: Unbestätigte E-Mail-Adresse
+        unlock_token: Entsperrungs-Token
+        updated_at: Aktualisiert am
+      collaborator/collaborations:
+        collaborator: Mitarbeiter
+    errors:
+      models:
+        collaborator:
+          attributes:
+            password_confirmation:
+              confirmation: stimmt nicht mit Passwort überein
+            reset_password_token:
+              invalid: invalid
+    models:
+      collaborator:
+        one: Mitarbeiter
+        other: Mitarbeiter

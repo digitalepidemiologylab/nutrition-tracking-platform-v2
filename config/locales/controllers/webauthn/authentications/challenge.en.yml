@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    webauthn:
+      authentications:
+        challenges:
+          create:
+            failure: Authentication failed

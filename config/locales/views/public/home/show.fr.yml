@@ -1,0 +1,31 @@
+---
+fr:
+  public:
+    home:
+      show:
+        all_in_one_section:
+          subtitle: De l'application mobile aux algorithmes d'intelligence artificielle, du back-end web à la base de données des codes-barres alimentaires, toutes les parties du système sont étroitement intégrées et proviennent de la même source.
+          title_1: Un système
+          title_2: tout-en-un
+        contact_section:
+          title_1: Vous voulez en
+          title_2: savoir plus?
+        hero:
+          subtitle: 'Assisté par l''IA, transparent, développé par des chercheurs et utilisé par des groupes de recherche et des cohortes médicales dans le monde entier: MyFoodRepo est un système complet de suivi nutritionnel professionnel.'
+          title_1: Suivi nutritionnel
+          title_2: rendu facile
+        made_by_researchers_section:
+          subtitle: Enraciné dans la science et l'ingénierie, le système MyFoodRepo est développé et entretenu par une équipe de chercheurs étudiant la nutrition. Il est continuellement amélioré pour répondre aux besoins des participants à l'étude et des chercheurs.
+          title_1: Réalisé par des chercheurs,
+          title_2: pour les chercheurs
+        papers:
+          title: Nos papiers
+        scroll_down: Défiler vers le bas
+        transparency_section:
+          subtitle: Le système MyFoodRepo exploite et génère des données ouvertes, et des éléments essentiels du système, tels que les algorithmes d'IA, sont disponibles sous forme de code source ouvert.
+          title_1: Transparence pour nous,
+          title_2: confidentialité pour vous
+        your_study_section:
+          subtitle: MyFoodRepo est conçu pour les études de recherche. Embarquez les participants, annotez leurs données, communiquez avec eux et exportez les données collectées en temps réel, le tout à partir d'une interface web facile à utiliser.
+          title_1: Votre étude,
+          title_2: vos données

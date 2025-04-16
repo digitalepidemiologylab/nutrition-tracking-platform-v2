@@ -1,0 +1,19 @@
+---
+fr:
+  collab:
+    food_lists:
+      destroy:
+        failure: La liste d'aliments n'a pas pu être supprimée
+        success: Liste d'aliments supprimée avec succès
+      edit:
+        title: Modifier une liste d'aliments
+      form:
+        metadata: Metadata (JSON)
+      index:
+        query: Recherche
+        title: Listes d'aliments
+      show:
+        details: Détails
+        query: Recherche
+      update:
+        success: Liste d'aliments mise à jour avec succès

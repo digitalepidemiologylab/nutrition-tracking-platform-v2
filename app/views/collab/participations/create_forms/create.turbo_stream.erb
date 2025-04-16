@@ -1,0 +1,15 @@
+<%=
+  turbo_stream.update(
+    dom_id(@cohort, :participations),
+    partial: "collab/participations/participations",
+    locals: {
+      cohort: @cohort,
+      participations: @participations,
+      participations_create_form: @participations_create_form,
+      pagy: @pagy_participations
+    }
+  )
+%>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

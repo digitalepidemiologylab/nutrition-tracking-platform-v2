@@ -1,0 +1,14 @@
+development:
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_CABLE_URL", ENV["REDIS_URL"]) %>
+  channel_prefix: myfoodrepo_development
+
+test:
+  adapter: test
+
+production:
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_CABLE_URL", ENV["REDIS_URL"]) %>
+  channel_prefix: myfoodrepo_production
+  ssl_params:
+    verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>

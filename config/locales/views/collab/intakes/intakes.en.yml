@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    intakes:
+      index:
+        query:
+          label: Search
+          tooltip: Search for intakes by date or food name

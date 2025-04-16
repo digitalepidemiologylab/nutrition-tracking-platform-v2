@@ -1,0 +1,15 @@
+---
+fr:
+  collab:
+    profiles:
+      edit:
+        subtitle: Modifier mon profil
+      show:
+        api_tokens: Jetons API
+        client: Client
+        credentials: Clés d'accès
+        details: Détails
+        documents: Documents
+        title: Profil
+        token: Jeton
+        uid: UID

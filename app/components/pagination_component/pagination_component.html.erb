@@ -1,0 +1,43 @@
+<% link = pagy_link_proc(@pagy) -%>
+<div class="py-6 flex items-center justify-between">
+  <div class="flex-1 flex justify-between space-x-3 sm:hidden">
+    <% if @pagy.prev -%>
+      <%== link.call(@pagy.prev, t("pagination_component.prev"), 'class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand"') %>
+    <% end -%>
+    <% if @pagy.next -%>
+      <%== link.call(@pagy.next, t("pagination_component.next"), 'class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand" aria-label="next page"') %>
+    <% end -%>
+  </div>
+  <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+    <div>
+      <p class="text-sm text-gray-700">
+        <%= t("pagination_component.showing") %>
+        <span class="font-medium"><%= @pagy.from %></span>
+        <%= t("pagination_component.to") %>
+        <span class="font-medium"><%= @pagy.to %></span>
+        <%= t("pagination_component.of") %>
+        <span class="font-medium"><%= @pagy.count %></span>
+        <%= t("pagination_component.results") %>
+      </p>
+    </div>
+    <div>
+      <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+        <% if @pagy.prev -%>
+          <%== link.call(@pagy.prev, "<i class='ph-caret-left text-lg'></i><span class='sr-only'>#{t("pagination_component.prev")}</span>", 'class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand"') %>
+        <% end %>
+        <% @pagy.series.each do |item| -%>
+          <% if item.is_a?(Integer) -%>
+            <%== link.call item, item, %(class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand" aria-label="goto page #{item}") %>
+          <% elsif item.is_a?(String) -%>
+            <%== link.call item, item, %(class="z-10 bg-brand border-brand text-white relative inline-flex items-center px-4 py-2 border text-sm font-medium focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand" aria-label="page #{item}" aria-current="page") %>
+          <% elsif item == :gap -%>
+            <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"><%== t("pagination_component.gap") %></span>
+          <% end -%>
+        <% end -%>
+        <% if @pagy.next -%>
+          <%== link.call(@pagy.next, "<span class='sr-only'>#{t("pagination_component.next")}</span><i class='ph-caret-right text-lg'></i>", 'class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand" aria-label="next page"') %>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+---
+de:
+  services:
+    users:
+      destroy:
+        errors:
+          participations_count: Benutzer kann nicht zerstört werden, da er mehr als eine Beteiligung hat

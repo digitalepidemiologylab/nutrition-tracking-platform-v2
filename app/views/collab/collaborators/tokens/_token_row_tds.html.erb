@@ -1,0 +1,29 @@
+<% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+  <%= collaborator.uid %>
+<% end %>
+<% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+  <%= client %>
+  <clipboard-copy value="<%= client %>" data-copied-text="&#x2713;" class="inline text-brand hover:underline">
+    <%= t("helpers.copy") %>
+  </clipboard-copy>
+<% end %>
+<% r.with_row_td(additional_classes: "font-medium text-gray-500#{token ? " animate-highlight" : ""}") do %>
+  <%= token || "**********************" %>
+  <% if token %>
+    <clipboard-copy value="<%= token %>" data-copied-text="&#x2713;" class="inline text-brand hover:underline">
+      <%= t("helpers.copy") %>
+    </clipboard-copy>
+  <% end %>
+<% end %>
+<% r.with_row_td(additional_classes: "text-right") do %>
+  <%=
+    button_to(
+      collab_collaborator_token_path(collaborator, client),
+      method: :delete,
+      class: "inline-flex items-center px-2.5 py-0.5 text-sm leading-5 font-medium text-red-700 hover:text-red-500",
+      form: {data: {turbo_confirm: t("helpers.are_you_sure")}}
+    ) do
+  %>
+    <%= t("helpers.destroy") %>
+  <% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<% r.with_row_td(additional_classes: "font-medium text-gray-800") { participation.user_id } %>
+<% r.with_row_td(additional_classes: "text-gray-500") { participation.key } %>
+<%
+  r.with_row_td(additional_classes: "text-gray-500") do
+    next if participation.associated_at.blank?
+
+    content = [l(participation.associated_at, format: :long)]
+    if Collab::Participations::ResetterPolicy.new(collaborator, participation).create?
+      content << link_to(
+        t("collab.participations.shared.reset"),
+        collab_participation_resetter_path(participation),
+        class: "inline text-brand hover:underline",
+        data: {
+          turbo_method: :post,
+          turbo_confirm: t("helpers.are_you_sure")
+        }
+      )
+    end
+    safe_join(content, " ")
+  end
+%>
+<% r.with_row_td(additional_classes: "text-gray-500") { l(participation.started_at, format: :long) if participation.started_at } %>
+<% r.with_row_td(additional_classes: "text-gray-500") { l(participation.ended_at, format: :long) if participation.ended_at } %>
+<% r.with_row_td(additional_classes: "text-gray-500") { l(participation.created_at, format: :long) } %>
+<%
+  r.with_row_td(additional_classes: "text-right text-gray-500") {
+    link_to t("helpers.edit"), edit_collab_cohort_participation_path(participation.cohort, participation), class: "text-brand hover:underline", data: {turbo_frame: "_top"}
+  }
+%>

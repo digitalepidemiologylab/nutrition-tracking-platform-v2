@@ -1,0 +1,65 @@
+<div class="h-screen flex overflow-hidden bg-gray-100">
+  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+  <div
+    data-controller="sidebar-component"
+    data-action="mobile-sidebar-button-component:open@window->sidebar-component#enter"
+    data-transition-enter-active="transition-opacity ease-linear duration-300"
+    data-transition-enter-from="opacity-0"
+    data-transition-enter-to="opacity-100"
+    data-transition-leave-active="transition-opacity ease-linear duration-300"
+    data-transition-leave-from="opacity-100"
+    data-transition-leave-to="opacity-0"
+    class="fixed inset-0 flex z-40 md:hidden"
+    role="dialog"
+    aria-modal="true">
+    <div
+      data-action="click->sidebar-component#leave"
+      class="fixed inset-0 bg-gray-600 bg-opacity-75"
+      aria-hidden="true">
+    </div>
+    <div data-sidebar-component-target="menu" class=" relative flex-1 flex flex-col max-w-xs w-full pt-5 bg-white">
+      <div class="absolute top-0 right-0 -mr-12 pt-4">
+        <button
+          data-sidebar-component-target="close"
+          data-action="sidebar-component#leave"
+          type="button"
+          class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only"><%= t("layouts.collab.sidebar_component.close_sidebar") %></span>
+          <i class="ph-x text-white text-2xl"></i>
+        </button>
+      </div>
+      <div class="flex-shrink-0 flex items-center px-6">
+        <%= link_to image_tag("logo.svg", class: "h-7.5 w-auto", alt: "MyFoodRepo"), root_path %>
+      </div>
+      <div class="mt-9 flex-1 h-0 overflow-y-auto">
+        <nav class="flex-1 px-3 bg-white space-y-1">
+          <% items.each do |item| %>
+            <%= item %>
+          <% end %>
+        </nav>
+      </div>
+      <%= render(BottomNavComponent.new(items: bottom_items)) %>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+      <!-- Dummy element to force sidebar to shrink to fit close icon -->
+    </div>
+  </div>
+  <!-- Static sidebar for desktop -->
+  <div class="hidden md:flex md:flex-shrink-0">
+    <div class="flex flex-col w-72">
+      <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 bg-white overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-6">
+          <%= link_to image_tag("logo.svg", class: "h-7.5 w-auto", alt: "MyFoodRepo"), root_path %>
+        </div>
+        <div class="mt-9 flex-grow flex flex-col">
+          <nav class="flex-1 px-3 bg-white space-y-1">
+            <% items.each do |item| %>
+              <%= item %>
+            <% end %>
+          </nav>
+        </div>
+        <%= render(BottomNavComponent.new(items: bottom_items)) %>
+      </div>
+    </div>
+  </div>
+</div>

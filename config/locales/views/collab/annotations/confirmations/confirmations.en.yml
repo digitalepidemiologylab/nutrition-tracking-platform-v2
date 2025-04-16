@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    annotations:
+      confirmations:
+        create:
+          failure: Unable to confirm annotation. %{messages}
+          success: Annotation confirmed successfully

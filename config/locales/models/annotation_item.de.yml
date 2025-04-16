@@ -1,0 +1,24 @@
+---
+de:
+  activerecord:
+    attributes:
+      annotation_item:
+        consumed_quantity: Verbrauchte Menge
+        consumed_unit: Gegessene Einheit
+        disable_kcal_in_range_validation: Energie (kcal) Validierung deaktivieren
+        id: ID
+        merge: Zusammenführen
+        present_quantity: Derzeitige Menge
+        present_unit: Derzeitige Einheit
+    errors:
+      models:
+        annotation_item:
+          attributes:
+            consumed_kcal:
+              out_of_range: 'außerhalb des Bereichs:'
+            food:
+              invalid_food_list: gehört zu einer ungültigen Lebensmittelliste
+    models:
+      annotation_item:
+        one: Geschirrteil
+        other: Geschirrteile

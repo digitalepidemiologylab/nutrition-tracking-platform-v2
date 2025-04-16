@@ -1,0 +1,9 @@
+---
+de:
+  collab:
+    collaborators:
+      tokens:
+        create:
+          success: Token erfolgreich erstellt
+        destroy:
+          success: Token erfolgreich gelöscht

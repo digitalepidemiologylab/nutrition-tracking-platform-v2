@@ -1,0 +1,50 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= @food_list.name %>
+    <% t.with_action { link_to(t("helpers.edit"), edit_collab_food_list_path(@food_list), class: "btn btn-secondary") } if policy([:collab, @food_list]).edit? %>
+    <% t.with_action { link_to(t("helpers.destroy"), collab_food_list_path(@food_list), class: "btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: t("helpers.are_you_sure")}) } if policy([:collab, @food_list]).destroy? %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= render(Collab::DetailsComponent.new) do |t| %>
+      <% t.with_title { t(".details") } %>
+      <% t.with_detail(label: t("activerecord.attributes.food_list.country"), value: @food_list.country.name) %>
+      <% t.with_detail(label: t("activerecord.attributes.food_list.source"), value: @food_list.source.presence || "NA") %>
+      <% t.with_detail(label: t("activerecord.attributes.food_list.version"), value: @food_list.version.presence || "NA") %>
+      <% @food_list.metadata&.each do |k, v| %>
+        <% t.with_detail(label: k, value: v) %>
+      <% end %>
+      <% t.with_detail(label: t("activerecord.attributes.food_list.created_at"), value: l(@food_list.created_at, format: :long)) %>
+    <% end %>
+  </div>
+  <div class="px-4 py-6 sm:px-6 md:px-8">
+    <%= render(Collab::TableComponent.new) do |tc| %>
+      <% tc.with_title do |title| %>
+        <%= t("collab.cohorts.index.title") %>
+      <% end %>
+      <%= render "collab/cohorts/table", cohorts: @cohorts, tc: tc %>
+    <% end %>
+  </div>
+  <div class="px-4 py-6 sm:px-6 md:px-8">
+    <%= turbo_frame_tag "foods" do %>
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_title do |title| %>
+          <%= t("collab.foods.index.title") %>
+          <% title.with_additional_element do %>
+            <%= form_with url: "", method: :get, builder: AppFormBuilder, class: "flex justify-between items-center md:justify-end md:space-x-4", data: {controller: "query-form", turbo_frame: "foods", turbo_action: "advance"} do |f| %>
+              <div>
+                <%= f.label :items, t("helpers.items"), class: "text-sm font-medium text-gray-700" %>
+                <%= f.select :items, options_for_select([10, 25, 50, 100], selected: params[:items] || Pagy::DEFAULT[:items]), {}, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleCountChange"} %>
+              </div>
+              <div>
+                <%= f.label :query, t(".query"), class: "text-sm font-medium text-gray-700" %>
+                <%= f.search_field :query, value: params[:query], autofocus: true, class: "mt-1 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleSearchChange"} %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= render "collab/foods/table", foods: @foods, tc: tc %>
+      <% end %>
+      <%= render(PaginationComponent.new(pagy: @pagy)) %>
+    <% end %>
+  </div>
+</div>

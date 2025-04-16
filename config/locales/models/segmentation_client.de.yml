@@ -1,0 +1,7 @@
+---
+de:
+  activerecord:
+    models:
+      segmentation_client:
+        one: Segmentierung Klient
+        other: Segmentierung Klienten

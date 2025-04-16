@@ -1,0 +1,15 @@
+{
+  "job_id": "1623395843-1eddf41fea9bdd",
+  "created_at": "2021-06-11T07:17:23.561455",
+  "updated_at": "2021-06-11T07:17:23.561518",
+  "processing_time": null,
+  "status": "UNEXPECTED",
+  "message": "unexpected error",
+  "request": {
+    "image_url": "https://s3.eu-central-1.amazonaws.com/myfoodrepo-prd/image_media/files/000/171/684/original/881e1bdb.jpeg?1625554797",
+    "webhook_url": "http://e2141fda5da3.ngrok.io/api/v1/public_media/131e5ee1-5615-4eae-84d2-9a33f7a0ce05/webhook.json"
+  },
+  "response": {},
+  "model_identifier": "124096",
+  "api_version": "v1.0"
+}

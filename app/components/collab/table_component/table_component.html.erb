@@ -1,0 +1,26 @@
+<div class="flex flex-col">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden sm:rounded-lg">
+        <%= title %>
+        <%= form %>
+        <% if rows.present? || @force_show_table %>
+          <table class="min-w-full divide-y divide-gray-200<%= " table-striped" if @striped %>"<%= @table_id ? " id=#{@table_id}" : "" %>>
+            <thead class="bg-gray-50 align-top<%= rows.blank? ? " hidden" : "" %>">
+              <tr>
+                <% head_tds.each do |head_td| %>
+                  <%= head_td %>
+                <% end %>
+              </tr>
+            </thead>
+            <tbody class="bg-white <%= "divide-y divide-gray-200" unless @striped %>"<%= @tbody_id ? " id=#{@tbody_id}" : "" %>>
+              <% rows.each do |row| %>
+                <%= row %>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

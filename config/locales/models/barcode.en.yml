@@ -1,0 +1,14 @@
+---
+en:
+  activemodel:
+    attributes:
+      barcode:
+        code: Barcode
+    errors:
+      models:
+        barcode:
+          attributes:
+            code:
+              invalid_checksum: has an invalid checksum
+              invalid_length: has an invalid length
+              invalid_prefix: has an invalid prefix

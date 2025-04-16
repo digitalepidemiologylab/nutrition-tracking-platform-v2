@@ -1,0 +1,18 @@
+---
+de:
+  activerecord:
+    attributes:
+      annotation:
+        id: ID
+        status: Status
+        updated_at: Aktualisiert
+    models:
+      annotation:
+        one: Anmerkung
+        other: Anmerkungen
+        states:
+          annotatable: Annotierbar
+          annotated: Annotiert
+          awaiting_segmentation_service: Warten auf Segmentierungsdienst
+          info_asked: Info an Benutzer gesendet
+          initial: Anfang

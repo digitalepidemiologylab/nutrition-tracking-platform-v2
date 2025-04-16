@@ -1,0 +1,7 @@
+---
+fr:
+  activerecord:
+    models:
+      comments:
+        one: Commentaire
+        other: Commentaires

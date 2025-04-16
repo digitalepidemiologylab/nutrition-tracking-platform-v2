@@ -1,0 +1,25 @@
+---
+en:
+  activerecord:
+    attributes:
+      participation:
+        associated_at: Associated at
+        cohort: Cohort
+        created_at: Created at
+        ended_at: Ended at
+        key: Key
+        started_at: Started at
+        updated_at: Updated at
+        user: User
+        user_id: User ID
+    errors:
+      models:
+        participation:
+          attributes:
+            base:
+              intakes_outside_participation: Participation start and end dates must include all intakes
+              overlap: Cannot overlap with another participation
+    models:
+      participation:
+        one: Participation
+        other: Participations

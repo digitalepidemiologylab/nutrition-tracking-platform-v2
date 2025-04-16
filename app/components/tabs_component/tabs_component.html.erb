@@ -1,0 +1,19 @@
+<div>
+  <div class="sm:hidden">
+    <label for="tabs" class="sr-only"><%= t("tabs_component.select_tab") %></label>
+    <select id="tabs" name="tabs" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm rounded-md">
+      <% tabs.each do |tab| %>
+        <option <%= "selected" if @active %>><%= tab %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="hidden sm:block">
+    <div class="border-b border-gray-200">
+      <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+        <% tabs.each do |tab| %>
+          <%= tab %>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+</div>

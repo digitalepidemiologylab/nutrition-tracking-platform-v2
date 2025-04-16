@@ -1,0 +1,8 @@
+---
+de:
+  collab:
+    annotations:
+      confirmations:
+        create:
+          failure: Anmerkung kann nicht bestätigt werden. %{messages}
+          success: Anmerkung erfolgreich bestätigt

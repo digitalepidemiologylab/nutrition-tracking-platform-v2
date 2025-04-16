@@ -1,0 +1,24 @@
+---
+fr:
+  activerecord:
+    attributes:
+      annotation_item:
+        consumed_quantity: Quantité Consommée
+        consumed_unit: Unité consommée
+        disable_kcal_in_range_validation: Désactiver la validation de l'énergie (kcal)
+        id: ID
+        merge: Fusionner
+        present_quantity: Quantité Présente
+        present_unit: Unité présente
+    errors:
+      models:
+        annotation_item:
+          attributes:
+            consumed_kcal:
+              out_of_range: 'hors limite:'
+            food:
+              invalid_food_list: appartient à une liste d'aliments invalide
+    models:
+      annotation_item:
+        one: Article du plat
+        other: Articles du plat

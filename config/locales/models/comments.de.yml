@@ -1,0 +1,7 @@
+---
+de:
+  activerecord:
+    models:
+      comments:
+        one: Kommentar
+        other: Kommentare

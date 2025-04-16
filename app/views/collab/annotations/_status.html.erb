@@ -1,0 +1,17 @@
+<div class="flex justify-start">
+  <%= t("activerecord.models.annotation.states.#{annotation.status}") %>
+  <% if !policy([:collab, annotation]).annotatable? %>
+    <%=
+      link_to(
+        collab_annotation_opening_path(annotation),
+        class: "ml-2",
+        data: {
+          turbo_method: :post,
+          turbo_confirm: t(".confirm")
+        }
+      ) do
+    %>
+      <%= render(ButtonComponent.new(small: true)) { t(".allow_annotation") } %>
+    <% end %>
+  <% end %>
+</div>

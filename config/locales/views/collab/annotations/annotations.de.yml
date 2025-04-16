@@ -1,0 +1,45 @@
+---
+de:
+  activemodel:
+    errors:
+      models:
+        annotations:
+          annotation_items_merge_forms:
+            attributes:
+              base:
+                size_destroy: Wählen Sie mindestens 1 Element zum Zerstören
+                size_merge: Wählen Sie mindestens 2 zusammenzuführende Elemente
+  collab:
+    annotations:
+      annotation_items_destroy_forms:
+        destroy:
+          failure: Artikel können nicht zerstört werden
+          success: Artikel wurden erfolgreich zerstört
+      annotation_items_merge_forms:
+        create:
+          failure: Artikel können nicht zusammengeführt werden
+          success: Artikel wurden erfolgreich zusammengeführt
+      clear_polygons_button:
+        clear_polygons: Polygone löschen
+      hide_polygons_link:
+        hide_polygons: Alle Polygone ausblenden
+        show_polygons: Alle Polygone anzeigen
+      index:
+        title: Ausstehende Mahlzeiten, Snacks und Getränke
+      show:
+        add_food: Lebensmittel hinzufügen
+        add_product: Produkt hinzufügen
+        confirm_button: Bestätigen
+        destroy_items: Zerstören
+        destroy_tooltip: Zerstören Sie die angekreuzten Elemente
+        details: Einzelheiten
+        eaten: Zuletzt gegessen
+        merge_items: Zusammenführen
+        merge_tooltip: Wählen Sie zwei oder mehr Elemente aus, die zusammengefügt werden sollen. Die unteren Elemente werden mit dem oberen Element zusammengeführt.
+        same_date_intakes_tooltip: Alle Einnahmen dieses Benutzers an demselben Datum anzeigen
+        title: Anmerkung zu den Gerichten
+      status:
+        allow_annotation: Anmerkung zulassen
+        confirm: Sind Sie sicher, dass Sie diese Anmerkung wieder annotieren möchten?
+      totals:
+        total_consumed: Gesamtverbrauch

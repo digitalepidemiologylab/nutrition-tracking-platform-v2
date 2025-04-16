@@ -1,0 +1,15 @@
+{
+  "job_id": "1623395843-1eddf41fea9bdd",
+  "created_at": "2021-06-11T07:17:23.561455",
+  "updated_at": "2021-06-11T07:17:23.561518",
+  "processing_time":null,
+  "status": "MFR.Job.QUEUED",
+  "message": "Job Queued Successfully",
+  "request":{
+    "image_url": "https://s3.eu-central-1.amazonaws.com/myfoodrepo-dev/image_media/files/000/166/730/original/dc3fa181.jpeg?1622574870",
+    "webhook_url": "http://e2141fda5da3.ngrok.io/api/v1/public_media/3c82e3ad-ba5b-4efd-9835-15f76ed2626e/webhook.json"
+  },
+  "response": null,
+  "model_identifier":null,
+  "api_version": "v1.0"
+}

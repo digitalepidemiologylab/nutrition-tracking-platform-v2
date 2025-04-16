@@ -1,0 +1,45 @@
+---
+en:
+  activemodel:
+    errors:
+      models:
+        annotations:
+          annotation_items_merge_forms:
+            attributes:
+              base:
+                size_destroy: Select at least 1 item to delete
+                size_merge: Select at least 2 items to merge
+  collab:
+    annotations:
+      annotation_items_destroy_forms:
+        destroy:
+          failure: Unable to delete items
+          success: Items deleted successfully
+      annotation_items_merge_forms:
+        create:
+          failure: Unable to merge items
+          success: Items merged successfully
+      clear_polygons_button:
+        clear_polygons: Clear Polygons
+      hide_polygons_link:
+        hide_polygons: Hide All Polygons
+        show_polygons: Show All Polygons
+      index:
+        title: Pending Meals, Snacks & Drinks
+      show:
+        add_food: Add Food
+        add_product: Add Product
+        confirm_button: Confirm
+        destroy_items: Delete
+        destroy_tooltip: Delete checked items
+        details: Details
+        eaten: Last Eaten
+        merge_items: Merge
+        merge_tooltip: 'Select two or more items: Bottom items will be merged in top-most one'
+        same_date_intakes_tooltip: See all intakes of this user on the same date
+        title: Dish annotation
+      status:
+        allow_annotation: Allow annotation
+        confirm: Are you sure you want to make this annotation annotatable again?
+      totals:
+        total_consumed: Total consumed

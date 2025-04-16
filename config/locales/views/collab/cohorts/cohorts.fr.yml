@@ -1,0 +1,18 @@
+---
+fr:
+  collab:
+    cohorts:
+      create:
+        success: Cohorte créée avec succès
+      edit:
+        title: Editer une cohorte
+      index:
+        add_button: Créer une cohorte
+        title: Cohortes
+      new:
+        title: Créer une cohorte
+      show:
+        details: Détails
+        new_invitation: Nouvelle invitation
+      update:
+        success: Cohorte mise à jour avec succès

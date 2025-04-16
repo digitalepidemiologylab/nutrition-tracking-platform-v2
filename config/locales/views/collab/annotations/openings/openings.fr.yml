@@ -1,0 +1,8 @@
+---
+fr:
+  collab:
+    annotations:
+      openings:
+        create:
+          failure: L'annotation n'a pas pu être réouverte
+          success: L'annotation a été réouverte avec succès

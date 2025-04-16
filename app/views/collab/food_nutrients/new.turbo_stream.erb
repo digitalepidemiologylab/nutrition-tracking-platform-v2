@@ -1,0 +1,8 @@
+<%= turbo_stream.append(dom_id(@food, :food_nutrients)) do %>
+  <%= fields_for(@food, builder: AppFormBuilder) do |f| %>
+    <%= render("collab/food_nutrients/form", f: f, food: @food, food_nutrient: @food_nutrient, remaining_nutrients: @remaining_nutrients) %>
+  <% end %>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

@@ -1,0 +1,6 @@
+---
+de:
+  layouts:
+    public_header:
+      sign_in: Anmelden
+      sign_out: Abmelden

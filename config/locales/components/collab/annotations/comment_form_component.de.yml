@@ -1,0 +1,10 @@
+---
+de:
+  collab:
+    annotations:
+      comment_form_component:
+        add_comment_placeholder: Einen Kommentar hinzufügen...
+        add_comment_template_placeholder: Eine häufig gestellte Frage stellen...
+        comment_button: Kommentieren
+        silent:
+          label: Benutzer nicht über diesen Kommentar benachrichtigen

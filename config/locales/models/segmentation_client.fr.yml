@@ -1,0 +1,7 @@
+---
+fr:
+  activerecord:
+    models:
+      segmentation_client:
+        one: Service de Segmentation
+        other: Services de Segmentation

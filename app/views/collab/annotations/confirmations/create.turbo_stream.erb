@@ -1,0 +1,3 @@
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

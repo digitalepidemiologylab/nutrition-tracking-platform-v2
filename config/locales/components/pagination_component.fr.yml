@@ -1,0 +1,10 @@
+---
+fr:
+  pagination_component:
+    gap: "..."
+    next: Suivant
+    of: de
+    prev: Précédent
+    results: résultats
+    showing: Affichage de
+    to: à

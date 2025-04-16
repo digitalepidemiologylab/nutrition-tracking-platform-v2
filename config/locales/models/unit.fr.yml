@@ -1,0 +1,18 @@
+---
+fr:
+  activerecord:
+    attributes:
+      unit:
+        id: ID
+    errors:
+      models:
+        unit:
+          attributes:
+            id:
+              not_changeable: Changement non autorisé
+          base:
+            not_destroyable: Cette unité est une unité de base et/ou a des modèles associés
+    models:
+      unit:
+        one: Unité
+        other: Unités

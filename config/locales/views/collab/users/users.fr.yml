@@ -1,0 +1,25 @@
+---
+fr:
+  collab:
+    users:
+      anonymizes:
+        update:
+          failure: L'utilisateur n'a pas pu être anonymisé
+          success: L'utilisateur a été anonymisé avec succès
+      destroy:
+        failure: L'utilisateur n'a pas pu être supprimé
+        success: L'utilisateur a été supprimé avec succès
+      index:
+        query:
+          label: Recherche
+          tooltip: Recherchez des utilisateurs par e-mail, nom de cohorte ou clé de participation
+        title: Utilisateurs
+      show:
+        anonymize:
+          button: Anonymiser cet utilisateur
+          help: Toutes les données utilisateur sont conservées mais anonymisées. Une fois anonymisé, un utilisateur ne pourra plus se connecter. Cela ne peut pas être annulé.
+        danger_zone: Zone de danger
+        destroy:
+          button: Supprimer cet utilisateur
+          help: Supprime l'utilisateur et **TOUTES** les données associées. Cette action est irréversible. Utilisez-la par exemple lorsque l'utilisateur demande explicitement la destruction de ses données.
+        details: Détails

@@ -1,0 +1,19 @@
+segmentations_get_all_stale_requested_job:
+  cron: "every 30 minutes" # is equivalent to `*/30 * * * *`
+  class: "Segmentations::GetAllStaleRequestedJob"
+  queue: cron
+  description: >
+    Retrieve Segmentations with status :requested that haven't been updated in the last hour (stale)
+    and try to recover data from segmentation service.
+products_fetch_updated_from_remote_job:
+  cron: "every 1 day"
+  class: "Products::FetchUpdatedFromRemoteJob"
+  queue: cron
+  description: >
+    Fetch products that have been updated since last time the job was run from remote service
+foods_update_kcal_max_job:
+  cron: "every 2 days"
+  class: "Foods::UpdateKcalMaxJob"
+  queue: cron
+  description: >
+    Update kcal_max for recently annotated foods

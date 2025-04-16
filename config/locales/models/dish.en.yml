@@ -1,0 +1,20 @@
+---
+en:
+  activerecord:
+    attributes:
+      dish:
+        actions: Actions
+        dish_image: Image
+        eaten: Eaten
+        id: ID
+        user: User
+    errors:
+      models:
+        dish:
+          attributes:
+            base:
+              intake_presence: A dish must have at least one intake
+    models:
+      dish:
+        one: Dish
+        other: Dishes

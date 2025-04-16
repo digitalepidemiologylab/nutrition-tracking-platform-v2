@@ -1,0 +1,25 @@
+---
+de:
+  collab:
+    users:
+      anonymizes:
+        update:
+          failure: Benutzer konnte nicht anonymisiert werden
+          success: Benutzer erfolgreich anonymisiert
+      destroy:
+        failure: Benutzer konnte nicht zerstört werden
+        success: Benutzer erfolgreich zerstört
+      index:
+        query:
+          label: Suche
+          tooltip: Suche nach Benutzern nach E-Mail, Kursname oder Teilnahmeschlüssel
+        title: Benutzer
+      show:
+        anonymize:
+          button: Diesen Benutzer anonymisieren
+          help: Alle Benutzerdaten werden aufbewahrt, aber anonymisiert. Sobald ein Benutzer anonymisiert wurde, kann er sich nicht mehr anmelden. Dies kann nicht rückgängig gemacht werden.
+        danger_zone: Gefahrenzone
+        destroy:
+          button: Diesen Benutzer zerstören
+          help: Entfernen Sie den Benutzer und **ALLE** zugehörigen Daten. Dies kann nicht rückgängig gemacht werden. Verwenden Sie beispielsweise, wenn ein Benutzer ausdrücklich um die Zerstörung seiner Daten bittet.
+        details: Einzelheiten

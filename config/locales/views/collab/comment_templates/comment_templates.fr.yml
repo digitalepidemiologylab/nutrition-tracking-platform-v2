@@ -1,0 +1,18 @@
+---
+fr:
+  collab:
+    comment_templates:
+      create:
+        success: Modèle de commentaire créé avec succès
+      destroy:
+        failure: Impossible de supprimer le Modèle de commentaire
+        success: Modèle de commentaire supprimé avec succès
+      edit:
+        title: Editer un Modèle de commentaire
+      index:
+        add_button: Créer un Modèle de commentaire
+        title: Modèle de commentaires
+      new:
+        title: Créer un Modèle de commentaire
+      update:
+        success: Modèle de commentaire mise à jour avec succès

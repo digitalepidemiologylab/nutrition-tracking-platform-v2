@@ -1,0 +1,19 @@
+---
+en:
+  collab:
+    food_lists:
+      destroy:
+        failure: Unable to delete the food list
+        success: Food list successfully deleted
+      edit:
+        title: Edit a food list
+      form:
+        metadata: Metadata (JSON)
+      index:
+        query: Search
+        title: Food lists
+      show:
+        details: Details
+        query: Search
+      update:
+        success: Food list updated successfully

@@ -1,0 +1,8 @@
+---
+fr:
+  collab:
+    annotation_items:
+      sorts:
+        update:
+          failure: Le réordonnancement a échoué
+          success: Les éléments ont été réordonnés avec succès

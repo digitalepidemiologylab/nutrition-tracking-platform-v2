@@ -1,0 +1,20 @@
+---
+fr:
+  activerecord:
+    attributes:
+      dish:
+        actions: Actions
+        dish_image: Image
+        eaten: Consommé
+        id: ID
+        user: Utilisateur
+    errors:
+      models:
+        dish:
+          attributes:
+            base:
+              intake_presence: Un plat doit avoir été consommé au moins une fois
+    models:
+      dish:
+        one: Plat
+        other: Plats

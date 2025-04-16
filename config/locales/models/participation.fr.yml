@@ -1,0 +1,25 @@
+---
+fr:
+  activerecord:
+    attributes:
+      participation:
+        associated_at: Associée
+        cohort: Cohorte
+        created_at: Enregistrée
+        ended_at: Terminée
+        key: Clé
+        started_at: Démarrée
+        updated_at: Date de mise à jour
+        user: Utilisateur
+        user_id: ID Utilisateur
+    errors:
+      models:
+        participation:
+          attributes:
+            base:
+              intakes_outside_participation: Les dates de début et de fin de participation doivent inclure toutes les consommations de plats
+              overlap: Ne peut pas chevaucher une autre participation
+    models:
+      participation:
+        one: Participation
+        other: Participations

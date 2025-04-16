@@ -1,0 +1,31 @@
+---
+en:
+  public:
+    home:
+      show:
+        all_in_one_section:
+          subtitle: From the mobile app to the AI algorithms, from the web backend to the barcoded food database, all parts of the system are tightly integrated, coming from the same source.
+          title_1: An all-in-one
+          title_2: system
+        contact_section:
+          title_1: Want to
+          title_2: know more?
+        hero:
+          subtitle: 'AI-assisted, transparent, developed by researchers, and used by research groups and medical cohorts internationally: MyFoodRepo is a full-stack system for professional nutrition tracking.'
+          title_1: Nutrition tracking
+          title_2: made easy
+        made_by_researchers_section:
+          subtitle: Rooted in science and engineering, the MyFoodRepo system is developed and maintained by a research team studying nutrition. It is continuously improved to meet the needs of study participants and researchers.
+          title_1: Made by researchers,
+          title_2: for researchers
+        papers:
+          title: Our Papers
+        scroll_down: Scroll down
+        transparency_section:
+          subtitle: The MyFoodRepo system is both leveraging and generating open data, and critical parts of the system such as AI algorithms are available as open source code.
+          title_1: Transparency from us,
+          title_2: privacy for you
+        your_study_section:
+          subtitle: MyFoodRepo is built for research studies. Onboard participants, annotate their data, communicate with participants, and export the collected data in real-time, all from an easy-to-use web interface.
+          title_1: Your study,
+          title_2: your data

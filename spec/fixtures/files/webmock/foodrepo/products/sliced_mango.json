@@ -1,0 +1,199 @@
+{
+  "data": [
+    {
+      "id": 2030,
+      "country": "CH",
+      "barcode": "7610848337010",
+      "name_translations": {
+        "de": "Mango : Scheiben",
+        "fr": "Mangue : en tranches",
+        "it": "Mango : A spicchi"
+      },
+      "display_name_translations": {
+        "de": "Mango : Scheiben",
+        "fr": "Mangue : en tranches",
+        "it": "Mango : A spicchi",
+        "en": "Mango : Scheiben"
+      },
+      "ingredients_translations": {
+        "de": "Mango (Thailand), Wasser, Zucker, Säuerungsmittel (E330)",
+        "fr": "mangue (Thaïlande), eau, sucre, acidifiant (E330)",
+        "it": "mango (Thailandia), acqua, zucchero, acidificante (E330)"
+      },
+      "origin_translations": {
+        "de": "[\"Thailand\"]",
+        "fr": "[\"Thaïlande\"]",
+        "it": "[\"Thailandia\"]"
+      },
+      "status": "complete",
+      "quantity": 245,
+      "unit": "g",
+      "portion_quantity": 122,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0,
+      "images": [
+        {
+          "categories": [
+            "Back"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/44806/thumb_7610848337010.jpg?v=1471513065",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/44806/medium_7610848337010.jpg?v=1471513065",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/44806/large_7610848337010.jpg?v=1471513065",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/44806/xlarge_7610848337010.jpg?v=1471513065"
+        },
+        {
+          "categories": [
+            "Back"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8173/thumb_7610848337010.jpg?v=1467237786",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8173/medium_7610848337010.jpg?v=1467237786",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8173/large_7610848337010.jpg?v=1467237786",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8173/xlarge_7610848337010.jpg?v=1467237786"
+        },
+        {
+          "categories": [
+            "Front"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8177/thumb_7610848337010.jpg?v=1467237786",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8177/medium_7610848337010.jpg?v=1467237786",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8177/large_7610848337010.jpg?v=1467237786",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8177/xlarge_7610848337010.jpg?v=1467237786"
+        },
+        {
+          "categories": [
+            "Ingredients list"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8180/thumb_7610848337010.jpg?v=1467237786",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8180/medium_7610848337010.jpg?v=1467237786",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8180/large_7610848337010.jpg?v=1467237786",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8180/xlarge_7610848337010.jpg?v=1467237786"
+        },
+        {
+          "categories": [
+            "Nutrients table"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8183/thumb_7610848337010.jpg?v=1467237786",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8183/medium_7610848337010.jpg?v=1467237786",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8183/large_7610848337010.jpg?v=1467237786",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/8183/xlarge_7610848337010.jpg?v=1467237786"
+        }
+      ],
+      "nutrients": {
+        "salt": {
+          "name_translations": {
+            "de": "Salz",
+            "en": "Salt",
+            "fr": "Sel",
+            "it": "Sale"
+          },
+          "unit": "g",
+          "per_hundred": 0,
+          "per_portion": 0,
+          "per_day": 0
+        },
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 0.5,
+          "per_portion": 0.6,
+          "per_day": 1
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 1.5,
+          "per_portion": 1.8,
+          "per_day": 7
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 15,
+          "per_portion": 18.4,
+          "per_day": 20
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 15,
+          "per_portion": 18.4,
+          "per_day": 7
+        },
+        "saturated_fat": {
+          "name_translations": {
+            "de": "Gesättigte Fettsäuren",
+            "en": "Saturated fat",
+            "fr": "Acides gras saturés",
+            "it": "Acidi grassi saturi"
+          },
+          "unit": "g",
+          "per_hundred": 0,
+          "per_portion": 0,
+          "per_day": 0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 0,
+          "per_portion": 0,
+          "per_day": 0
+        },
+        "energy_kcal": {
+          "name_translations": {
+            "de": "Energie (kCal)",
+            "en": "Energy (Calories / kCal)",
+            "fr": "Énergie (kCal)",
+            "it": "Energia (kCal)"
+          },
+          "unit": "kCal",
+          "per_hundred": 67,
+          "per_portion": 81,
+          "per_day": 4
+        },
+        "energy": {
+          "name_translations": {
+            "de": "Energie",
+            "en": "Energy",
+            "fr": "Énergie",
+            "it": "Energia"
+          },
+          "unit": "kJ",
+          "per_hundred": 280,
+          "per_portion": null,
+          "per_day": 4
+        }
+      },
+      "created_at": "2016-06-28T06:39:07.707Z",
+      "updated_at": "2016-08-18T09:37:47.323Z"
+    }
+  ],
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 25
+  }
+}

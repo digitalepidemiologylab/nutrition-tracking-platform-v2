@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    annotation_items:
+      destroy:
+        failure: Unable to remove item
+      update:
+        failure: Item invalid

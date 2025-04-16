@@ -1,0 +1,21 @@
+---
+de:
+  activerecord:
+    attributes:
+      intake:
+        consumed_at: Konsumiert am
+        consumed_at_in_intake_timezone: Datum der Konsumierung in der Zeitzone des Benutzers
+        consumed_at_in_local_timezone: Datum der Konsumierung in der lokalen Zeitzone
+        id: ID
+        timezone: Zeitzone
+    errors:
+      models:
+        intake:
+          attributes:
+            consumed_at:
+              during_participation: muss während der Teilnahme erfolgen
+              less_than_or_equal_to_1_hour_from_now: muss weniger als oder gleich 1 Stunde von jetzt sein
+    models:
+      intake:
+        one: Einnahme
+        other: Einnahmen

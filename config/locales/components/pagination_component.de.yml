@@ -1,0 +1,10 @@
+---
+de:
+  pagination_component:
+    gap: "..."
+    next: Nächste
+    of: auf
+    prev: Vorherige
+    results: Resultate
+    showing: Anzeige
+    to: zu

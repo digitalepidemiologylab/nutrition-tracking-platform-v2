@@ -1,0 +1,8 @@
+<%= turbo_stream.replace(dom_id(@participation)) do %>
+  <%= render(Collab::TableComponent::RowComponent.new(id: dom_id(@participation))) do |r| %>
+    <%= render "collab/participations/participation_row_tds", r: r, participation: @participation, collaborator: current_collaborator %>
+  <% end %>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

@@ -1,0 +1,22 @@
+---
+fr:
+  collab:
+    food_sets:
+      create:
+        success: Set d'aliments créé avec succès
+      destroy:
+        failure: Impossible de supprimer le Set d'aliments
+        success: Set d'aliments supprimé avec succès
+      edit:
+        title: Editer un set d'aliments
+      index:
+        add_button: Créer un set d'aliment
+        query: Rechercher par nom
+        title: Sets d'aliments
+      new:
+        title: Créer un set d'aliments
+      show:
+        details: Détails
+        query: Rechercher
+      update:
+        success: Set d'aliments mis-à-jour avec succès

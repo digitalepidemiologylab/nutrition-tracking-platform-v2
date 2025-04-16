@@ -1,0 +1,13 @@
+---
+fr:
+  activerecord:
+    attributes:
+      food_set:
+        associated_foods: Aliments associés
+        cname: Nom Canonique
+        created_at: Créé
+        name: Nom
+    models:
+      food_set:
+        one: Set d'Aliment
+        other: Sets d'Aliments

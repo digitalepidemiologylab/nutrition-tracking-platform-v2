@@ -1,0 +1,11 @@
+---
+de:
+  collab:
+    note_forms:
+      edit:
+        title: Hinweis bearbeiten
+      show:
+        details: Details
+        title: Hinweis
+      update:
+        success: Hinweis erfolgreich aktualisiert

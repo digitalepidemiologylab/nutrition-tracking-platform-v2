@@ -1,0 +1,15 @@
+---
+en:
+  activerecord:
+    attributes:
+      country:
+        id: ID
+    errors:
+      models:
+        country:
+          base:
+            has_associated_models: Country has associated models
+    models:
+      country:
+        one: Country
+        other: Countries

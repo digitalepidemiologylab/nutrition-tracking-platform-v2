@@ -1,0 +1,20 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new(max_width: "5xl")) do |t| %>
+    <%= t(".title") %>
+    <% t.with_action { link_to(t("helpers.cancel"), collab_cohort_path(@collaboration.cohort), class: "btn btn-secondary") } %>
+  <% end %>
+  <div class="max-w-5xl px-4 sm:px-6 md:px-8">
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+      <%= form_for(@collaboration, url: collab_collaboration_path(@collaboration), html: {method: :patch}, builder: AppFormBuilder) do |f| %>
+        <div class="shadow sm:rounded-md sm:overflow-hidden">
+          <div class="bg-white py-6 px-4 sm:p-6">
+            <div class="grid grid-cols-4 gap-6">
+              <%= f.input :role, collection: Collaboration.roles.keys, text_method: ->(role) { t(role, scope: "roles") } %>
+            </div>
+          </div>
+          <%= f.submit_input(t("helpers.submit.update", model: "Participation"), class: "ml-2 btn btn-primary") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

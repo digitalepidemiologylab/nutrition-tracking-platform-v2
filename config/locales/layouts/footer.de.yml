@@ -1,0 +1,8 @@
+---
+de:
+  layouts:
+    footer:
+      copyright: "&copy; Copyright 2017–%{current_year} MyFoodRepo. Ein Projekt des %{digital_epidemiology_lab_link} der %{epfl_link}, mit Unterstützung der %{kgjf_link}, %{seerave_link} und %{leenaards_link}."
+      delab: Digital Epidemiology Lab
+      privacy_policy: Datenschutzbestimmungen
+      terms_and_conditions: Bedingungen und Konditionen

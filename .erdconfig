@@ -1,0 +1,33 @@
+attributes:
+  - content
+  - foreign_keys
+  - inheritance
+disconnected: true
+filename: erd
+filetype: pdf
+indirect: false
+inheritance: false
+notation: simple
+orientation: vertical
+polymorphism: false
+sort: true
+warn: true
+title: MyFoodRepo v2 entity-relationship diagram
+exclude:
+  - "ActiveStorage::Blob"
+  - "ActiveStorage::VariantRecord"
+  - "CommentTemplate::Translation"
+  - "Country::Translation"
+  - "Food::Translation"
+  - "FoodSet::Translation"
+  - "Nutrient::Translation"
+  - "PaperTrail::Version"
+  - "Product::Translation"
+only: null
+prepend_primary: false
+cluster: false
+splines: spline
+fonts:
+  normal: "Noto Sans"
+  bold: "Noto Sans Bold"
+  italic: "Noto Sans Italic"

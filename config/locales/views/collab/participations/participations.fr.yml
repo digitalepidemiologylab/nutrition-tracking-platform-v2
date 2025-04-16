@@ -1,0 +1,28 @@
+---
+fr:
+  collab:
+    participations:
+      create_forms:
+        create:
+          success: Participations créées avec succès
+      destroy:
+        failure: Participation n'a pas pu être supprimée
+        success: Participation supprimée avec succès
+      edit:
+        destroy:
+          button: Supprimer cette participation
+          help: Une fois que vous aurez supprimé cette participation, vous perdrez toutes les données associées.
+          title: Supprimer cette participation
+        title: Modifier une participation
+      form:
+        started_at:
+          hint: Défini lorsque l'utilisateur s'associe à la clé de participation
+      index:
+        title: Participations
+      resetters:
+        create:
+          success: Réinitialisation réussie de la date d'association
+      shared:
+        reset: reset
+      update:
+        success: Participation mise à jour avec succès

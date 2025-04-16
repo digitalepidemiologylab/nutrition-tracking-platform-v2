@@ -1,0 +1,25 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= t(".title") %>
+    <% t.with_action do %>
+      <%= form_with url: "", method: :get, builder: AppFormBuilder, class: "flex justify-between items-center md:justify-end md:space-x-4", data: {controller: "query-form", turbo_frame: "food-lists", turbo_action: "advance"} do |f| %>
+        <div>
+          <%= f.label :items, t("helpers.items"), class: "text-sm font-medium text-gray-700" %>
+          <%= f.select :items, options_for_select([10, 25, 50, 100], selected: params[:items] || Pagy::DEFAULT[:items]), {}, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleCountChange"} %>
+        </div>
+        <div>
+          <%= f.label :query, t(".query"), class: "text-sm font-medium text-gray-700" %>
+          <%= f.search_field :query, value: params[:query], autofocus: true, class: "mt-1 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleSearchChange"} %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= turbo_frame_tag "food-lists" do %>
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <%= render "table", food_lists: @food_lists, tc: tc %>
+      <% end %>
+      <%= render(PaginationComponent.new(pagy: @pagy)) %>
+    <% end %>
+  </div>
+</div>

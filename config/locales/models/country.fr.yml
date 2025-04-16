@@ -1,0 +1,15 @@
+---
+fr:
+  activerecord:
+    attributes:
+      country:
+        id: ID
+    errors:
+      models:
+        country:
+          base:
+            has_associated_models: Le pays a des modèles associés
+    models:
+      country:
+        one: Pays
+        other: Pays

@@ -1,0 +1,12 @@
+<%=
+  button_to(
+    t(".clear_polygons"),
+    "#",
+    class: "text-brand hover:underline disabled:opacity-50",
+    disabled: annotation_item.nil?,
+    data: {
+      action: "click->annotation#destroyPolygons",
+      "annotation-target": "clearPolygonSetLink"
+    }
+  )
+%>

@@ -1,0 +1,9 @@
+---
+en:
+  collab:
+    webauthn:
+      authentications:
+        new:
+          authenticate: Authenticate
+          failure: Authentication failed
+          title: Passkey Authentication

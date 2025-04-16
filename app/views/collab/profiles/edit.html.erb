@@ -1,0 +1,22 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new(max_width: "5xl")) do |t| %>
+    <%= @collaborator.name %>
+    <% t.with_action { link_to(t("helpers.cancel"), collab_profile_path, class: "btn btn-secondary") } %>
+  <% end %>
+  <div class="max-w-5xl px-4 sm:px-6 md:px-8">
+    <%= render(Collab::PanelComponent.new) do |t| %>
+      <% t.with_title { t(".subtitle") } %>
+      <%= form_for(@collaborator, url: collab_profile_path, builder: AppFormBuilder) do |f| %>
+        <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+          <div class="md:mt-6 grid grid-cols-4 gap-6">
+            <%= f.input :id, input_html: {disabled: true} %>
+            <%= f.input :email, input_html: {autofocus: true} %>
+            <%= f.input :name %>
+            <%= f.input :timezone, collection: ActiveSupport::TimeZone::MAPPING.values.uniq.sort %>
+          </div>
+        </div>
+        <%= f.submit_input %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

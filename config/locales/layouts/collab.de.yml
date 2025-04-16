@@ -1,0 +1,25 @@
+---
+de:
+  layouts:
+    collab:
+      api_collab_v1_documentation: Dokumentation der Collab API V1
+      api_v2_documentation: Benutzer-API-V2-Dokumentation
+      cohorts: Kohorten
+      collaborators: Mitarbeiter
+      comment_templates: Kommentarvorlagen
+      coverband: Codeabdeckung
+      flash_component:
+        close: Schließen
+      food_lists: Lebensmittellisten
+      food_sets: Lebensmittel-Sets
+      foods: Lebensmittel
+      job_logs: Ausgeführt Geplant Jobs
+      pending_annotations: Anhängige Anmerkungen
+      products: Produkten
+      sidebar_component:
+        close_sidebar: Sidebar schließen
+        more: Mehr
+        open_sidebar: Sidebar öffnen
+      sidekiq: Sidekiq Jobs
+      styleguide: Styleguide
+      users: Benutzer

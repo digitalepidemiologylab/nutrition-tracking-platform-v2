@@ -1,0 +1,33 @@
+<div data-controller="bottom-nav-component">
+  <nav
+    class="px-3 py-3 bg-white space-y-1"
+    data-bottom-nav-component-target="menu"
+    data-transition-enter-active="transition-opacity ease-linear duration-300"
+    data-transition-enter-from="opacity-0"
+    data-transition-enter-to="opacity-100"
+    data-transition-leave-active="transition-opacity ease-linear duration-300"
+    data-transition-leave-from="opacity-100"
+    data-transition-leave-to="opacity-0">
+    <% @items.each do |item| %>
+      <%= item %>
+    <% end %>
+  </nav>
+  <div class="">
+    <button
+      data-bottom-nav-component-target="button"
+      data-action="bottom-nav-component#move"
+      type="button"
+      class="text-center w-full text-gray-600 hover:bg-gray-50 hover:text-gray-800 group px-3 py-5 text-sm font-medium"
+      aria-expanded="false">
+      <div class="flex align-center justify-center">
+        <span><%= t("layouts.collab.sidebar_component.more") %></span>
+        <%=
+          render(IconComponent.new(
+            "caret-up",
+            classes: "hover:text-gray-700 text-lg pl-2"
+          ))
+        %>
+      </div>
+    </button>
+  </div>
+</div>

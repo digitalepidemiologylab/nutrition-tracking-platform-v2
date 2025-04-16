@@ -1,0 +1,11 @@
+<%= form_for([:collab, cohort, participation], builder: AppFormBuilder) do |f| %>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 sm:p-6">
+      <div class="grid grid-cols-4 gap-6">
+        <%= f.input :started_at, input_html: {disabled: true}, hint: t(".started_at.hint") %>
+        <%= f.input :ended_at %>
+      </div>
+    </div>
+    <%= f.submit_input %>
+  </div>
+<% end %>

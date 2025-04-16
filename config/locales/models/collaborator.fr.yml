@@ -1,0 +1,47 @@
+---
+fr:
+  activerecord:
+    attributes:
+      collaborator:
+        admin: Admin
+        confirmation_sent_at: Date d'envoi de la confirmation
+        confirmation_token: Clé de confirmation du mot de passe
+        confirmed_at: Confirmé à
+        created_at: Enregistré à
+        current_password: Mot de passe actuel
+        current_sign_in_at: Date de la connexion actuelle
+        current_sign_in_ip: IP de la connexion actuelle
+        email: Adresse Email
+        encrypted_password: Mot de passe chiffré
+        failed_attempts: Tentatives échouées
+        id: ID
+        invited_to_sign_up: Invité
+        last_sign_in_at: Date de la dernière connexion
+        last_sign_in_ip: IP de la dernière connexion
+        locked_at: Verrouillé à
+        name: Nom
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
+        remember_created_at: Mémorisé à
+        remember_me: Se souvenir de moi ?
+        reset_password_sent_at: Clé de réinitialisation créée à
+        reset_password_token: Clé de réinitialisation du mot de passe
+        sign_in_count: Nombre des connexions
+        timezone: Fuseau horaire
+        unconfirmed_email: Email non confirmé
+        unlock_token: Clé de déverrouillage
+        updated_at: Date de mise à jour
+      collaborator/collaborations:
+        collaborator: Collaborateur
+    errors:
+      models:
+        collaborator:
+          attributes:
+            password_confirmation:
+              confirmation: ne correspond pas au mot de passe
+            reset_password_token:
+              invalid: invalide
+    models:
+      collaborator:
+        one: Collaborateur
+        other: Collaborateurs

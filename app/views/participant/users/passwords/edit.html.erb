@@ -1,0 +1,31 @@
+<div class="py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <%= link_to image_tag("logomark.svg", class: "mx-auto h-14 w-auto", alt: "MyFoodRepo"), root_path %>
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-800">
+      <%= t("devise.passwords.edit.change_my_password") %>
+    </h2>
+  </div>
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), method: :put, builder: AppFormBuilder) do |f| %>
+        <%= hidden_field_tag :reset_password_token, f.object.reset_password_token %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class="space-y-6">
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <%
+            label_text = [t("devise.passwords.edit.new_password")]
+            label_text << t("devise.passwords.edit.minimum_password_length", count: @minimum_password_length) if @minimum_password_length
+          %>
+          <%= f.input :password, label: {text: label_text.join(" ")}, input_html: {autofocus: true, autocomplete: "new-password", required: true} %>
+          <%= f.input :password_confirmation, required: true %>
+          <div>
+            <%= render(ButtonComponent.new(type: :submit)) do |c| %>
+              <% c.with_icon(:lock, classes: "text-lg opacity-60") %>
+              <%= t("devise.passwords.edit.change_my_password") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

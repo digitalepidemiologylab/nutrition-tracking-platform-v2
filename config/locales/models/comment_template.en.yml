@@ -1,0 +1,11 @@
+---
+en:
+  activerecord:
+    attributes:
+      comment_template:
+        message: Message
+        title: Title
+    models:
+      comment_template:
+        one: Comment template
+        other: Comment templates

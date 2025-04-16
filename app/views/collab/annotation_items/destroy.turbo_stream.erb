@@ -1,0 +1,25 @@
+<% if @annotation_item.destroyed? %>
+  <%= turbo_stream.remove(dom_id(@annotation_item)) %>
+  <%= turbo_stream.replace(dom_id(@annotation, :totals)) do %>
+    <%= render("collab/annotations/totals", annotation: @annotation) %>
+  <% end %>
+  <%= turbo_stream.append(dom_id(@annotation)) do %>
+    <template
+      data-controller="annotation-items--select"
+      data-annotation-items--select-annotation-outlet="[data-controller='annotation']"
+      data-annotation-items--select-id-value>
+    </template>
+  <% end %>
+  <%= turbo_stream.replace(dom_id(@annotation, :canvas)) do %>
+    <%=
+      render(Collab::Annotations::CanvasComponent.new(
+        annotation: @annotation,
+        annotation_item: nil,
+        annotation_items: @annotation_items
+      ))
+    %>
+  <% end %>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

@@ -1,0 +1,7 @@
+---
+de:
+  devise_token_auth:
+    passwords:
+      sended_paranoid: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden ist, erhalten Sie in wenigen Minuten einen Link zur Wiederherstellung Ihres Passworts an Ihre E-Mail-Adresse.
+    registrations:
+      account_with_uid_destroyed: Ihre persönlichen Daten sind gelöscht worden. Bitte beachten Sie, dass alle Ihre Tellerbilder im Namen einer Kohorte gesammelt wurden. Sie müssen sich an die Kohorte wenden, wenn Sie möchten, dass Ihre Bilder und die dazugehörigen Daten gelöscht werden.

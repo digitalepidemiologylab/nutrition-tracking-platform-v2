@@ -1,0 +1,17 @@
+---
+fr:
+  activerecord:
+    attributes:
+      job_log:
+        duration: Durée
+        job_id: Job ID
+        job_name: Job Name
+        logs: Messages
+        status: Status
+        updated_at: Dernière exécution
+    errors:
+      models:
+        job_log:
+          attributes:
+            end_at:
+              greater_than_start_at: doit être supérieure à la date de début

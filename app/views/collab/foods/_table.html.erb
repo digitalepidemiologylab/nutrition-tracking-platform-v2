@@ -1,0 +1,40 @@
+<% tc.with_head_td(column: :name, params: params) { t("activerecord.attributes.food.name") } %>
+<% tc.with_head_td { t("activerecord.models.food_set", count: 2) } %>
+<% tc.with_head_td(column: :food_list, params: params) { t("activerecord.models.food_list", count: 1) } %>
+<% tc.with_head_td(column: :unit_id, params: params) { t("activerecord.models.unit", count: 1) } %>
+<% tc.with_head_td(column: :fa_ps_ratio, params: params) { t("activerecord.attributes.food.fa_ps_ratio") } %>
+<% tc.with_head_td(column: :kcal_min, params: params) { t("activerecord.attributes.food.kcal_min") } %>
+<% tc.with_head_td(column: :kcal_max, params: params) { t("activerecord.attributes.food.kcal_max") } %>
+<% tc.with_head_td(column: :segmentable, params: params) { t("activerecord.attributes.food.segmentable") } %>
+<% tc.with_head_td(column: :annotatable, params: params) { t("activerecord.attributes.food.annotatable") } %>
+<% foods.each do |food| %>
+  <% tc.with_row do |r| %>
+    <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+      <%= link_to food.name, collab_food_path(food), class: "text-brand hover:underline", data: {turbo_frame: "_top"} %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.food_sets.map(&:name).sort_by(&:downcase).join(", ") %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.food_list.name %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.unit.id %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.fa_ps_ratio %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.kcal_min %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= food.kcal_max %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") do %>
+      <%= render(BooleanIconComponent.new(food.segmentable)) %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-right text-gray-500") do %>
+      <%= render(BooleanIconComponent.new(food.annotatable)) %>
+    <% end %>
+  <% end %>
+<% end %>

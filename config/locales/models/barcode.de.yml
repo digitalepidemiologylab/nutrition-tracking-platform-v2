@@ -1,0 +1,14 @@
+---
+de:
+  activemodel:
+    attributes:
+      barcode:
+        code: Strichcode
+    errors:
+      models:
+        barcode:
+          attributes:
+            code:
+              invalid_checksum: hat eine ungültige Prüfsumme
+              invalid_length: hat eine ungültige Länge
+              invalid_prefix: hat ein ungültiges Präfix

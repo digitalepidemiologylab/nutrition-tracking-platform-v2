@@ -1,0 +1,22 @@
+<div class="mx-2 py-14 rounded-xl sm:mx-5 sm:py-30">
+  <div class="px-4 sm:px-6">
+    <div class="flex justify-center gap-5 sm:gap-7">
+      <%= link_to image_tag("btn-app-store.svg", class: "w-auto h:8 sm:h-10"), "https://itunes.apple.com/app/myfoodrepo/id1450244793", target: :blank %>
+      <%= link_to image_tag("btn-google-play.svg", class: "w-auto h:8 sm:h-10"), "https://play.google.com/store/apps/details?id=com.myfoodrepoapp", target: :blank %>
+    </div>
+    <div class="text-center">
+      <p class="mx-auto mt-6 text-sm text-center text-gray-500 sm:mt-12 sm:text-md">
+        <%== t(".copyright",
+               current_year: Date.current.year,
+               digital_epidemiology_lab_link: link_to(t(".delab"), "https://www.digitalepidemiologylab.org", class: "underline hover:text-brand"),
+               epfl_link: link_to("EPFL", "https://www.epfl.ch", class: "underline hover:text-brand"),
+               kgjf_link: link_to("Kristian Gerhard Jebsen Foundation", "http://www.kgjf.org", class: "underline hover:text-brand"),
+               seerave_link: link_to("Seerave Foundation", "http://www.seerave.org", class: "underline hover:text-brand"),
+               leenaards_link: link_to("Leenaards Foundation", "https://www.leenaards.ch", class: "underline hover:text-brand")) %>
+      </p>
+      <p class="mx-auto mt-2 text-sm text-center text-gray-500 sm:text-md">
+        <%= link_to t(".terms_and_conditions"), terms_path, class: "underline hover:text-brand" %> · <%= link_to t(".privacy_policy"), privacy_path, class: "underline hover:text-brand" %>
+      </p>
+    </div>
+  </div>
+</div>

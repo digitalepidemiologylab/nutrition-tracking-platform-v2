@@ -1,0 +1,28 @@
+---
+de:
+  collab:
+    participations:
+      create_forms:
+        create:
+          success: Erfolgreich gegründete Beteiligung
+      destroy:
+        failure: Beteiligung konnte nicht gelöscht werden
+        success: Beteiligung erfolgreich gelöscht
+      edit:
+        destroy:
+          button: Diese Beteiligung zerstören
+          help: Sobald Sie diese Beteiligung löschen, verlieren Sie alle mit ihr verbundenen Daten.
+          title: Diese Beteiligung zerstören
+        title: Beteiligung bearbeiten
+      form:
+        started_at:
+          hint: Festgelegt wenn der Benutzer sich mit dem Teilnahmeschlüssel verbindet
+      index:
+        title: Beteiligungen
+      resetters:
+        create:
+          success: Verknüpfungsdatum erfolgreich zurückgesetzt
+      shared:
+        reset: Reset
+      update:
+        success: Beteiligung erfolgreich aktualisiert

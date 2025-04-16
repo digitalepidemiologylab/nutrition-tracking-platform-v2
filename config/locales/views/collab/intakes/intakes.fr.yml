@@ -1,0 +1,8 @@
+---
+fr:
+  collab:
+    intakes:
+      index:
+        query:
+          label: Recherche
+          tooltip: Recherchez des consommations par date ou nom de nourriture

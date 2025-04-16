@@ -1,0 +1,10 @@
+---
+en:
+  public:
+    errors:
+      show:
+        go_to_home_button: Go to home
+        messages:
+          '404': The page you are looking for doesn't seem to exist...
+          '422': The server was not able to carry out the requested instructions...
+          '500': The server had an unexpected problem...

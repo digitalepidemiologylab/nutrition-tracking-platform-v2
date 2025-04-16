@@ -1,0 +1,359 @@
+#
+# Endpoints for MyFoodRepo mobile apps
+#
+# This file is intended to be used with VSCode and the addon "Rest Client"
+# https://code.visualstudio.com
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
+
+# Variables
+@host = http://localhost:3000
+@locale = fr
+@userEmail = user_1@myfoodrepo.org
+@userPassword = MyFoodRepoPassword
+@coke_barcode = "5449000009500"
+
+###
+# Get a session token for a "real" user (login)
+# @name userSession
+
+POST {{host}}/api/v2/me/sign_in
+content-type: application/json
+accept: application/json
+
+{
+  "data" : {
+    "type" : "user",
+    "attributes" : {
+      "email" : "{{userEmail}}",
+      "password" : "{{userPassword}}"
+    }
+  }
+}
+
+###
+# Delete session (logout)
+
+DELETE {{host}}/api/v2/me/sign_out
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Forgot password. Get an email with a reset token
+
+POST {{host}}/api/v2/me/password?locale=fr
+content-type: application/json
+accept: application/json
+
+{
+  "email": "{{userEmail}}"
+}
+
+###
+# Sign up with participation key
+# @name userSession
+
+@participationKey = set_me
+
+POST {{host}}/api/v2/me
+content-type: application/json
+accept: application/json
+
+{
+  "data": {
+    "type": "participations",
+    "attributes": {
+      "key": "{{participationKey}}"
+    }
+  }
+}
+
+###
+# Join cohort with participation key
+
+@participationKey = set_me
+
+POST {{host}}/api/v2/participate
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "participations",
+    "attributes": {
+      "key": "{{participationKey}}"
+    }
+  }
+}
+
+###
+# List user participations
+
+GET {{host}}/api/v2/participations?include=cohort
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# List user participations with unsupported mobile app version
+
+GET {{host}}/api/v2/participations?include=cohort
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+user-agent: MyFoodRepo/1.0.0 (iOS 10.3.1; Scale/2.00)
+
+###
+# User profile
+
+GET {{host}}/api/v2/me
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Delete user account
+
+DELETE {{host}}/api/v2/me
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Update user registration
+
+PATCH {{host}}/api/v2/me
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "users",
+    "attributes": {
+      "email": "new_email@myfoodrepo.org",
+      "password": "new_password",
+      "password_confirmation": "new_password"
+    }
+  }
+}
+
+###
+# Update user dishes privacy
+
+PATCH {{host}}/api/v2/me
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "users",
+    "attributes": {
+      "dishes_private": "1"
+    }
+  }
+}
+
+###
+# Create a direct upload
+
+POST {{host}}/api/v2/direct_uploads
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "direct_uploads",
+    "attributes": {
+      "filename": "image",
+      "byte_size": 1234,
+      "checksum": "Base64Encoded128bitMD5digest",
+      "content_type": "image/jpeg"
+    }
+  }
+}
+
+###
+# Create a dish with an image
+
+POST {{host}}/api/v2/dish_forms
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "dish_forms",
+    "attributes": {
+      "dish": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa5",
+        "description": "string"
+      },
+      "intake": {
+        "consumed_at": "2023-02-28T15:48:37.532Z",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "dish_image": {
+        "data": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWsxWWpSaFlXTm1ZeTB3TVRSaUxUUXlNRGN0T0Rrek5pMWtOV05sTnpBMk4yWTBNMlFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--2b690fc40cb46830f1665c396943fc87daddf186"
+      }
+    }
+  }
+}
+
+###
+# Create a dish with a barcode
+
+POST {{host}}/api/v2/dishes
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "attributes": {
+      "barcode": {{coke_barcode}}
+    },
+    "relationships": {
+      "intakes": {
+        "data": [
+          {
+            "type": "intakes",
+            "attributes": {
+              "consumed_at": "2022-02-08T14:01:39Z",
+              "timezone": "Asia/Hong_Kong"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+
+###
+# Intakes list with include param
+# @name intakesList
+
+GET {{host}}/api/v2/intakes?include=annotation.dish.dish_image,annotation.comments
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Intakes list with pagination params
+
+GET {{host}}/api/v2/intakes?page=2&items=5
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Intakes list with updated_at_gt param
+
+GET {{host}}/api/v2/intakes?filter[updated_at_gt]=2022-02-16T09:56:49.234234Z
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# Create a intake for a specific dish
+
+POST {{host}}/api/v2/dishes/{{intakesList.response.body.included[0].relationships.dish.data.id}}/intakes
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "intakes",
+    "attributes": {
+      "consumed_at": "2022-02-08T14:01:39Z",
+      "timezone": "Asia/Hong_Kong"
+    }
+  }
+}
+
+###
+# Update an Intake
+
+PATCH {{host}}/api/v2/intakes/{{intakesList.response.body.data[0].id}}
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "intakes",
+    "attributes": {
+      "consumed_at": "2022-02-08T14:01:39Z"
+    }
+  }
+}
+
+###
+# Delete an intake
+
+DELETE {{host}}/api/v2/intakes/{{intakesList.response.body.data[0].id}}
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+###
+# List comments for a specific annotation
+
+GET {{host}}/api/v2/annotations/{{intakesList.response.body.data[0].relationships.annotation.data.id}}/comments?include=annotation
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+
+###
+# Create a comment for a specific annotation
+
+POST {{host}}/api/v2/annotations/{{intakesList.response.body.data[0].relationships.annotation.data.id}}/comments
+content-type: application/json
+accept: application/json
+access-token: {{userSession.response.headers.access-token}}
+client: {{userSession.response.headers.client}}
+uid: {{userSession.response.headers.uid}}
+
+{
+  "data": {
+    "type": "commments",
+    "attributes": {
+      "message": "Hello World"
+    }
+  }
+}

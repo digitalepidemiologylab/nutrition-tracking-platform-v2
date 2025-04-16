@@ -1,0 +1,86 @@
+<div class="px-4 sm:px-6 md:px-8">
+  <div class="pb-6">
+    <%= form_with url: "", method: :get, builder: AppFormBuilder, class: "flex justify-between items-center md:justify-end md:space-x-4", data: {controller: "query-form", turbo_frame: "intakes", turbo_action: "advance"} do |f| %>
+      <div>
+        <%= f.label :items, t("helpers.items"), class: "text-sm font-medium text-gray-700" %>
+        <%= f.select :items, options_for_select([10, 25, 50, 100], selected: params[:items] || Pagy::DEFAULT[:items]), {}, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleCountChange"} %>
+      </div>
+      <div>
+        <%=
+          f.label(
+            :query,
+            t(".query.label"),
+            class: "text-sm font-medium text-gray-700",
+            data: {
+              "tippy-content": t(".query.tooltip")
+            }
+          )
+        %>
+        <%= f.search_field :query, value: params[:query], autofocus: true, class: "mt-1 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleSearchChange"} %>
+      </div>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag "intakes" do %>
+    <%= render(Collab::TableComponent.new(striped: true)) do |tc| %>
+      <% tc.with_title do |title| %>
+        <%= t("activerecord.models.intake", count: 2) %>
+      <% end %>
+      <% tc.with_head_td { t("activerecord.attributes.dish.dish_image") } %>
+      <% tc.with_head_td { "#{t("activerecord.models.intake", count: 1)} #{t("activerecord.attributes.intake.id")}" } %>
+      <% tc.with_head_td { "#{t("activerecord.models.annotation", count: 1)} #{t("activerecord.attributes.annotation.id")}" } %>
+      <% tc.with_head_td(column: "annotations.status", params: params) { "#{t("activerecord.models.annotation", count: 1)} #{t("activerecord.attributes.annotation.status")}" } %>
+      <% tc.with_head_td(column: "intakes.consumed_at", params: params) { t("activerecord.attributes.intake.consumed_at_in_intake_timezone") } %>
+      <% tc.with_head_td { t("activerecord.models.cohort", count: 2) } %>
+      <% @intakes.each do |intake| %>
+        <% annotation = intake.annotation %>
+        <% dish = annotation.dish %>
+        <% tc.with_row do |r| %>
+          <% r.with_row_td(additional_classes: "text-gray-500 space-y-2") do %>
+            <% if annotation.image %>
+              <%= link_to collab_annotation_path(annotation), data: {turbo_frame: "_top"} do %>
+                <%=
+                  image_tag(annotation.image, class: "object-cover h-24 w-24 rounded-md")
+                %>
+              <% end %>
+            <% else %>
+              <%= link_to(collab_annotation_path(annotation), class: "text-brand", data: {turbo_frame: "_top"}) do %>
+                <div class="flex items-center justify-center h-24 w-24 rounded-md bg-gray-100 hover:border-brand hover:border-2">
+                  <%=
+                    render(IconComponent.new(
+                      "camera-slash",
+                      classes: "text-4xl"
+                    ))
+                  %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% r.with_row_td(additional_classes: "text-gray-500") do %>
+            <%= intake.id %>
+          <% end %>
+          <% r.with_row_td(additional_classes: "text-gray-500") do %>
+            <%= link_to(annotation.id, collab_annotation_path(annotation), data: {turbo_frame: "_top"}, class: "text-brand hover:underline") %>
+          <% end %>
+          <% r.with_row_td(additional_classes: "text-gray-500") do %>
+            <%= annotation.status %>
+          <% end %>
+          <% r.with_row_td(additional_classes: "text-gray-500") do %>
+            <%= consumed_at_in_timezone(intake: intake) %>
+          <% end %>
+          <% r.with_row_td(additional_classes: "text-gray-500") do %>
+            <%=
+              link_to_if(
+                policy([:collab, annotation.cohort]).show?,
+                annotation.cohort.name,
+                collab_cohort_path(annotation.cohort),
+                class: "text-brand hover:underline",
+                data: {turbo_frame: "_top"}
+              )
+            %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= render(PaginationComponent.new(pagy: @pagy_intakes)) %>
+  <% end %>
+</div>

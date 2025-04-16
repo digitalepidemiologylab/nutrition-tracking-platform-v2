@@ -1,0 +1,7 @@
+---
+en:
+  devise_token_auth:
+    passwords:
+      sended_paranoid: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+    registrations:
+      account_with_uid_destroyed: Your personal data has been deleted. Please note that all your dish images have been collected on behalf of a cohort. You must contact the cohort if you want your images and their associated data to be deleted.

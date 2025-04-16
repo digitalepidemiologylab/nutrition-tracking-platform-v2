@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": 44047,
+      "country": "CH",
+      "barcode": "5941021017118",
+      "name_translations": {
+        "en": "Dark chocolate"
+      },
+      "display_name_translations": {
+        "de": "Dark chocolate",
+        "fr": "Dark chocolate",
+        "it": "Dark chocolate",
+        "en": "Dark chocolate"
+      },
+      "ingredients_translations": {},
+      "origin_translations": {},
+      "status": "rescan",
+      "quantity": 65,
+      "unit": "g",
+      "portion_quantity": 0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0,
+      "images": [
+        {
+          "categories": [
+            "Back"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179100/thumb_1583408952841-0.jpg?v=1585064894",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179100/medium_1583408952841-0.jpg?v=1585064894",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179100/large_1583408952841-0.jpg?v=1585064894",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179100/xlarge_1583408952841-0.jpg?v=1585064894"
+        },
+        {
+          "categories": [
+            "Front"
+          ],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179099/thumb_1583408952861-1.jpg?v=1585064894",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179099/medium_1583408952861-1.jpg?v=1585064894",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179099/large_1583408952861-1.jpg?v=1585064894",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/179099/xlarge_1583408952861-1.jpg?v=1585064894"
+        }
+      ],
+      "nutrients": {},
+      "created_at": "2020-03-24T15:46:57.300Z",
+      "updated_at": "2022-01-01T15:48:15.034Z"
+    }
+  ],
+  "links": {},
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 23
+  }
+}

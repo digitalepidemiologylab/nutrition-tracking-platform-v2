@@ -1,0 +1,96 @@
+#
+# Endpoints for MyFoodRepo mobile apps
+#
+# This file is intended to be used with VSCode and the addon "Rest Client"
+# https://code.visualstudio.com
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
+
+# Variables
+@host = https://mfr.localhost
+@locale = fr
+@collaboratorEmail = admin@myfoodrepo.org
+@collaboratorClient = 5KfFLvQlKGR7FOysHLoDQQ
+@collaboratorAccessToken = D_EgeeE4VOjSs16A9gL4UQ
+@cohort_id = 2b28a73f-bc57-4716-a5e5-22a63107048d
+@participation_key = XHLY2yGif
+
+###
+# List Participations
+# @name participationsList
+
+GET {{host}}/collab/api/v1/cohorts/{{cohort_id}}/participations?key={{participation_key}}
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+###
+# Show Participation
+
+GET {{host}}/collab/api/v1/participations/{{participationsList.response.body.data[0].id}}
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+###
+# Create Participations
+
+POST {{host}}/collab/api/v1/cohorts/{{cohort_id}}/participations
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+###
+# Update Participation
+
+PATCH {{host}}/collab/api/v1/participations/{{participationsList.response.body.data[0].id}}
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+{
+  "data": {
+    "type": "participations",
+    "attributes": {
+      "ended_at": "2023-02-08T14:01:39Z"
+    }
+  }
+}
+
+###
+# Get Cohort info with food lists
+
+GET {{host}}/collab/api/v1/cohorts/{{cohort_id}}?include=food_lists
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+###
+# List Annotations
+
+GET {{host}}/collab/api/v1/participations/{{participationsList.response.body.data[0].id}}/annotations?include=dish,dish.dish_image,intakes,comments,annotation_items,annotation_items.food,annotation_items.product,annotation_items.product.product_images
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}
+
+###
+# List Nutrients
+
+GET {{host}}/collab/api/v1/nutrients
+content-type: application/json
+accept: application/json
+uid: {{collaboratorEmail}}
+client: {{collaboratorClient}}
+access-token: {{collaboratorAccessToken}}

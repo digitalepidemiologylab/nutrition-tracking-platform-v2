@@ -1,0 +1,8 @@
+---
+de:
+  collab:
+    annotation_items:
+      sorts:
+        update:
+          failure: Der Sortiervorgang ist fehlgeschlagen
+          success: Die Elemente wurden erfolgreich sortiert

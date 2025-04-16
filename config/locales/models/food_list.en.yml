@@ -1,0 +1,22 @@
+---
+en:
+  activerecord:
+    attributes:
+      food_list:
+        country: Country
+        created_at: Created
+        editable: Editable
+        metadata: Metadata
+        name: Name
+        source: Source
+        version: Version
+    errors:
+      models:
+        food_list:
+          attributes:
+            metadata_data:
+              invalid: is not valid JSON
+    models:
+      food_list:
+        one: Food list
+        other: Food lists

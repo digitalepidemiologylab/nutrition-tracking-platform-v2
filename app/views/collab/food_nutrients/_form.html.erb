@@ -1,0 +1,23 @@
+<div data-controller="food-nutrients--form" class="grid grid-cols-6 gap-6 mt-6">
+  <%= f.fields_for(:food_nutrients_attributes, food_nutrient, index: food_nutrient.object_id, builder: AppFormBuilder) do |fns| %>
+    <div class="col-span-3">
+      <%= fns.hidden_field(:id) if fns.object.persisted? %>
+      <%= fns.hidden_field :nutrient_id %>
+      <% if fns.object.persisted? %>
+        <%= fns.input :nutrient_id, type: :string, input_html: {disabled: true, required: true, value: food_nutrient.nutrient.name} %>
+      <% else %>
+        <%= fns.input :nutrient_id, collection: remaining_nutrients, value_method: :id, text_method: :name, input_html: {required: true} %>
+      <% end %>
+    </div>
+    <div class="col-span-2">
+      <%= fns.input :per_hundred, input_html: {required: true} %>
+    </div>
+    <div class="pt-8 col-span-1">
+      <% if fns.object.persisted? %>
+        <%= fns.input :_destroy, as: :boolean, label: {text: t("helpers.destroy")} %>
+      <% else %>
+        <%= link_to(t("helpers.destroy"), "#", class: "text-brand", data: {action: "click->food-nutrients--form#destroy"}) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+<%= turbo_frame_tag(notable, :note) do %>
+  <%= simple_format(notable.note) %>
+  <p>
+    <%= link_to t("helpers.edit"), [:edit, :collab, notable, :note_forms], class: "text-brand hover:underline" %>
+  </p>
+<% end %>

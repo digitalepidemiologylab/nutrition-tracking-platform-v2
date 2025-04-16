@@ -1,0 +1,13 @@
+---
+fr:
+  activerecord:
+    attributes:
+      nutrient:
+        cname: Nom canonique
+        id: ID
+        name: Nom
+        unit: Unité
+    models:
+      nutrient:
+        one: Nutriment
+        other: Nutriments

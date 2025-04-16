@@ -1,0 +1,18 @@
+---
+fr:
+  activerecord:
+    attributes:
+      product:
+        barcode: Code-barres
+        fetched_at: Dernière synchronisation
+        id: ID
+        name: Name
+        portion_quantity: Quantité de portion standard
+        product_image: Image
+        source: Source
+        status: Status
+        unit: Unité
+    models:
+      product:
+        one: Produit
+        other: Produits

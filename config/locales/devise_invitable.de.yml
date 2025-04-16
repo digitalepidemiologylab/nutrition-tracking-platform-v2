@@ -1,0 +1,33 @@
+---
+de:
+  devise:
+    failure:
+      invited: Sie haben eine Einladung erhalten, nehmen Sie sie an, um Ihr Konto zu erstellen.
+    invitations:
+      edit:
+        header: Willkommen bei MyFoodRepo
+        subheader: Bitte geben Sie Ihren Namen und Ihr Passwort ein, um fortzufahren.
+        submit_button: Weiter
+      invitation_removed: Ihre Einladung wurde entfernt.
+      invitation_token_invalid: Das angegebene Einladungs-Token ist nicht gültig!
+      new:
+        header: Einladung versenden
+        submit_button: Eine Einladung verschicken
+      no_invitations_remaining: Keine Einladungen mehr übrig
+      send_instructions: Es wurde eine Einladungs-E-Mail an %{email} gesendet.
+      updated: Ihr Passwort wurde erfolgreich festgelegt. Sie sind jetzt eingeloggt.
+      updated_not_active: Ihr Passwort wurde erfolgreich festgelegt.
+    mailer:
+      invitation_instructions:
+        accept: Einladung annehmen
+        accept_until: Diese Einladung wird in %{due_date} fällig.
+        hello: Hallo %{email},
+        ignore: Wenn Sie die Einladung nicht annehmen möchten, ignorieren Sie bitte diese E-Mail. Ihr Konto wird erst erstellt, wenn Sie den obigen Link aufrufen und Ihr Passwort festlegen.
+        someone_invited_you: Jemand hat Sie zu MyFoodRepo eingeladen, Sie können diese Einladung über den unten stehenden Link annehmen.
+        subject: Einladungshinweis
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"

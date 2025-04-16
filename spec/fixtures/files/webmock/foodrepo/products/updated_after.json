@@ -1,0 +1,429 @@
+{
+  "took": 0,
+  "timed_out": false,
+  "_shards": {
+    "total": 1, "successful": 1, "skipped": 0, "failed": 0
+  },
+  "hits": {
+    "total": 6,
+    "max_score": null,
+    "hits": [{
+        "_score": null,
+        "_source": {
+          "id": 296816,
+          "country": "US",
+          "barcode": "0190646641016",
+          "name_translations": {
+            "en": "THE ORIGINAL OAT-MILK"
+          },
+          "display_name_translations": {
+            "de": "THE ORIGINAL OAT-MILK",
+            "fr": "THE ORIGINAL OAT-MILK",
+            "it": "THE ORIGINAL OAT-MILK",
+            "en": "THE ORIGINAL OAT-MILK"
+          },
+          "ingredients_translations": {
+            "en":
+            "OATMILK (WATER, OATS). CONTAINS 2% OR LESS OF: RAPESEED OIL, DIPOTASSIUM PHOSPHATE, CALCIUM CARBONATE, TRICALCIUM PHOSPHATE, SEA SALT, DICALCIUM PHOSPHATE, RIBOFLAVIN, VITAMIN A, VITAMIN D2, VITAMIN B12."
+          },
+          "status": "rescan",
+          "quantity": 240.0,
+          "unit": "ml",
+          "hundred_unit": "ml",
+          "portion_quantity": 0.0,
+          "portion_unit": "ml",
+          "alcohol_by_volume": 0.0,
+          "images": [{
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76101/thumb_image.jpg?v=1667833703",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76101/medium_image.jpg?v=1667833703",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76101/large_image.jpg?v=1667833703",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76101/xlarge_image.jpg?v=1667833703"
+            },
+            {
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76102/thumb_image.jpg?v=1667833700",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76102/medium_image.jpg?v=1667833700",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76102/large_image.jpg?v=1667833700",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76102/xlarge_image.jpg?v=1667833700"
+            },
+            {
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76103/thumb_image.jpg?v=1667833700",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76103/medium_image.jpg?v=1667833700",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76103/large_image.jpg?v=1667833700",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76103/xlarge_image.jpg?v=1667833700"
+            },
+            {
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76104/thumb_image.jpg?v=1667833703",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76104/medium_image.jpg?v=1667833703",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76104/large_image.jpg?v=1667833703",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76104/xlarge_image.jpg?v=1667833703"
+            }
+          ],
+          "nutrients": {
+            "iron": {
+              "name_translations": {
+                "de": "Eisen", "en": "Iron", "fr": "Fer", "it": "Ferro"
+              },
+              "unit": "mg",
+              "per_hundred": 0.12,
+              "per_portion": null
+            },
+            "cholesterol": {
+              "name_translations": {
+                "de": "Cholesterin", "en": "Cholesterol", "fr": "Cholestérol", "it": "Colesterolo"
+              },
+              "unit": "mg",
+              "per_hundred": 0.0,
+              "per_portion": null
+            },
+            "fatty_acids_total_saturated": {
+              "name_translations": {
+                "de": "Fettsäuren, gesamt gesättigt",
+                "en": "Fatty acids, total saturated",
+                "fr": "Acides gras, total des acides gras saturés",
+                "it": "Acidi grassi, saturi totali"
+              },
+              "unit": "g",
+              "per_hundred": 0.21,
+              "per_portion": null
+            },
+            "protein": {
+              "name_translations": {
+                "de": "Eiweiss", "en": "Protein", "fr": "Protéines", "it": "Proteine"
+              },
+              "unit": "g",
+              "per_hundred": 1.25,
+              "per_portion": null
+            },
+            "fat": {
+              "name_translations": {
+                "de": "Fett", "en": "Fat", "fr": "Matières grasses", "it": "Grassi"
+              },
+              "unit": "g",
+              "per_hundred": 2.08,
+              "per_portion": null
+            },
+            "carbohydrates": {
+              "name_translations": {
+                "de": "Kohlenhydrate", "en": "Carbohydrates", "fr": "Glucides", "it": "Carboidrati"
+              },
+              "unit": "g",
+              "per_hundred": 6.67,
+              "per_portion": null
+            },
+            "energy_calories_kcal": {
+              "name_translations": {
+                "de": "Energie (kCal)", "en": "Energy (Calories / kCal)", "fr": "Énergie (kCal)", "it": "Energia (kCal)"
+              },
+              "unit": "kCal",
+              "per_hundred": 50.0,
+              "per_portion": null
+            },
+            "sugars": {
+              "name_translations": {
+                "de": "Zucker", "en": "Sugars", "fr": "Sucres", "it": "Zuccheri"
+              },
+              "unit": "g",
+              "per_hundred": 2.92,
+              "per_portion": null
+            },
+            "fiber": {
+              "name_translations": {
+                "de": "Ballaststoffe", "en": "Fiber", "fr": "Fibres alimentaires", "it": "Fibre"
+              },
+              "unit": "g",
+              "per_hundred": 0.8,
+              "per_portion": null
+            },
+            "fiber_soluble": {
+              "name_translations": {
+                "de": "Ballaststoffe, löslich", "en": "Fiber, soluble", "fr": "Fibre, soluble", "it": "Fibra, solubile"
+              },
+              "unit": "g",
+              "per_hundred": 0.0,
+              "per_portion": null
+            },
+            "calcium": {
+              "name_translations": {
+                "de": "Kalzium", "en": "Calcium", "fr": "Calcium", "it": "Calcio"
+              },
+              "unit": "mg",
+              "per_hundred": 146.0,
+              "per_portion": null
+            },
+            "potassium_k": {
+              "name_translations": {
+                "de": "Kalium, K", "en": "Potassium, K", "fr": "Potassium, K", "it": "Potassio, K"
+              },
+              "unit": "mg",
+              "per_hundred": 162.0,
+              "per_portion": null
+            },
+            "sodium": {
+              "name_translations": {
+                "de": "Natrium", "en": "Sodium", "fr": "Sodium", "it": "Sodio"
+              },
+              "unit": "g",
+              "per_hundred": 0.04,
+              "per_portion": null
+            },
+            "fatty_acids_total_trans": {
+              "name_translations": {
+                "de": "Fettsäuren, gesamt trans",
+                "en": "Fatty acids, total trans",
+                "fr": "Acides gras, trans totaux",
+                "it": "Acidi grassi, totale trans"
+              },
+              "unit": "g",
+              "per_hundred": 0.0,
+              "per_portion": null
+            },
+            "phosphorus": {
+              "name_translations": {
+                "de": "Phosphor", "en": "Phosphorus", "fr": "Phosphore", "it": "Fosforo"
+              },
+              "unit": "mg",
+              "per_hundred": 112.0,
+              "per_portion": null
+            },
+            "vitamin_b2_riboflavin": {
+              "name_translations": {
+                "de": "Vitamin B2 (Riboflavin)",
+                "en": "Vitamin B2 (Riboflavin)",
+                "fr": "Vitamine B2 (Riboflavine)",
+                "it": "Vitamina B2 (Riboflavin)"
+              },
+              "unit": "mg",
+              "per_hundred": 0.25,
+              "per_portion": null
+            },
+            "vitamin_b12_cobalamin": {
+              "name_translations": {
+                "de": "Vitamin B12 (Cobalamin)",
+                "en": "Vitamin B12 (Cobalamin)",
+                "fr": "Vitamine B12 (Cobalamine)",
+                "it": "Vitamina B12 (Cobalamina)"
+              },
+              "unit": "µg",
+              "per_hundred": 0.5,
+              "per_portion": null
+            },
+            "energy": {
+              "name_translations": {
+                "de": "Energie", "en": "Energy", "fr": "Énergie", "it": "Energia"
+              },
+              "unit": "kJ",
+              "per_hundred": 209.2,
+              "per_portion": null
+            }
+          },
+          "created_at": "2021-04-26T07:29:19.567Z",
+          "updated_at": "2022-11-07T15:08:23.972Z"
+        },
+        "sort": [1667833703972]
+      },
+      {
+        "_score": null,
+        "_source": {
+          "id": 22784,
+          "country": "US",
+          "barcode": "00019320000430",
+          "name_translations": {
+            "en": "CHIPS AHOY! COOKIES-SINGLE SERVE BIG BAG 1X3 OZ"
+          },
+          "display_name_translations": {
+            "de": "CHIPS AHOY! COOKIES-SINGLE SERVE BIG BAG 1X3 OZ",
+            "fr": "CHIPS AHOY! COOKIES-SINGLE SERVE BIG BAG 1X3 OZ",
+            "it": "CHIPS AHOY! COOKIES-SINGLE SERVE BIG BAG 1X3 OZ",
+            "en": "CHIPS AHOY! COOKIES-SINGLE SERVE BIG BAG 1X3 OZ"
+          },
+          "ingredients_translations": {
+            "en":
+            "INGREDIENTS: UNBLEACHED ENRICHED FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE {VITAMIN B1}, RIBOFLAVIN {VITAMIN B2}, FOLIC ACID), SEMISWEET CHOCOLATE CHIPS (SUGAR, CHOCOLATE, DEXTROSE, COCOA BUTTER, SOY LECITHIN), SOYBEAN AND/OR CANOLA OIL, SUGAR, HIGH FRUCTOSE CORN SYRUP, SALT, BAKING SODA, CARAMEL COLOR, NATURAL AND ARTIFICIAL FLAVOR, WHEY (FROM MILK)."
+          },
+          "status": "rescan",
+          "quantity": 29.0,
+          "unit": "g",
+          "hundred_unit": "g",
+          "portion_quantity": 0.0,
+          "portion_unit": "g",
+          "alcohol_by_volume": 0.0,
+          "images": [{
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76126/thumb_tmp_image_file_020221125-75764-g9plcf?v=1669397496",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76126/medium_tmp_image_file_020221125-75764-g9plcf?v=1669397496",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76126/large_tmp_image_file_020221125-75764-g9plcf?v=1669397496",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76126/xlarge_tmp_image_file_020221125-75764-g9plcf?v=1669397496"
+            },
+            {
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76127/thumb_tmp_image_file_120221125-75764-xlty8i?v=1669397496",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76127/medium_tmp_image_file_120221125-75764-xlty8i?v=1669397496",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76127/large_tmp_image_file_120221125-75764-xlty8i?v=1669397496",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76127/xlarge_tmp_image_file_120221125-75764-xlty8i?v=1669397496"
+            },
+            {
+              "categories": [],
+              "thumb":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76128/thumb_sabre-laser.jpg?v=1669397621",
+              "medium":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76128/medium_sabre-laser.jpg?v=1669397621",
+              "large":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76128/large_sabre-laser.jpg?v=1669397621",
+              "xlarge":
+              "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/76128/xlarge_sabre-laser.jpg?v=1669397621"
+            }
+          ],
+          "nutrients": {
+            "iron": {
+              "name_translations": {
+                "de": "Eisen", "en": "Iron", "fr": "Fer", "it": "Ferro"
+              },
+              "unit": "mg",
+              "per_hundred": 4.72,
+              "per_portion": null
+            },
+            "cholesterol": {
+              "name_translations": {
+                "de": "Cholesterin", "en": "Cholesterol", "fr": "Cholestérol", "it": "Colesterolo"
+              },
+              "unit": "mg",
+              "per_hundred": 0.0,
+              "per_portion": null
+            },
+            "fatty_acids_total_saturated": {
+              "name_translations": {
+                "de": "Fettsäuren, gesamt gesättigt",
+                "en": "Fatty acids, total saturated",
+                "fr": "Acides gras, total des acides gras saturés",
+                "it": "Acidi grassi, saturi totali"
+              },
+              "unit": "g",
+              "per_hundred": 5.17,
+              "per_portion": null
+            },
+            "protein": {
+              "name_translations": {
+                "de": "Eiweiss", "en": "Protein", "fr": "Protéines", "it": "Proteine"
+              },
+              "unit": "g",
+              "per_hundred": 3.45,
+              "per_portion": null
+            },
+            "fat": {
+              "name_translations": {
+                "de": "Fett", "en": "Fat", "fr": "Matières grasses", "it": "Grassi"
+              },
+              "unit": "g",
+              "per_hundred": 24.14,
+              "per_portion": null
+            },
+            "carbohydrates": {
+              "name_translations": {
+                "de": "Kohlenhydrate", "en": "Carbohydrates", "fr": "Glucides", "it": "Carboidrati"
+              },
+              "unit": "g",
+              "per_hundred": 65.52,
+              "per_portion": null
+            },
+            "sugars": {
+              "name_translations": {
+                "de": "Zucker", "en": "Sugars", "fr": "Sucres", "it": "Zuccheri"
+              },
+              "unit": "g",
+              "per_hundred": 27.59,
+              "per_portion": null
+            },
+            "fiber": {
+              "name_translations": {
+                "de": "Ballaststoffe", "en": "Fiber", "fr": "Fibres alimentaires", "it": "Fibre"
+              },
+              "unit": "g",
+              "per_hundred": 3.4,
+              "per_portion": null
+            },
+            "calcium": {
+              "name_translations": {
+                "de": "Kalzium", "en": "Calcium", "fr": "Calcium", "it": "Calcio"
+              },
+              "unit": "mg",
+              "per_hundred": 13.0,
+              "per_portion": null
+            },
+            "potassium_k": {
+              "name_translations": {
+                "de": "Kalium, K", "en": "Potassium, K", "fr": "Potassium, K", "it": "Potassio, K"
+              },
+              "unit": "mg",
+              "per_hundred": 103.0,
+              "per_portion": null
+            },
+            "sodium": {
+              "name_translations": {
+                "de": "Natrium", "en": "Sodium", "fr": "Sodium", "it": "Sodio"
+              },
+              "unit": "g",
+              "per_hundred": 0.28,
+              "per_portion": null
+            },
+            "fatty_acids_total_trans": {
+              "name_translations": {
+                "de": "Fettsäuren, gesamt trans",
+                "en": "Fatty acids, total trans",
+                "fr": "Acides gras, trans totaux",
+                "it": "Acidi grassi, totale trans"
+              },
+              "unit": "g",
+              "per_hundred": 0.0,
+              "per_portion": null
+            },
+            "vitamin_c_ascorbic_acid": {
+              "name_translations": {
+                "de": "Vitamin C (Askorbinsäure)",
+                "en": "Vitamin C (Ascorbic acid)",
+                "fr": "Vitamine C (Acide ascorbique)",
+                "it": "Vitamina C (Acido ascorbico)"
+              },
+              "unit": "mg",
+              "per_hundred": 0.0,
+              "per_portion": null
+            }
+          },
+          "created_at": "2021-04-26T07:27:08.778Z",
+          "updated_at": "2022-11-25T17:33:41.785Z"
+        },
+        "sort": [1669397621785]
+      }
+    ]
+  },
+  "meta": {
+    "api_version": "3.03", "generated_in": 11
+  }
+}

@@ -1,0 +1,18 @@
+---
+en:
+  activerecord:
+    attributes:
+      unit:
+        id: ID
+    errors:
+      models:
+        unit:
+          attributes:
+            id:
+              not_changeable: change not allowed
+          base:
+            not_destroyable: This unit is a base unit and/or has associated models
+    models:
+      unit:
+        one: Unit
+        other: Units

@@ -1,0 +1,23 @@
+---
+en:
+  collab:
+    foods:
+      create:
+        success: Food created successfully
+      destroy:
+        failure: Unable to destroy the food
+        success: Food successfully deleted
+      edit:
+        title: Edit a food
+      form:
+        new_nutrient: Add a nutrient
+      index:
+        add_button: Create a food
+        query: Search
+        title: Foods
+      new:
+        title: Create a food
+      show:
+        details: Details
+      update:
+        success: Food updated successfully

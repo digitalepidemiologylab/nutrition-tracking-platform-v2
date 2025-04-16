@@ -1,0 +1,14 @@
+<%= link_to(
+      @url,
+      class: @active ? "bg-gray-100 text-gray-800 group flex items-center px-3 py-2 text-sm font-medium rounded-md" : "text-gray-600 hover:bg-gray-50 hover:text-gray-800 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
+    ) do %>
+  <div class="flex items-center flex-1">
+    <%=
+      render(IconComponent.new(
+        @icon,
+        classes: @active ? "text-brand mr-3 text-xl flex-shrink-0" : "text-gray-400 mr-3 text-xl flex-shrink-0"
+      ))
+    %>
+    <%= @text %>
+  </div>
+<% end %>

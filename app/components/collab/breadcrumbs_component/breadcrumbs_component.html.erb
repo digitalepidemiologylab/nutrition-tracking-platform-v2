@@ -1,0 +1,7 @@
+<div class="flex-1 flex">
+  <nav class="hidden md:flex" aria-label="Breadcrumb">
+    <ol class="flex items-center space-x-2">
+      <%= render(Collab::BreadcrumbsComponent::CrumbComponent.with_collection(@crumbs)) %>
+    </ol>
+  </nav>
+</div>

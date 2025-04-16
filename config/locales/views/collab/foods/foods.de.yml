@@ -1,0 +1,23 @@
+---
+de:
+  collab:
+    foods:
+      create:
+        success: Lebensmittel erfolgreich erstellt
+      destroy:
+        failure: Lebensmittel können nicht vernichtet werden
+        success: Lebensmittel erfolgreich zerstört
+      edit:
+        title: Eine Lebensmittel bearbeiten
+      form:
+        new_nutrient: Nährstoff hinzufügen
+      index:
+        add_button: Erstellen einer Lebensmittel
+        query: Suche
+        title: Lebensmitteln
+      new:
+        title: Eine Lebensmittel erstellen
+      show:
+        details: Einzelheiten
+      update:
+        success: Lebensmittel erfolgreich aktualisiert

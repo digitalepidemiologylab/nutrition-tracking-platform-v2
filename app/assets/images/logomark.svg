@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="60px" viewBox="0 0 39 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Component-Flash-Banner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Flash-Banner" transform="translate(-692.000000, -90.000000)" fill-rule="nonzero">
+            <g id="Navbar" transform="translate(40.000000, 90.000000)">
+                <g id="Group" transform="translate(652.000000, 0.000000)">
+                    <path d="M0,0 C10.0362904,0.494778156 18.0875534,8.73195678 18.5711643,19 L18.5711643,19 L18.4344009,18.9957346 C8.46004184,18.4345667 0.477912142,10.2242836 0,0 Z M39,0 C38.5220879,10.2242836 30.5399583,18.4345667 20.5655991,18.9957346 L20.4288357,19 C20.9124466,8.73195678 28.9637096,0.494778156 39,0 Z" id="Shape" fill="#82C443"></path>
+                    <path d="M19.5,21 C30.2695526,21 39,29.7304474 39,40.5 C39,51.2695526 30.2695526,60 19.5,60 C8.7304474,60 0,51.2695526 0,40.5 C0,29.7304474 8.7304474,21 19.5,21 Z M19.5,30.75 C14.1152237,30.75 9.75000002,35.1152236 9.75000002,40.5 C9.75000002,45.8847762 14.1152237,50.25 19.5,50.25 C24.8847764,50.25 29.25,45.8847762 29.25,40.5 C29.25,35.1152236 24.8847764,30.75 19.5,30.75 Z" id="Shape" fill="#F47100"></path>
+                    <circle id="Oval" fill="#F47100" cx="19.5" cy="40.5" r="6.5"></circle>
+                    <circle id="Oval" fill="#FFFFFF" cx="30" cy="30" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

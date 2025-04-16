@@ -1,0 +1,28 @@
+<% content_for :sub_content do %>
+  <div class="py-6">
+    <%= render(Collab::TitleComponent.new) do |t| %>
+      <%= @user.email.presence || @user.id %>
+    <% end %>
+    <div class="px-4 pb-4 sm:px-6 md:px-8">
+      <%= render(TabsComponent.new) do |tc| %>
+        <%=
+          tc.with_tab(
+            url: collab_user_path(@user)
+          ) { t(".details") }
+        %>
+        <%=
+          tc.with_tab(
+            url: collab_user_participations_path(@user)
+          ) { t("activerecord.models.participation", count: 2) }
+        %>
+        <%=
+          tc.with_tab(
+            url: collab_user_intakes_path(@user)
+          ) { t("activerecord.models.intake", count: 2) }
+        %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
+<% end %>
+<%= render template: "layouts/collab" %>

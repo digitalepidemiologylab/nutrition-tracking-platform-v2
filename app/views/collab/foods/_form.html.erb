@@ -1,0 +1,49 @@
+<%= form_for([:collab, food], builder: AppFormBuilder) do |f| %>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
+      <div class="grid grid-cols-4 gap-6">
+        <div class="col-span-4 sm:col-span-2" data-controller="food-sets--select">
+          <%= f.input(
+                :food_set_ids,
+                label: {text: t("activerecord.models.food_set", count: 2)},
+                collection: Array(f.object.food_sets),
+                value_method: :id,
+                text_method: :name,
+                input_html: {
+                  multiple: true,
+                  class: "m-0 p-0 mt-1",
+                  data: {"food-sets--select_target": "foodSetsSelect", url: collab_food_sets_path(format: :json)}
+                }
+              ) %>
+        </div>
+        <%= f.input(:food_list_id, collection: food_lists, value_method: :id, text_method: :name, input_html: {required: true}) %>
+        <%= f.input(:fa_ps_ratio) %>
+        <%= f.input(:portion_quantity) %>
+        <%= f.input(:unit_id, collection: Unit.order(id: :asc), value_method: :id, text_method: :id, input_html: {required: true}) %>
+      </div>
+      <div class="grid grid-cols-4 gap-6 border-t pt-6">
+        <% I18n.available_locales.each do |locale| %>
+          <%= f.input("name_#{locale}", label: {text: "#{Food.human_attribute_name(:name)} #{t(locale, scope: "locales")}"}, input_html: {required: locale == :en}) %>
+        <% end %>
+      </div>
+      <div class="grid grid-cols-4 gap-6 border-t pt-6">
+        <%= f.input(:kcal_min) %>
+        <%= f.input(:kcal_max) %>
+      </div>
+      <div class="grid grid-cols-4 gap-6 border-t pt-6">
+        <%= f.input(:segmentable) %>
+        <%= f.input(:annotatable) %>
+      </div>
+      <div class="border-t pt-6">
+        <h2 class="text-lg leading-6 font-medium text-gray-600"><%= t("activerecord.models.food_nutrient.other") %></h2>
+        <div id="<%= dom_id(food, :food_nutrients) %>" class="mt-6">
+          <%= render(partial: "collab/food_nutrients/form", collection: food_nutrients, as: :food_nutrient, locals: {f: f, food: food, remaining_nutrients: remaining_nutrients}) %>
+        </div>
+        <div class="mt-6">
+          <%= link_to(t(".new_nutrient"), new_collab_food_nutrient_path(food_id: food&.id), data: {"turbo-stream": true}, class: "btn btn-secondary") %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit_input %>
+  </div>
+<% end %>

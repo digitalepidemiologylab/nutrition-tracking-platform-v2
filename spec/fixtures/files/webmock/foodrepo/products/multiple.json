@@ -1,0 +1,1116 @@
+{
+  "data": [
+    {
+      "id": 971,
+      "country": "CH",
+      "barcode": "7610848493136",
+      "name_translations": {
+        "fr": "Chocolat noir aux éclats d'amande 60% de caccao"
+      },
+      "display_name_translations": {
+        "de": "Chocolat noir aux éclats d'amande 60% de caccao",
+        "fr": "Chocolat noir aux éclats d'amande 60% de caccao",
+        "it": "Chocolat noir aux éclats d'amande 60% de caccao",
+        "en": "Chocolat noir aux éclats d'amande 60% de caccao"
+      },
+      "ingredients_translations": {
+        "de": "Kakaomasse (Honduras), Rohrohrzucker (Paraguay), Mandeln 15% (Spanien), Kakaobutter (Dominikanische  Republik), eingestottene Butter.",
+        "fr": "Cacao en pâte (Honduras), sucre de canne brut (Paraguay), amandes 15% (Espagne), beurre de cacao (République dominicaine), beurre fondu"
+      },
+      "status": "complete",
+      "quantity": 100.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 20.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3937/thumb_myImage.jpg?v=1464848260",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3937/medium_myImage.jpg?v=1464848260",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3937/large_myImage.jpg?v=1464848260",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3937/xlarge_myImage.jpg?v=1464848260"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43903/thumb_myImage.jpg?v=1470654000",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43903/medium_myImage.jpg?v=1470654000",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43903/large_myImage.jpg?v=1470654000",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43903/xlarge_myImage.jpg?v=1470654000"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67320/thumb_myImage.jpg?v=1473942829",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67320/medium_myImage.jpg?v=1473942829",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67320/large_myImage.jpg?v=1473942829",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67320/xlarge_myImage.jpg?v=1473942829"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67321/thumb_myImage.jpg?v=1473942841",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67321/medium_myImage.jpg?v=1473942841",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67321/large_myImage.jpg?v=1473942841",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67321/xlarge_myImage.jpg?v=1473942841"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3938/thumb_myImage.jpg?v=1565703866",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3938/medium_myImage.jpg?v=1565703866",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3938/large_myImage.jpg?v=1565703866",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3938/xlarge_myImage.jpg?v=1565703866"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 10.0,
+          "per_portion": 2.0,
+          "per_day": 4.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 42.0,
+          "per_portion": 8.0,
+          "per_day": 2.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 38.0,
+          "per_portion": 7.0,
+          "per_day": 3.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 31.0,
+          "per_portion": 6.0,
+          "per_day": 7.0
+        }
+      },
+      "created_at": "2016-05-31T17:54:05.758Z",
+      "updated_at": "2019-08-13T13:44:30.947Z"
+    },
+    {
+      "id": 972,
+      "country": "CH",
+      "barcode": "7611654884033",
+      "name_translations": {
+        "fr": "Chocolat au lait aux noisettes"
+      },
+      "display_name_translations": {
+        "de": "Chocolat au lait aux noisettes",
+        "fr": "Chocolat au lait aux noisettes",
+        "it": "Chocolat au lait aux noisettes",
+        "en": "Chocolat au lait aux noisettes"
+      },
+      "ingredients_translations": {
+        "de": "Zutaten: Rohrohrzucker* (Paraguay), karamellisierte geröstete Haselnüsse 22% (Haselnüsse [Türkei], Rohrohrzucker [Paraguay], Wasser), Vollmilchpulver (Schweiz), Kakaobutter* (Dominikanische Republik), Kakaomasse* (Peru), Haselnusspaste 4.5% (Türkei), Vanullleschoten*, Kakaobestandteil in der Schokoladenmasse: mindestens 32%, * Nach Fairtrade-Standards gehandelte Zutaten. Gesamtanteil 58.6%. Davon Kakaoerzeugnisse und Zuckerarten mit Mengenausgleich. Alle landwirtschaftlichen Zutaten stammen aus biologischem Anbau. \r\n\r\nAllergie: Enthält Haselnuss, Milch. Kann spuren von Mandeln, Soja enthalten.",
+        "fr": "Ingrédients: sucre de canne brut* (Paraguay), cacao en pâte (Pérou), pâte de noisette 4.5% (Turquie), gousses de vanullle*. Teneur en cacao du chocolat: 32% minimum. * Ingrédients conformes aux standards du commerce équitable Fairtrade. 58.6% du poids total. Dont sucre et produits à base de cacao avec bilan de masse. Tous les ingrédients agricoles sont issus de l'agriculture biologique.\r\n\r\nAllergies: Contient des noisettes, du lait. Peut contenir des traces d'amendes,de soja."
+      },
+      "status": "complete",
+      "quantity": 150.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 30.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3939/thumb_myImage.jpg?v=1465828644",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3939/medium_myImage.jpg?v=1465828644",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3939/large_myImage.jpg?v=1465828644",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3939/xlarge_myImage.jpg?v=1465828644"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67319/thumb_myImage.jpg?v=1473942705",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67319/medium_myImage.jpg?v=1473942705",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67319/large_myImage.jpg?v=1473942705",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67319/xlarge_myImage.jpg?v=1473942705"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3941/thumb_myImage.jpg?v=1566720967",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3941/medium_myImage.jpg?v=1566720967",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3941/large_myImage.jpg?v=1566720967",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3941/xlarge_myImage.jpg?v=1566720967"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43904/thumb_myImage.jpg?v=1566732807",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43904/medium_myImage.jpg?v=1566732807",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43904/large_myImage.jpg?v=1566732807",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43904/xlarge_myImage.jpg?v=1566732807"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 10.0,
+          "per_portion": 3.0,
+          "per_day": 6.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 40.0,
+          "per_portion": 12.0,
+          "per_day": 17.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 43.0,
+          "per_portion": 12.9,
+          "per_day": 5.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 42.0,
+          "per_portion": 12.6,
+          "per_day": 14.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 4.0,
+          "per_portion": 1.2,
+          "per_day": null
+        }
+      },
+      "created_at": "2016-05-31T17:54:07.264Z",
+      "updated_at": "2019-08-25T11:33:33.245Z"
+    },
+    {
+      "id": 973,
+      "country": "CH",
+      "barcode": "7610800972105",
+      "name_translations": {
+        "de": "Grüne Bohnenkerne",
+        "fr": "Flageolets verts",
+        "it": "Fagioli nani"
+      },
+      "display_name_translations": {
+        "de": "Grüne Bohnenkerne",
+        "fr": "Flageolets verts",
+        "it": "Fagioli nani",
+        "en": "Grüne Bohnenkerne"
+      },
+      "ingredients_translations": {
+        "de": "Grüne Bohnenkerne 66%, Wasser, Kochsalz",
+        "fr": "flageolets verts 66%, eau, sel de cuisine"
+      },
+      "status": "complete",
+      "quantity": 265.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 130.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3945/thumb_myImage.jpg?v=1466186561",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3945/medium_myImage.jpg?v=1466186561",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3945/large_myImage.jpg?v=1466186561",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3945/xlarge_myImage.jpg?v=1466186561"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3943/thumb_myImage.jpg?v=1466186561",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3943/medium_myImage.jpg?v=1466186561",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3943/large_myImage.jpg?v=1466186561",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3943/xlarge_myImage.jpg?v=1466186561"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3940/thumb_myImage.jpg?v=1466186561",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3940/medium_myImage.jpg?v=1466186561",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3940/large_myImage.jpg?v=1466186561",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3940/xlarge_myImage.jpg?v=1466186561"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43905/thumb_myImage.jpg?v=1470654016",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43905/medium_myImage.jpg?v=1470654016",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43905/large_myImage.jpg?v=1470654016",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/43905/xlarge_myImage.jpg?v=1470654016"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 5.0,
+          "per_portion": 6.5,
+          "per_day": 13.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 1.0,
+          "per_portion": 1.3,
+          "per_day": 2.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 12.0,
+          "per_portion": 15.6,
+          "per_day": 6.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 0.5,
+          "per_portion": 0.7,
+          "per_day": 1.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 6.0,
+          "per_portion": 7.8,
+          "per_day": 31.0
+        }
+      },
+      "created_at": "2016-05-31T17:54:07.484Z",
+      "updated_at": "2016-08-08T11:00:13.900Z"
+    },
+    {
+      "id": 975,
+      "country": "CH",
+      "barcode": "7610807015843",
+      "name_translations": {
+        "de": "Pinienkerne",
+        "fr": "Pignons de pin",
+        "it": "Pinoli"
+      },
+      "display_name_translations": {
+        "de": "Pinienkerne",
+        "fr": "Pignons de pin",
+        "it": "Pinoli",
+        "en": "Pinienkerne"
+      },
+      "ingredients_translations": {
+        "de": "Bio Pinienkerne",
+        "fr": "pignons de pin bio",
+        "it": " pinoli bio"
+      },
+      "status": "complete",
+      "quantity": 100.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 30.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3949/thumb_myImage.jpg?v=1466273196",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3949/medium_myImage.jpg?v=1466273196",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3949/large_myImage.jpg?v=1466273196",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3949/xlarge_myImage.jpg?v=1466273196"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3947/thumb_myImage.jpg?v=1466273196",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3947/medium_myImage.jpg?v=1466273196",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3947/large_myImage.jpg?v=1466273196",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3947/xlarge_myImage.jpg?v=1466273196"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3944/thumb_myImage.jpg?v=1466352033",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3944/medium_myImage.jpg?v=1466352033",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3944/large_myImage.jpg?v=1466352033",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3944/xlarge_myImage.jpg?v=1466352033"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44087/thumb_myImage.jpg?v=1471507065",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44087/medium_myImage.jpg?v=1471507065",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44087/large_myImage.jpg?v=1471507065",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44087/xlarge_myImage.jpg?v=1471507065"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67347/thumb_myImage.jpg?v=1473951400",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67347/medium_myImage.jpg?v=1473951400",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67347/large_myImage.jpg?v=1473951400",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67347/xlarge_myImage.jpg?v=1473951400"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 36.0,
+          "per_portion": 10.8,
+          "per_day": 22.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 50.0,
+          "per_portion": 15.0,
+          "per_day": 21.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 3.0,
+          "per_portion": 0.9,
+          "per_day": 0.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 3.0,
+          "per_portion": 0.9,
+          "per_day": 1.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 5.0,
+          "per_portion": 1.5,
+          "per_day": null
+        }
+      },
+      "created_at": "2016-05-31T17:54:07.955Z",
+      "updated_at": "2016-09-15T14:56:41.812Z"
+    },
+    {
+      "id": 977,
+      "country": "CH",
+      "barcode": "7611654457411",
+      "name_translations": {
+        "de": "Sardinen",
+        "fr": "Sardines",
+        "it": "Sardine"
+      },
+      "display_name_translations": {
+        "de": "Sardinen",
+        "fr": "Sardines",
+        "it": "Sardine",
+        "en": "Sardinen"
+      },
+      "ingredients_translations": {
+        "de": " Sardinen 70%, Olivenöl\r\n\r\nEnthält Fisch",
+        "fr": "sardines 70%, huile d'olive\r\n\r\nContient du poisson",
+        "it": "Sardine 70%, olio d'oliva\r\n\r\nContiene pesce"
+      },
+      "status": "complete",
+      "quantity": 90.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 90.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3953/thumb_myImage.jpg?v=1466274369",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3953/medium_myImage.jpg?v=1466274369",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3953/large_myImage.jpg?v=1466274369",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3953/xlarge_myImage.jpg?v=1466274369"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3952/thumb_myImage.jpg?v=1479393700",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3952/medium_myImage.jpg?v=1479393700",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3952/large_myImage.jpg?v=1479393700",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3952/xlarge_myImage.jpg?v=1479393700"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3958/thumb_myImage.jpg?v=1479393702",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3958/medium_myImage.jpg?v=1479393702",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3958/large_myImage.jpg?v=1479393702",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3958/xlarge_myImage.jpg?v=1479393702"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3955/thumb_myImage.jpg?v=1466274369",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3955/medium_myImage.jpg?v=1466274369",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3955/large_myImage.jpg?v=1466274369",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3955/xlarge_myImage.jpg?v=1466274369"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67330/thumb_myImage.jpg?v=1479393703",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67330/medium_myImage.jpg?v=1479393703",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67330/large_myImage.jpg?v=1479393703",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67330/xlarge_myImage.jpg?v=1479393703"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44089/thumb_myImage.jpg?v=1479393708",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44089/medium_myImage.jpg?v=1479393708",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44089/large_myImage.jpg?v=1479393708",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44089/xlarge_myImage.jpg?v=1479393708"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 24.0,
+          "per_portion": 21.6,
+          "per_day": 43.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 11.0,
+          "per_portion": 9.9,
+          "per_day": 14.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": 0.0,
+          "per_day": 0.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": 0.0,
+          "per_day": 0.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": 0.0,
+          "per_day": 0.0
+        }
+      },
+      "created_at": "2016-05-31T17:54:09.484Z",
+      "updated_at": "2020-12-17T12:09:37.391Z"
+    },
+    {
+      "id": 979,
+      "country": "CH",
+      "barcode": "7610807017977",
+      "name_translations": {
+        "fr": "Mayonnaise",
+        "it": "Maionese"
+      },
+      "display_name_translations": {
+        "de": "Mayonnaise",
+        "fr": "Mayonnaise",
+        "it": "Maionese",
+        "en": "Mayonnaise"
+      },
+      "ingredients_translations": {
+        "de": "Sonnenblumenöl 78% (Europa), Eigelb pasteurisiert 7% (Schweiz, Europa), Senf (Wasser, Apfelessig, Senfsamen, Meersalz, Rohrohrzucker, Gewürze), Weissweinessig, Apfelessig, Zitronensaft, Kochsalz.\r\nAlle landwirtschaftlichen Zutaten stammen aus biologischem Anbau.",
+        "fr": "huile de tournesol 78% (Europe), jaune d'œuf pasteurisé 7% (Suisse, Europe), moutarde (eau, vinaigre de pomme, graines de moutarde, sel marin, sucre de canne brut, épices), vinaigre de vin blanc, vinaigre de pomme, jus de citron, sel de cuisine. Tous les ingrédients agricoles sont issus de l'agriculture biologique.",
+        "it": "olio di girasole 78% (Europa), tuorlo pastorizzato 7% (Svizzera, Europa), senape (acqua, aceto di mele, semi di senape, sale marino, zucchero di canna greggio, spezie), aceto di vino bianco, aceto di mele, succo di limone, sale da cucina. Tutti gli ingredienti agricoli provengono da coltivazione biologiche."
+      },
+      "status": "complete",
+      "quantity": 265.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 15.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3966/thumb_myImage.jpg?v=1466353613",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3966/medium_myImage.jpg?v=1466353613",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3966/large_myImage.jpg?v=1466353613",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3966/xlarge_myImage.jpg?v=1466353613"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3964/thumb_myImage.jpg?v=1466353613",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3964/medium_myImage.jpg?v=1466353613",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3964/large_myImage.jpg?v=1466353613",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3964/xlarge_myImage.jpg?v=1466353613"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3962/thumb_myImage.jpg?v=1487339702",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3962/medium_myImage.jpg?v=1487339702",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3962/large_myImage.jpg?v=1487339702",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3962/xlarge_myImage.jpg?v=1487339702"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3960/thumb_myImage.jpg?v=1481045492",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3960/medium_myImage.jpg?v=1481045492",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3960/large_myImage.jpg?v=1481045492",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3960/xlarge_myImage.jpg?v=1481045492"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44090/thumb_myImage.jpg?v=1471507142",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44090/medium_myImage.jpg?v=1471507142",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44090/large_myImage.jpg?v=1471507142",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44090/xlarge_myImage.jpg?v=1471507142"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67329/thumb_myImage.jpg?v=1473945344",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67329/medium_myImage.jpg?v=1473945344",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67329/large_myImage.jpg?v=1473945344",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67329/xlarge_myImage.jpg?v=1473945344"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 1.5,
+          "per_portion": 0.2,
+          "per_day": 0.0
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 81.0,
+          "per_portion": 12.2,
+          "per_day": 17.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": 0.0,
+          "per_day": 0.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": 0.0,
+          "per_day": 0.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 1.0,
+          "per_portion": 0.2,
+          "per_day": null
+        }
+      },
+      "created_at": "2016-05-31T17:54:11.204Z",
+      "updated_at": "2017-02-19T09:34:41.398Z"
+    },
+    {
+      "id": 980,
+      "country": "CH",
+      "barcode": "7610800990178",
+      "name_translations": {
+        "de": "Schwarz Tee",
+        "fr": "Thé noir",
+        "it": "Te Nero"
+      },
+      "display_name_translations": {
+        "de": "Schwarz Tee",
+        "fr": "Thé noir",
+        "it": "Te Nero",
+        "en": "Schwarz Tee"
+      },
+      "ingredients_translations": {
+        "de": "Bio Schwarztee (Indien), nach Fairtrade Standards gehandelt. Gesamtanteil 100%.",
+        "fr": "the noir (Inde), conforme aux standards du\r\ncommerce Fairtrade. 100% du poids total.",
+        "it": "tè nero bio (India), conforme agli standard fairtrade. Totale: 100%."
+      },
+      "status": "complete",
+      "quantity": 100.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 0.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3969/thumb_myImage.jpg?v=1466353982",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3969/medium_myImage.jpg?v=1466353982",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3969/large_myImage.jpg?v=1466353982",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3969/xlarge_myImage.jpg?v=1466353982"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3967/thumb_myImage.jpg?v=1466353982",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3967/medium_myImage.jpg?v=1466353982",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3967/large_myImage.jpg?v=1466353982",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3967/xlarge_myImage.jpg?v=1466353982"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67328/thumb_myImage.jpg?v=1473945198",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67328/medium_myImage.jpg?v=1473945198",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67328/large_myImage.jpg?v=1473945198",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67328/xlarge_myImage.jpg?v=1473945198"
+        }
+      ],
+      "nutrients": {},
+      "created_at": "2016-05-31T19:57:41.556Z",
+      "updated_at": "2016-09-15T13:13:19.354Z"
+    },
+    {
+      "id": 985,
+      "country": "CH",
+      "barcode": "3046920029759",
+      "name_translations": {
+        "en": "Lindt : Excellence 90% Cacao",
+        "fr": "Lindt : Excellence 90% Cacao"
+      },
+      "display_name_translations": {
+        "de": "Lindt : Excellence 90% Cacao",
+        "fr": "Lindt : Excellence 90% Cacao",
+        "it": "Lindt : Excellence 90% Cacao",
+        "en": "Lindt : Excellence 90% Cacao"
+      },
+      "ingredients_translations": {
+        "de": "Kakaomasse, Kakaobutter, fettarmes Kakaopulver, Zucker, Vanullle",
+        "fr": "pâte de cacao, beurre de cacao, cacao maigre, sucre, vanullle",
+        "it": "pasta di cacao, burro di cacao, cacao magro in polvere, zucchero vaniglia"
+      },
+      "status": "complete",
+      "quantity": 100.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 0.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3979/thumb_myImage.jpg?v=1466853116",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3979/medium_myImage.jpg?v=1466853116",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3979/large_myImage.jpg?v=1466853116",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3979/xlarge_myImage.jpg?v=1466853116"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3981/thumb_myImage.jpg?v=1481045501",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3981/medium_myImage.jpg?v=1481045501",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3981/large_myImage.jpg?v=1481045501",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3981/xlarge_myImage.jpg?v=1481045501"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44092/thumb_myImage.jpg?v=1471507163",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44092/medium_myImage.jpg?v=1471507163",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44092/large_myImage.jpg?v=1471507163",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44092/xlarge_myImage.jpg?v=1471507163"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67326/thumb_myImage.jpg?v=1473944969",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67326/medium_myImage.jpg?v=1473944969",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67326/large_myImage.jpg?v=1473944969",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/67326/xlarge_myImage.jpg?v=1473944969"
+        }
+      ],
+      "nutrients": {
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 10.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 55.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 14.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 7.0,
+          "per_portion": null,
+          "per_day": null
+        }
+      },
+      "created_at": "2016-05-31T19:57:44.929Z",
+      "updated_at": "2016-12-06T17:31:41.713Z"
+    },
+    {
+      "id": 990,
+      "country": "CH",
+      "barcode": "7611654666875",
+      "name_translations": {
+        "de": "Naturaplan Alpenkräuter-Tee",
+        "en": "Naturaplan  Alpenherb tea ",
+        "fr": "Naturaplan Infusion aux herbes des Alpes",
+        "it": "Naturaplan Infuso di erbe aromatiche"
+      },
+      "display_name_translations": {
+        "de": "Naturaplan Alpenkräuter-Tee",
+        "fr": "Naturaplan Infusion aux herbes des Alpes",
+        "it": "Naturaplan Infuso di erbe aromatiche",
+        "en": "Naturaplan  Alpenherb tea "
+      },
+      "ingredients_translations": {
+        "de": "Pfefferminze (Schweiz), Zitronenmelisse (Schweiz), wohlriechendes Eisenkraut(Schweiz), Frauenmantel (Schweiz), Kamille, Salbei, Thymian, Brennnessel. Alle landwirtschaftlichen Zutaten stammen aus biologischem Anbau.",
+        "fr": "Peppermint (Suisse), mélisse (Suisse), la verveine odorante (Suisse), alchémille (Suisse), la camomille, la sauge, le thym, l'ortie. Tous les ingrédients agricoles sont issus de l'agriculture biologique.",
+        "it": "Peppermint (Svizzera), melissa (Svizzera), verbena fragrante (Svizzera), alchemilla (Svizzera), camomilla, salvia, timo, ortica. Tutti gli ingredienti agricoli provengono da coltivazioni biologiche."
+      },
+      "status": "rescan",
+      "quantity": 0.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 0.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4008/thumb_myImage.jpg?v=1468835962",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4008/medium_myImage.jpg?v=1468835962",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4008/large_myImage.jpg?v=1468835962",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4008/xlarge_myImage.jpg?v=1468835962"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4005/thumb_myImage.jpg?v=1468835962",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4005/medium_myImage.jpg?v=1468835962",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4005/large_myImage.jpg?v=1468835962",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4005/xlarge_myImage.jpg?v=1468835962"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4002/thumb_myImage.jpg?v=1468835962",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4002/medium_myImage.jpg?v=1468835962",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4002/large_myImage.jpg?v=1468835962",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4002/xlarge_myImage.jpg?v=1468835962"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4000/thumb_myImage.jpg?v=1468835962",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4000/medium_myImage.jpg?v=1468835962",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4000/large_myImage.jpg?v=1468835962",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4000/xlarge_myImage.jpg?v=1468835962"
+        },
+        {
+          "categories": [],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3998/thumb_myImage.jpg?v=1468835962",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3998/medium_myImage.jpg?v=1468835962",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3998/large_myImage.jpg?v=1468835962",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3998/xlarge_myImage.jpg?v=1468835962"
+        }
+      ],
+      "nutrients": {},
+      "created_at": "2016-05-31T19:57:52.096Z",
+      "updated_at": "2016-07-18T10:11:09.120Z"
+    },
+    {
+      "id": 991,
+      "country": "CH",
+      "barcode": "7610632050217",
+      "name_translations": {
+        "de": "Naturaplan Feigen",
+        "en": "Naturaplan Figs",
+        "fr": "Naturaplan Figues",
+        "it": "Naturaplan Fichi"
+      },
+      "display_name_translations": {
+        "de": "Naturaplan Feigen",
+        "fr": "Naturaplan Figues",
+        "it": "Naturaplan Fichi",
+        "en": "Naturaplan Figs"
+      },
+      "ingredients_translations": {
+        "de": "Bio Feigen",
+        "en": "Bio Figs",
+        "fr": "Figues Bio",
+        "it": "Fichi Bio"
+      },
+      "status": "complete",
+      "quantity": 400.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 40.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4006/thumb_myImage.jpg?v=1468837025",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4006/medium_myImage.jpg?v=1468837025",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4006/large_myImage.jpg?v=1468837025",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4006/xlarge_myImage.jpg?v=1468837025"
+        },
+        {
+          "categories": ["Front"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4003/thumb_myImage.jpg?v=1468837025",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4003/medium_myImage.jpg?v=1468837025",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4003/large_myImage.jpg?v=1468837025",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4003/xlarge_myImage.jpg?v=1468837025"
+        },
+        {
+          "categories": ["Ingredients list"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4001/thumb_myImage.jpg?v=1468837025",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4001/medium_myImage.jpg?v=1468837025",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4001/large_myImage.jpg?v=1468837025",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/4001/xlarge_myImage.jpg?v=1468837025"
+        },
+        {
+          "categories": ["Nutrients table"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3999/thumb_myImage.jpg?v=1468837025",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3999/medium_myImage.jpg?v=1468837025",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3999/large_myImage.jpg?v=1468837025",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/3999/xlarge_myImage.jpg?v=1468837025"
+        },
+        {
+          "categories": ["Back"],
+          "thumb": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44096/thumb_myImage.jpg?v=1471507201",
+          "medium": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44096/medium_myImage.jpg?v=1471507201",
+          "large": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44096/large_myImage.jpg?v=1471507201",
+          "xlarge": "https://dflrtkwiq6x6s.cloudfront.net/uploads_production/image/data/44096/xlarge_myImage.jpg?v=1471507201"
+        }
+      ],
+      "nutrients": {
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 0.5,
+          "per_portion": 0.2,
+          "per_day": 0.0
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 58.0,
+          "per_portion": 23.2,
+          "per_day": 8.0
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 47.0,
+          "per_portion": 18.8,
+          "per_day": 20.0
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 10.0,
+          "per_portion": 4.0,
+          "per_day": 6.0
+        },
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 3.0,
+          "per_portion": 1.2,
+          "per_day": 2.0
+        }
+      },
+      "created_at": "2016-05-31T19:57:52.192Z",
+      "updated_at": "2016-08-18T08:00:02.774Z"
+    }
+  ],
+  "links": {},
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 21
+  }
+}

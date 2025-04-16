@@ -1,0 +1,17 @@
+---
+fr:
+  activerecord:
+    attributes:
+      food:
+        annotatable: Annotatable
+        country: Pays
+        fa_ps_ratio: Rapport entre graisses P/S
+        kcal_max: kcal maximum
+        kcal_min: kcal minimum
+        name: Nom
+        portion_quantity: Quantité de portion standard
+        segmentable: Segmentable
+    models:
+      food:
+        one: Aliment
+        other: Aliments

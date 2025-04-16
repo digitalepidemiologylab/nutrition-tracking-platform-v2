@@ -1,0 +1,18 @@
+---
+en:
+  activerecord:
+    attributes:
+      user:
+        cohorts: Cohorts
+        created_at: Created
+        email: Email
+        id: ID
+        note: Note about User
+    errors:
+      models:
+        user:
+          email_and_password: Both email and password must be updated
+    models:
+      user:
+        one: User
+        other: Users

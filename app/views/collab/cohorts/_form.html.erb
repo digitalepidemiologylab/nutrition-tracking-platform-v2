@@ -1,0 +1,28 @@
+<%= form_for([:collab, cohort], builder: AppFormBuilder) do |f| %>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 sm:p-6">
+      <div class="grid grid-cols-4 gap-6 pb-24">
+        <%= f.input :name, input_html: {autofocus: true, required: true} %>
+        <%= f.input :segmentation_client_id, collection: segmentation_clients, value_method: :id, text_method: :name, input_html: {required: true, disabled: Collab::CohortPolicy.new(current_collaborator, cohort).permitted_attributes.exclude?(:segmentation_client_id)} %>
+        <div class="col-span-4 sm:col-span-2" data-controller="food-lists--select">
+          <%=
+            f.input(
+              :food_list_ids,
+              label: {text: t("activerecord.models.food_list", count: 2)},
+              collection: food_lists,
+              value_method: :id,
+              text_method: :name,
+              input_html: {
+                required: true,
+                multiple: true,
+                class: "m-0 p-0 mt-1",
+                data: {"food-lists--select_target": "foodListsSelect"}
+              }
+            )
+          %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit_input %>
+  </div>
+<% end %>

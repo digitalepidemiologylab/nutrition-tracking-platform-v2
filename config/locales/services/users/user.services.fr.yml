@@ -1,0 +1,7 @@
+---
+fr:
+  services:
+    users:
+      destroy:
+        errors:
+          participations_count: L'utilisateur ne peut pas être supprrimé car il a plus d'une participation.

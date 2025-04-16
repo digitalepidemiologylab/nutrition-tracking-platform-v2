@@ -1,0 +1,12 @@
+@layer components {
+  .ts-wrapper .ts-control {
+    border-radius: 0.375rem;
+    min-height: 2.4rem;
+  }
+
+  .food_id .ts-dropdown,
+  .food_list_ids .ts-dropdown,
+  .food_set_ids .ts-dropdown {
+    @apply top-0;
+  }
+}

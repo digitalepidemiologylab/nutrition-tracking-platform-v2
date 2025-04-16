@@ -1,0 +1,24 @@
+---
+en:
+  activerecord:
+    attributes:
+      annotation_item:
+        consumed_quantity: Eaten Quantity
+        consumed_unit: Eaten Unit
+        disable_kcal_in_range_validation: Disable energy (kcal) validation
+        id: ID
+        merge: Merge
+        present_quantity: Present Quantity
+        present_unit: Present Unit
+    errors:
+      models:
+        annotation_item:
+          attributes:
+            consumed_kcal:
+              out_of_range: 'value out of limits:'
+            food:
+              invalid_food_list: belongs to an invalid food list
+    models:
+      annotation_item:
+        one: Dish Item
+        other: Dish Items

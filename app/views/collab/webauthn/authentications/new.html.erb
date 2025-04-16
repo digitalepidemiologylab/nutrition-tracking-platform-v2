@@ -1,0 +1,34 @@
+<div class="py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <%= link_to image_tag("logomark.svg", class: "mx-auto h-14 w-auto", alt: "MyFoodRepo"), root_path %>
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-800">
+      <%= t(".title") %>
+    </h2>
+  </div>
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div id="new_webauthn_credential" class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <%=
+        form_with(
+          url: collab_webauthn_authentications_challenge_url(format: :json),
+          builder: AppFormBuilder,
+          data: {
+            controller: "webauthn--authentication", "webauthn--authentication-callback-value": collab_webauthn_authentications_url,
+            action: "webauthn--authentication#handleSubmit"
+          }
+        ) do |f|
+      %>
+        <div class="space-y-6">
+          <p>
+            <%= t("devise.sessions.create.webauthn_notice") %>
+          </p>
+          <div>
+            <%= render(ButtonComponent.new(type: :submit, autofocus: true)) do |c| %>
+              <% c.with_icon(:lock, classes: "text-lg opacity-60") %>
+              <%= t(".authenticate") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

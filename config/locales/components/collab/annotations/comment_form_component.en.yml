@@ -1,0 +1,10 @@
+---
+en:
+  collab:
+    annotations:
+      comment_form_component:
+        add_comment_placeholder: Add a comment...
+        add_comment_template_placeholder: Ask a common question...
+        comment_button: Comment
+        silent:
+          label: Don't notify user about this comment

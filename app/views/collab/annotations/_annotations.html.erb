@@ -1,0 +1,64 @@
+<% title ||= nil %>
+<%= turbo_frame_tag "annotations" do %>
+  <%= render(Collab::TableComponent.new(striped: true)) do |tc| %>
+    <% tc.with_title { title } %>
+    <% tc.with_form(stimulus_controller: "annotations--query-form", turbo_frame: "annotations") do |tcf| %>
+      <%=
+        tcf.with_select(
+          attribute: "filter[status]",
+          label: "Status",
+          options: ["All"] + states.map { |state| [state.name.to_s.humanize, state.name] },
+          selected: params.dig(:filter, :status).presence || "all",
+          action: "annotations--query-form#handleFilterChange"
+        )
+      %>
+      <%=
+        tcf.with_select(
+          attribute: "filter[cohort_id]",
+          label: t("activerecord.models.cohort", count: 2),
+          options: ["All"] + cohorts.map { |cohort| [cohort.name, cohort.id] },
+          selected: params.dig(:filter, :cohort_id).presence || "all",
+          action: "annotations--query-form#handleFilterChange"
+        )
+      %>
+    <% end %>
+    <% tc.with_head_td { t("activerecord.attributes.dish.dish_image") } %>
+    <% tc.with_head_td { t("activerecord.attributes.annotation.id") } %>
+    <% tc.with_head_td(column: "status", params: params) { t("activerecord.attributes.annotation.status") } %>
+    <% tc.with_head_td(column: "dishes.id", params: params) { t("activerecord.models.dish", count: 1) } %>
+    <% tc.with_head_td { t("activerecord.attributes.dish.user") } %>
+    <% tc.with_head_td(column: "intakes.consumed_at", params: params) { t("activerecord.attributes.dish.eaten") } %>
+    <% tc.with_head_td(column: "updated_at", params: params) { t("activerecord.attributes.annotation.updated_at") } %>
+    <% tc.with_head_td { t("activerecord.models.cohort", count: 2) } %>
+    <% annotations.each do |annotation| %>
+      <% dish = annotation.dish %>
+      <% tc.with_row do |r| %>
+        <% r.with_row_td(additional_classes: "text-gray-500 w-32 pl-2 pr-0 lg:w-48 2xl:w-64 2xl:px-6 2xl:py-3") do %>
+          <%= render("collab/annotations/default_image", annotation: annotation, width: 64) %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= link_to(annotation.id, collab_annotation_path(annotation), data: {turbo_frame: "_top"}, class: "text-brand hover:underline") %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= annotation.status %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= dish.id %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= link_to_if(policy([:collab, dish.user]).show?, dish.user.email_or_id, collab_user_path(dish.user), data: {turbo_frame: "_top"}, class: "text-brand hover:underline") %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= last_consumed_at_in_timezone(annotation: annotation) %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= l(annotation.updated_at, format: :long) %>
+        <% end %>
+        <% r.with_row_td(additional_classes: "text-gray-500") do %>
+          <%= link_to_if(policy([:collab, annotation.cohort]).show?, annotation.cohort.name, collab_cohort_path(annotation.cohort), class: "text-brand hover:underline", data: {turbo_frame: "_top"}) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= render(PaginationComponent.new(pagy: pagy)) %>
+<% end %>

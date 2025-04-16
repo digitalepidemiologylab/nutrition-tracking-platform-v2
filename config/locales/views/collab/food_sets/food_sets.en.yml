@@ -1,0 +1,22 @@
+---
+en:
+  collab:
+    food_sets:
+      create:
+        success: Food set created successfully
+      destroy:
+        failure: Unable to delete Food set
+        success: Food set deleted successfully
+      edit:
+        title: Edit a food set
+      index:
+        add_button: Create a food set
+        query: Search by name
+        title: Food sets
+      new:
+        title: Create a food set
+      show:
+        details: Details
+        query: Search
+      update:
+        success: Food set updated successfully

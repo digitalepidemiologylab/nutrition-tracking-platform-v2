@@ -1,0 +1,195 @@
+version: "3.9"
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: ./docker/Dockerfile.dev
+  stdin_open: true
+  tty: true
+  env_file:
+    - .env
+    - .env.override
+  volumes:
+    - .:/app
+    - bundle:/usr/local/bundle
+    - node_modules:/app/node_modules
+  depends_on:
+    - postgres
+    - redis_jobs
+    - redis_cables
+
+services:
+  reverse-proxy:
+    image: traefik:2.9
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+      - 4000-4012:4000-4012
+    volumes:
+      - ./docker/traefik/tls.yml:/etc/traefik/tls.yml:ro
+      - ./docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./docker/certs:/etc/certs:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  app:
+    <<: *base
+    command: rails server -p 3000 -b 0.0.0.0
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.services.app-service.loadbalancer.server.port=3000"
+
+      - "traefik.http.routers.app-local.rule=Host(`mfr.localhost`)"
+      - "traefik.http.routers.app-local.tls=true"
+      - "traefik.http.routers.app-local.entrypoints=https"
+      - "traefik.http.routers.app-local.service=app-service"
+    depends_on:
+      - reverse-proxy
+      - js
+    tmpfs:
+      - /tmp
+
+  # Service to launch commands and the tests
+  dev:
+    <<: *base
+    profiles: ["dev"]
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.services.app-capybara-0.loadbalancer.server.port=4000"
+      - "traefik.http.routers.app-capybara-0.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-0.tls=true"
+      - "traefik.http.routers.app-capybara-0.entrypoints=capybara-0"
+      - "traefik.http.routers.app-capybara-0.service=app-capybara-0"
+
+      - "traefik.http.services.app-capybara-1.loadbalancer.server.port=4001"
+      - "traefik.http.routers.app-capybara-1.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-1.tls=true"
+      - "traefik.http.routers.app-capybara-1.entrypoints=capybara-1"
+      - "traefik.http.routers.app-capybara-1.service=app-capybara-1"
+
+      - "traefik.http.services.app-capybara-2.loadbalancer.server.port=4002"
+      - "traefik.http.routers.app-capybara-2.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-2.tls=true"
+      - "traefik.http.routers.app-capybara-2.entrypoints=capybara-2"
+      - "traefik.http.routers.app-capybara-2.service=app-capybara-2"
+
+      - "traefik.http.services.app-capybara-3.loadbalancer.server.port=4003"
+      - "traefik.http.routers.app-capybara-3.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-3.tls=true"
+      - "traefik.http.routers.app-capybara-3.entrypoints=capybara-3"
+      - "traefik.http.routers.app-capybara-3.service=app-capybara-3"
+
+      - "traefik.http.services.app-capybara-4.loadbalancer.server.port=4004"
+      - "traefik.http.routers.app-capybara-4.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-4.tls=true"
+      - "traefik.http.routers.app-capybara-4.entrypoints=capybara-4"
+      - "traefik.http.routers.app-capybara-4.service=app-capybara-4"
+
+      - "traefik.http.services.app-capybara-5.loadbalancer.server.port=4005"
+      - "traefik.http.routers.app-capybara-5.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-5.tls=true"
+      - "traefik.http.routers.app-capybara-5.entrypoints=capybara-5"
+      - "traefik.http.routers.app-capybara-5.service=app-capybara-5"
+
+      - "traefik.http.services.app-capybara-6.loadbalancer.server.port=4006"
+      - "traefik.http.routers.app-capybara-6.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-6.tls=true"
+      - "traefik.http.routers.app-capybara-6.entrypoints=capybara-6"
+      - "traefik.http.routers.app-capybara-6.service=app-capybara-6"
+
+      - "traefik.http.services.app-capybara-7.loadbalancer.server.port=4007"
+      - "traefik.http.routers.app-capybara-7.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-7.tls=true"
+      - "traefik.http.routers.app-capybara-7.entrypoints=capybara-7"
+      - "traefik.http.routers.app-capybara-7.service=app-capybara-7"
+
+      - "traefik.http.services.app-capybara-8.loadbalancer.server.port=4008"
+      - "traefik.http.routers.app-capybara-8.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-8.tls=true"
+      - "traefik.http.routers.app-capybara-8.entrypoints=capybara-8"
+      - "traefik.http.routers.app-capybara-8.service=app-capybara-8"
+
+      - "traefik.http.services.app-capybara-9.loadbalancer.server.port=4009"
+      - "traefik.http.routers.app-capybara-9.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-9.tls=true"
+      - "traefik.http.routers.app-capybara-9.entrypoints=capybara-9"
+      - "traefik.http.routers.app-capybara-9.service=app-capybara-9"
+
+      - "traefik.http.services.app-capybara-10.loadbalancer.server.port=4010"
+      - "traefik.http.routers.app-capybara-10.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-10.tls=true"
+      - "traefik.http.routers.app-capybara-10.entrypoints=capybara-10"
+      - "traefik.http.routers.app-capybara-10.service=app-capybara-10"
+
+      - "traefik.http.services.app-capybara-11.loadbalancer.server.port=4011"
+      - "traefik.http.routers.app-capybara-11.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-11.tls=true"
+      - "traefik.http.routers.app-capybara-11.entrypoints=capybara-11"
+      - "traefik.http.routers.app-capybara-11.service=app-capybara-11"
+
+      - "traefik.http.services.app-capybara-12.loadbalancer.server.port=4012"
+      - "traefik.http.routers.app-capybara-12.rule=Host(`host.docker.internal`)"
+      - "traefik.http.routers.app-capybara-12.tls=true"
+      - "traefik.http.routers.app-capybara-12.entrypoints=capybara-12"
+      - "traefik.http.routers.app-capybara-12.service=app-capybara-12"
+    depends_on:
+      - reverse-proxy
+      - selenium-chrome
+      - js
+    tmpfs:
+      - /tmp
+
+  js:
+    <<: *base
+    command: yarn build --watch
+    depends_on:
+      - css
+
+  css:
+    <<: *base
+    command: yarn build:css --watch
+
+  postgres:
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+
+  redis_jobs:
+    image: redis:6.2-alpine
+    volumes:
+      - redis_data_jobs:/data
+
+  redis_cables:
+    image: redis:6.2-alpine
+    volumes:
+      - redis_data_cables:/data
+
+  selenium-chrome:
+    image: selenium/standalone-chrome-debug:latest
+    shm_size: 2G
+    logging:
+      driver: none
+    ports:
+      - 5900:5900
+    environment:
+      - SCREEN_WIDTH=1680
+      - SCREEN_HEIGHT=1050
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # To work on Linux
+
+  sidekiq:
+    <<: *base
+    command: bundle exec sidekiq -C config/sidekiq_worker.yml
+
+volumes:
+  bundle:
+  node_modules:
+  postgres_data:
+  redis_data_jobs:
+  redis_data_cables:

@@ -1,0 +1,167 @@
+{
+  "data": [
+    {
+      "id": 40495,
+      "country": "DE",
+      "barcode": "4001686330135",
+      "name_translations": {
+        "de": "Haribo Sauer Pommes",
+        "fr": "Haribo Sauer Pommes"
+      },
+      "display_name_translations": {
+        "de": "Haribo Sauer Pommes",
+        "fr": "Haribo Sauer Pommes",
+        "it": "Haribo Sauer Pommes",
+        "en": "Haribo Sauer Pommes"
+      },
+      "ingredients_translations": {
+        "de": "Glukosesirup; Zucker; Stärke; Wasser; Gelatine; Säuerungsmittel: Citronensäure, Äpfelsäure; Frucht- und Pflanzenkonzentrate: Karotte, Saflor, Spirulina, Rettich, Süßkartoffel, Schwarze Johannisbeere, Hibiskus, Apfel, Orange, Holunderbeere, Zitrone; Aroma; Überzugsmittel: Carnaubawachs; Karamellsirup; Invertzuckersirup.",
+        "en": "Glucose syrup; Sugar; Strength; Water; Gelatin; Acidifier: citric acid, malic acid; Fruit and vegetable concentrates: carrot, safflower, spirulina, radish, sweet potato, blackcurrant, hibiscus, apple, orange, elderberry, lemon; Aroma; Coating agent: carnauba wax; Caramel syrup; Invert.",
+        "fr": "Le sirop de glucose; sucre; l'amidon; l'eau; la gélatine; Acidifiant: acide citrique, acide malique; Concentrés de fruits et de légumes: carotte, carthame, spiruline, radis, patate douce, cassis, hibiscus, pomme, orange, sureau, citron; saveur; Agent d'enrobage: cire de carnauba; Sirop de caramel; Intervertir.",
+        "it": "Sciroppo di glucosio; zucchero; amido; acqua; gelatina; Acidificatore: acido citrico, acido malico; Concentrati di frutta e verdura: carota, cartamo, spirulina, ravanello, patata dolce, ribes nero, ibisco, mela, arancia, sambuco, limone; sapore; Agente di rivestimento: cera carnauba; Sciroppo di caramello; Invertire."
+      },
+      "origin_translations": {},
+      "status": "complete",
+      "quantity": 200,
+      "unit": "g",
+      "portion_quantity": 0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0,
+      "images": [
+        {
+          "categories": [],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164133/thumb_4001686330135.jpg?v=1552396344",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164133/medium_4001686330135.jpg?v=1552396344",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164133/large_4001686330135.jpg?v=1552396344",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164133/xlarge_4001686330135.jpg?v=1552396344"
+        },
+        {
+          "categories": [],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164131/thumb_4001686330135.jpg?v=1552396344",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164131/medium_4001686330135.jpg?v=1552396344",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164131/large_4001686330135.jpg?v=1552396344",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164131/xlarge_4001686330135.jpg?v=1552396344"
+        },
+        {
+          "categories": [],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164130/thumb_4001686330135.jpg?v=1552396344",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164130/medium_4001686330135.jpg?v=1552396344",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164130/large_4001686330135.jpg?v=1552396344",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164130/xlarge_4001686330135.jpg?v=1552396344"
+        },
+        {
+          "categories": [],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164129/thumb_4001686330135.jpg?v=1552396344",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164129/medium_4001686330135.jpg?v=1552396344",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164129/large_4001686330135.jpg?v=1552396344",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/164129/xlarge_4001686330135.jpg?v=1552396344"
+        }
+      ],
+      "nutrients": {
+        "salt": {
+          "name_translations": {
+            "de": "Salz",
+            "en": "Salt",
+            "fr": "Sel",
+            "it": "Sale"
+          },
+          "unit": "g",
+          "per_hundred": 0.08,
+          "per_portion": null,
+          "per_day": null
+        },
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 3.5,
+          "per_portion": null,
+          "per_day": null
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 62,
+          "per_portion": null,
+          "per_day": null
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 81,
+          "per_portion": null,
+          "per_day": null
+        },
+        "saturated_fat": {
+          "name_translations": {
+            "de": "Gesättigte Fettsäuren",
+            "en": "Saturated fat",
+            "fr": "Acides gras saturés",
+            "it": "Acidi grassi saturi"
+          },
+          "unit": "g",
+          "per_hundred": 0.1,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 0.5,
+          "per_portion": null,
+          "per_day": null
+        },
+        "energy_kcal": {
+          "name_translations": {
+            "de": "Energie (kCal)",
+            "en": "Energy (Calories / kCal)",
+            "fr": "Énergie (kCal)",
+            "it": "Energia (kCal)"
+          },
+          "unit": "kCal",
+          "per_hundred": 345,
+          "per_portion": null,
+          "per_day": null
+        },
+        "energy": {
+          "name_translations": {
+            "de": "Energie",
+            "en": "Energy",
+            "fr": "Énergie",
+            "it": "Energia"
+          },
+          "unit": "kJ",
+          "per_hundred": 1465,
+          "per_portion": null,
+          "per_day": null
+        }
+      },
+      "created_at": "2019-03-08T15:52:15.423Z",
+      "updated_at": "2019-03-12T13:12:25.918Z"
+    }
+  ],
+  "links": {},
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 27
+  }
+}

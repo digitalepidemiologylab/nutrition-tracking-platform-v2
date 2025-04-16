@@ -1,0 +1,19 @@
+<div class="bg-white px-4 py-5 sm:px-6 border-b">
+  <%=
+    form_with(
+      url: request.query_parameters.merge,
+      method: :get,
+      builder: AppFormBuilder,
+      class: "flex flex-col space-y-4 md:flex-row md:justify-start md:space-x-4 md:items-center md:space-y-0",
+      data: {
+        controller: @stimulus_controller,
+        turbo_frame: @turbo_frame,
+        turbo_action: "advance"
+      }
+    ) do |f|
+  %>
+    <% selects.each do |select| %>
+      <%= select %>
+    <% end %>
+  <% end %>
+</div>

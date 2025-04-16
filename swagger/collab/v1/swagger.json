@@ -1,0 +1,1373 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Collab API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/collab/api/v1/participations/{participation_id}/annotations": {
+      "get": {
+        "summary": "list participation annotations",
+        "tags": [
+          "Annotations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "participation_id",
+            "in": "path",
+            "description": "Participation ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "description": "Number of items per page (default is 10, max is 20)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `dish`, `dish.dish_image`, `intakes`, `comments`, `annotation_items`, `annotation_items.food`, `annotation_items.food.food_nutrients`, `annotation_items.product`, `annotation_items.product.product_nutrients`, `annotation_items.product.product_images`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "a5f99c4c-be80-4cfb-b317-4e57b16c801d",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "080b9da1-eb6c-41c0-ae3f-b4d2505b0e94"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "cc6808fd-dcac-49bb-a879-89e114552031"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "adc95085-17ff-4531-a342-18452e749ba8",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "d4dda8fc-1f50-4ccf-8539-b1ef25b569dd"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "beb0e480-de5a-4413-9706-7df4cec6f3d3"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "0d7bdee4-68e5-4fb8-8406-340552c2df16",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "3bede158-9a72-43c5-9003-1868f89f4c5a"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "9e893f43-e178-44b5-a7d5-e049aa42ba13"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "0bf874eb-172b-4367-8526-d6c6d02d3068",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "0778385a-8c3f-4907-9cd9-8f13976ebac0"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "273da757-5477-42cd-ae5d-4f08f23866c6"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "6575e03d-e60e-4303-85a3-cd6806c9a5f7",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "2f90b90e-5a78-4bae-94e0-95e4c6f9ebba"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "08085a92-c93f-49a1-8a74-7baa137b46f7"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "included": [
+                    {
+                      "id": "080b9da1-eb6c-41c0-ae3f-b4d2505b0e94",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": null
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "ce01b63d-a6ab-4d17-b59d-f6617052d4e5"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "a5f99c4c-be80-4cfb-b317-4e57b16c801d"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "cc6808fd-dcac-49bb-a879-89e114552031",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "America/Sao_Paulo",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "a5f99c4c-be80-4cfb-b317-4e57b16c801d"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "d4dda8fc-1f50-4ccf-8539-b1ef25b569dd",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": null
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "0a29dacf-1b00-4c18-89a7-c172de6dd33a"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "adc95085-17ff-4531-a342-18452e749ba8"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "beb0e480-de5a-4413-9706-7df4cec6f3d3",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Africa/Johannesburg",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "adc95085-17ff-4531-a342-18452e749ba8"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "3bede158-9a72-43c5-9003-1868f89f4c5a",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": null
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "df1aba5f-fd24-442d-9e40-d3bf52634a18"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "0d7bdee4-68e5-4fb8-8406-340552c2df16"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "9e893f43-e178-44b5-a7d5-e049aa42ba13",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "America/Tijuana",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "0d7bdee4-68e5-4fb8-8406-340552c2df16"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "0778385a-8c3f-4907-9cd9-8f13976ebac0",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": null
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "c76ea082-0ed8-4043-9052-b6cf2a756ce5"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "0bf874eb-172b-4367-8526-d6c6d02d3068"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "273da757-5477-42cd-ae5d-4f08f23866c6",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Europe/Tallinn",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "0bf874eb-172b-4367-8526-d6c6d02d3068"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "2f90b90e-5a78-4bae-94e0-95e4c6f9ebba",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": null
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "11a7e7b8-aae2-449d-8110-aea9e3abb2fc"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "6575e03d-e60e-4303-85a3-cd6806c9a5f7"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "08085a92-c93f-49a1-8a74-7baa137b46f7",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Asia/Tokyo",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "6575e03d-e60e-4303-85a3-cd6806c9a5f7"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": 2,
+                    "last": 2
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collab/api/v1/cohorts/{cohort_id}": {
+      "get": {
+        "summary": "show cohort",
+        "tags": [
+          "Cohorts"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cohort_id",
+            "in": "path",
+            "description": "Cohort ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `country`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "29f8eb15-206e-4f17-9835-014619d33f5f",
+                    "type": "cohorts",
+                    "attributes": {
+                      "name": "Schaefer, Williamson and Cartwright"
+                    },
+                    "relationships": {
+                      "country": {
+                        "data": {
+                          "type": "countries",
+                          "id": "DE"
+                        }
+                      },
+                      "participations": {
+                        "data": [
+                          {
+                            "type": "participations",
+                            "id": "2d6dd481-0065-4f0d-9e47-a80cb4d792c5"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "DE",
+                      "type": "countries",
+                      "attributes": {
+                        "name": "Saint Lucia"
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Pundit::NotAuthorizedError",
+                      "detail": "not allowed to show? this Cohort"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "ActiveRecord::RecordNotFound",
+                      "detail": "Cohort not found"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collab/api/v1/nutrients": {
+      "get": {
+        "summary": "list nutrients",
+        "tags": [
+          "Nutrients"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "description": "Number of items per page (default is 250, max is 250)",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "soy_beans_marjoram_mahlab",
+                      "type": "nutrients",
+                      "attributes": {
+                        "name": "Soy Beans Marjoram Mahlab"
+                      },
+                      "relationships": {
+                        "unit": {
+                          "data": {
+                            "type": "units",
+                            "id": "g"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "stevia_tandoori_mix_avocado_oil",
+                      "type": "nutrients",
+                      "attributes": {
+                        "name": "Stevia Tandoori Mix Avocado Oil"
+                      },
+                      "relationships": {
+                        "unit": {
+                          "data": {
+                            "type": "units",
+                            "id": "g"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collab/api/v1/cohorts/{cohort_id}/participations": {
+      "get": {
+        "summary": "list cohort participations",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cohort_id",
+            "in": "path",
+            "description": "Cohort ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "description": "Number of items per page (default is 25, max is 100)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `cohort`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "66200436-4c35-41aa-89fa-c67d44f2ff7c",
+                      "type": "participations",
+                      "attributes": {
+                        "key": "zHCceD4kr",
+                        "started_at": "2021-12-12T12:12:12.000000Z",
+                        "ended_at": "2021-12-19T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "cohort": {
+                          "data": {
+                            "type": "cohorts",
+                            "id": "29f8eb15-206e-4f17-9835-014619d33f5f"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "f946c141-f9f4-484b-a876-566700f6eeb6",
+                      "type": "participations",
+                      "attributes": {
+                        "key": "zTkLhkoLf",
+                        "started_at": "2021-12-12T12:12:12.000000Z",
+                        "ended_at": "2021-12-19T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "cohort": {
+                          "data": {
+                            "type": "cohorts",
+                            "id": "29f8eb15-206e-4f17-9835-014619d33f5f"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "included": [
+                    {
+                      "id": "29f8eb15-206e-4f17-9835-014619d33f5f",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Lindgren-Ritchie"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "CH"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "66200436-4c35-41aa-89fa-c67d44f2ff7c"
+                            },
+                            {
+                              "type": "participations",
+                              "id": "f946c141-f9f4-484b-a876-566700f6eeb6"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create cohort participation",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cohort_id",
+            "in": "path",
+            "description": "Cohort ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `cohort`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "837d1049-e34f-4c16-8b2c-757a8f16cd7c",
+                    "type": "participations",
+                    "attributes": {
+                      "key": "6vJ2CLWgZ",
+                      "started_at": null,
+                      "ended_at": null
+                    },
+                    "relationships": {
+                      "cohort": {
+                        "data": {
+                          "type": "cohorts",
+                          "id": "29f8eb15-206e-4f17-9835-014619d33f5f"
+                        }
+                      },
+                      "annotations": {
+                        "data": [
+
+                        ]
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "29f8eb15-206e-4f17-9835-014619d33f5f",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Ledner-Wilkinson"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "DE"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "837d1049-e34f-4c16-8b2c-757a8f16cd7c"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid base",
+                      "detail": "Unable to save partipation",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collab/api/v1/participations/{participation_id}": {
+      "get": {
+        "summary": "show participation",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "participation_id",
+            "in": "path",
+            "description": "Participation ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `cohort`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "61b8ed41-74e1-40e9-86ca-e831a7e9d707",
+                    "type": "participations",
+                    "attributes": {
+                      "key": "v61J9U5Hs",
+                      "started_at": "2021-12-12T12:12:12.000000Z",
+                      "ended_at": "2021-12-19T12:12:12.000000Z"
+                    },
+                    "relationships": {
+                      "cohort": {
+                        "data": {
+                          "type": "cohorts",
+                          "id": "29f8eb15-206e-4f17-9835-014619d33f5f"
+                        }
+                      },
+                      "annotations": {
+                        "data": [
+
+                        ]
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "29f8eb15-206e-4f17-9835-014619d33f5f",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Hackett, Klein and Keeling"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "US"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "61b8ed41-74e1-40e9-86ca-e831a7e9d707"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Pundit::NotAuthorizedError",
+                      "detail": "not allowed to show? this Participation"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "ActiveRecord::RecordNotFound",
+                      "detail": "Participation not found"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update participation",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "participation_id",
+            "in": "path",
+            "description": "Participation ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `cohort`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "1335b296-04e0-4f1e-8d37-e4e97c487945",
+                    "type": "participations",
+                    "attributes": {
+                      "key": "oK3RycRAj",
+                      "started_at": "2021-12-12T12:12:12.000000Z",
+                      "ended_at": "2021-12-20T12:12:12.000000Z"
+                    },
+                    "relationships": {
+                      "cohort": {
+                        "data": {
+                          "type": "cohorts",
+                          "id": "29f8eb15-206e-4f17-9835-014619d33f5f"
+                        }
+                      },
+                      "annotations": {
+                        "data": [
+
+                        ]
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "29f8eb15-206e-4f17-9835-014619d33f5f",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Borer LLC"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "CH"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "1335b296-04e0-4f1e-8d37-e4e97c487945"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid base",
+                      "detail": "Unable to save partipation",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "participations"
+                    ]
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "ended_at": {
+                        "type": "string",
+                        "format": "date_time"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "{defaultProtocol}://{defaultHost}:{defaultPort}",
+      "variables": {
+        "defaultProtocol": {
+          "default": "https"
+        },
+        "defaultHost": {
+          "default": "mfr.localhost"
+        },
+        "defaultPort": {
+          "default": "443"
+        }
+      }
+    }
+  ]
+}

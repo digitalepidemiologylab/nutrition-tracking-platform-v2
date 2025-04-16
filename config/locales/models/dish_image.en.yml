@@ -1,0 +1,7 @@
+---
+en:
+  activerecord:
+    models:
+      dish_image:
+        one: Image
+        other: Images

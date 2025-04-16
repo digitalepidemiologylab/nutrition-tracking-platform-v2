@@ -1,0 +1,45 @@
+---
+fr:
+  activemodel:
+    errors:
+      models:
+        annotations:
+          annotation_items_merge_forms:
+            attributes:
+              base:
+                size_destroy: Sélectionnez au moins 1 élément à supprimer
+                size_merge: Sélectionnez au moins 2 éléments à fusionner
+  collab:
+    annotations:
+      annotation_items_destroy_forms:
+        destroy:
+          failure: Impossible de supprimer les éléments
+          success: Les éléments ont été supprimés avec succès
+      annotation_items_merge_forms:
+        create:
+          failure: Impossible de fusionner les éléments
+          success: Les éléments ont été fusionnés avec succès
+      clear_polygons_button:
+        clear_polygons: Effacer les polygones
+      hide_polygons_link:
+        hide_polygons: Masquer tous les polygones
+        show_polygons: Afficher tous les polygones
+      index:
+        title: Repas, collations et boissons en attente
+      show:
+        add_food: Ajouter un aliment
+        add_product: Ajouter un produit
+        confirm_button: Confirmer
+        destroy_items: Supprimer
+        destroy_tooltip: Supprimer les éléments cochés
+        details: Détails
+        eaten: Dernière consommation
+        merge_items: Fusionner
+        merge_tooltip: Sélectionnez 2 éléments ou plus à fusionner. Les éléments du bas seront fusionnés avec celui du haut.
+        same_date_intakes_tooltip: Voir toutes les consommations de cet utilisateur à la même date
+        title: Annotation de plat
+      status:
+        allow_annotation: Autoriser l'annotation
+        confirm: Êtes-vous sûr de vouloir rendre cette annotation annotable à nouveau ?
+      totals:
+        total_consumed: Total consommé

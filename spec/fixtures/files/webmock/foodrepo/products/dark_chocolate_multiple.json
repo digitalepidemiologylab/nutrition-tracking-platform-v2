@@ -1,0 +1,349 @@
+{
+  "data": [{
+      "id": 233486,
+      "country": "US",
+      "barcode": "0009542031695",
+      "name_translations": {
+        "en": "DARK CHOCOLATE"
+      },
+      "display_name_translations": {
+        "de": "DARK CHOCOLATE",
+        "fr": "DARK CHOCOLATE",
+        "it": "DARK CHOCOLATE",
+        "en": "DARK CHOCOLATE"
+      },
+      "ingredients_translations": {
+        "en": "CHOCOLATE, COCOA BUTTER, SUGAR, FAT REDUCED COCOA POWDER, MILKFAT."
+      },
+      "status": "rescan",
+      "quantity": 40.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 0.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [],
+      "nutrients": {
+        "iron": {
+          "name_translations": {
+            "de": "Eisen",
+            "en": "Iron",
+            "fr": "Fer",
+            "it": "Ferro"
+          },
+          "unit": "mg",
+          "per_hundred": 3.6,
+          "per_portion": null,
+          "per_day": null
+        },
+        "cholesterol": {
+          "name_translations": {
+            "de": "Cholesterin",
+            "en": "Cholesterol",
+            "fr": "Cholestérol",
+            "it": "Colesterolo"
+          },
+          "unit": "mg",
+          "per_hundred": 12.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fatty_acids_total_saturated": {
+          "name_translations": {
+            "de": "Fettsäuren, gesamt gesättigt",
+            "en": "Fatty acids, total saturated",
+            "fr": "Acides gras, total des acides gras saturés",
+            "it": "Acidi grassi, saturi totali"
+          },
+          "unit": "g",
+          "per_hundred": 30.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 10.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 47.5,
+          "per_portion": null,
+          "per_day": null
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 35.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "energy_kcal": {
+          "name_translations": {
+            "de": "Energie (kCal)",
+            "en": "Energy (kCal)",
+            "fr": "Énergie (kCal)",
+            "it": "Energia (kCal)"
+          },
+          "unit": "kCal",
+          "per_hundred": 575.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 17.5,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fiber": {
+          "name_translations": {
+            "de": "Ballaststoffe",
+            "en": "Fiber",
+            "fr": "Fibres alimentaires",
+            "it": "Fibre"
+          },
+          "unit": "g",
+          "per_hundred": 7.5,
+          "per_portion": null,
+          "per_day": null
+        },
+        "calcium": {
+          "name_translations": {
+            "de": "Kalzium",
+            "en": "Calcium",
+            "fr": "Calcium",
+            "it": "Calcio"
+          },
+          "unit": "mg",
+          "per_hundred": 100.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "sodium": {
+          "name_translations": {
+            "de": "Natrium",
+            "en": "Sodium",
+            "fr": "Sodium",
+            "it": "Sodio"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fatty_acids_total_trans": {
+          "name_translations": {
+            "de": "Fettsäuren, gesamt trans",
+            "en": "Fatty acids, total trans",
+            "fr": "Acides gras, trans totaux",
+            "it": "Acidi grassi, totale trans"
+          },
+          "unit": "g",
+          "per_hundred": 0.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "vitamin_c_ascorbic_acid": {
+          "name_translations": {
+            "de": "Vitamin C (Askorbinsäure)",
+            "en": "Vitamin C (Ascorbic acid)",
+            "fr": "Vitamine C (Acide ascorbique)",
+            "it": "Vitamina C (Acido ascorbico)"
+          },
+          "unit": "mg",
+          "per_hundred": 0.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "vitamin_a_iu": {
+          "name_translations": {
+            "de": "Vitamin A, IU",
+            "en": "Vitamin A, IU",
+            "es": "Vitamin A, IU",
+            "fr": "Vitamine A, IU",
+            "it": "Vitamina A, IU"
+          },
+          "unit": "IU",
+          "per_hundred": 250.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "energy": {
+          "name_translations": {
+            "de": "Energie",
+            "en": "Energy",
+            "fr": "Énergie",
+            "it": "Energia"
+          },
+          "unit": "kJ",
+          "per_hundred": 2405.8,
+          "per_portion": null,
+          "per_day": null
+        }
+      },
+      "created_at": "2021-04-26T10:21:26.772Z",
+      "updated_at": "2021-04-26T10:21:26.772Z"
+    },
+    {
+      "id": 27688,
+      "country": "CH",
+      "barcode": "0009542031695",
+      "name_translations": {
+        "de": "Lindt Excellence - Zartbitterschokolade (78% Kakao)",
+        "en": "Lindt Excellence - Dark Chocolate (78% cocoa)",
+        "fr": "Lindt Excellence - Chocolat Noir (78% de cacao)"
+      },
+      "display_name_translations": {
+        "de": "Lindt Excellence - Zartbitterschokolade (78% Kakao)",
+        "fr": "Lindt Excellence - Chocolat Noir (78% de cacao)",
+        "it": "Lindt Excellence - Dark Chocolate (78% cocoa)",
+        "en": "Lindt Excellence - Dark Chocolate (78% cocoa)"
+      },
+      "ingredients_translations": {
+        "de": "Schokolade, Kakaobutter, Zucker, fettarmes Kakaopulver, Milchfett.",
+        "en": "Chocolate, cocoa butter, sugar, fat reduced cocoa powder, milk fat.",
+        "fr": "Chocolat, beurre de cacao, sucre, poudre de cacao réduite en gras, graisse de lait"
+      },
+      "status": "complete",
+      "quantity": 100.0,
+      "unit": "g",
+      "hundred_unit": "g",
+      "portion_quantity": 0.0,
+      "portion_unit": "g",
+      "alcohol_by_volume": 0.0,
+      "images": [{
+          "categories": ["Front"],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119133/thumb_009542031695.jpg?v=1531674051",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119133/medium_009542031695.jpg?v=1531674051",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119133/large_009542031695.jpg?v=1531674051",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119133/xlarge_009542031695.jpg?v=1531674051"
+        },
+        {
+          "categories": ["Back", "Nutrients table", "Ingredients list"],
+          "thumb": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119132/thumb_009542031695.jpg?v=1531674051",
+          "medium": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119132/medium_009542031695.jpg?v=1531674051",
+          "large": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119132/large_009542031695.jpg?v=1531674051",
+          "xlarge": "https://d2v5oodgkvnw88.cloudfront.net/uploads_production/image/data/119132/xlarge_009542031695.jpg?v=1531674051"
+        }
+      ],
+      "nutrients": {
+        "energy": {
+          "name_translations": {
+            "de": "Energie",
+            "en": "Energy",
+            "fr": "Énergie",
+            "it": "Energia"
+          },
+          "unit": "kJ",
+          "per_hundred": 230.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "energy_kcal": {
+          "name_translations": {
+            "de": "Energie (kCal)",
+            "en": "Energy (kCal)",
+            "fr": "Énergie (kCal)",
+            "it": "Energia (kCal)"
+          },
+          "unit": "kCal",
+          "per_hundred": 170.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "fat": {
+          "name_translations": {
+            "de": "Fett",
+            "en": "Fat",
+            "fr": "Matières grasses",
+            "it": "Grassi"
+          },
+          "unit": "g",
+          "per_hundred": 19.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "saturated_fat": {
+          "name_translations": {
+            "de": "Gesättigte Fettsäuren",
+            "en": "Saturated fat",
+            "fr": "Acides gras saturés",
+            "it": "Acidi grassi saturi"
+          },
+          "unit": "g",
+          "per_hundred": 12.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "carbohydrates": {
+          "name_translations": {
+            "de": "Kohlenhydrate",
+            "en": "Carbohydrates",
+            "fr": "Glucides",
+            "it": "Carboidrati"
+          },
+          "unit": "g",
+          "per_hundred": 14.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "sugars": {
+          "name_translations": {
+            "de": "Zucker",
+            "en": "Sugars",
+            "fr": "Sucres",
+            "it": "Zuccheri"
+          },
+          "unit": "g",
+          "per_hundred": 7.0,
+          "per_portion": null,
+          "per_day": null
+        },
+        "protein": {
+          "name_translations": {
+            "de": "Eiweiss",
+            "en": "Protein",
+            "fr": "Protéines",
+            "it": "Proteine"
+          },
+          "unit": "g",
+          "per_hundred": 4.0,
+          "per_portion": null,
+          "per_day": null
+        }
+      },
+      "created_at": "2018-07-15T16:58:28.222Z",
+      "updated_at": "2019-10-28T12:52:22.016Z"
+    }
+  ],
+  "links": {},
+  "meta": {
+    "api_version": "3.03",
+    "generated_in": 24
+  }
+}

@@ -1,0 +1,8 @@
+---
+fr:
+  collab:
+    annotation_items:
+      destroy:
+        failure: Impossible de retirer l'élément
+      update:
+        failure: Élément invalide

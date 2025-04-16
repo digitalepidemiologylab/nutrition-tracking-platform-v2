@@ -1,0 +1,18 @@
+---
+de:
+  collab:
+    comment_templates:
+      create:
+        success: Kommentarvorlage erfolgreich erstellt.
+      destroy:
+        failure: Die Kommentarvorlage konnte nicht zerstört werden.
+        success: Kommentarvorlage erfolgreich zerstört
+      edit:
+        title: Kommentarvorlage bearbeiten
+      index:
+        add_button: Kommentarvorlage erstellen
+        title: Kommentarvorlage
+      new:
+        title: Kommentarvorlage erstellen
+      update:
+        success: Kommentarvorlage erfolgreich aktualisiert

@@ -1,0 +1,26 @@
+<%= render(Collab::TableComponent.new) do |tc| %>
+  <% tc.with_title do |title| %>
+    <% title.with_additional_element do %>
+      <%= form_for([:collab, cohort, participations_create_form], url: collab_cohort_participations_create_form_path(cohort), builder: AppFormBuilder, data: {turbo_confirm: t("helpers.are_you_sure")}) do |f| %>
+        <%= f.number_field :number, min: Participations::CreateForm::NUMBER_MIN, max: Participations::CreateForm::NUMBER_MAX, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300" %>
+        <%= f.submit(t("helpers.submit.create", model: "Participations"), class: "ml-2 btn btn-primary") %>
+        <%= f.error_text(:number) %>
+        <%= f.error_text(:base) %>
+      <% end %>
+    <% end %>
+    <%= t("activerecord.models.participation", count: 2) %>
+  <% end %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.user_id") } %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.key") } %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.associated_at") } %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.started_at") } %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.ended_at") } %>
+  <% tc.with_head_td { t("activerecord.attributes.participation.created_at") } %>
+  <% tc.with_head_td(align: :right) { } %>
+  <% participations.each do |participation| %>
+    <% tc.with_row(id: dom_id(participation)) do |r| %>
+      <%= render "collab/participations/participation_row_tds", r: r, participation: participation, collaborator: current_collaborator %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= render(PaginationComponent.new(pagy: pagy)) %>

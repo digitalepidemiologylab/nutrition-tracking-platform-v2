@@ -1,0 +1,30 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= t(".title") %>
+    <% t.with_action { link_to(t(".add_button"), new_collab_comment_template_path, class: "btn btn-primary") } if policy([:collab, CommentTemplate]).new? %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= turbo_frame_tag "comment_templates" do %>
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_head_td { t("activerecord.attributes.comment_template.title") } %>
+        <% tc.with_head_td { t("activerecord.attributes.comment_template.message") } %>
+        <% tc.with_head_td { } %>
+        <% @comment_templates.each do |comment_template| %>
+          <% tc.with_row do |r| %>
+            <% r.with_row_td(additional_classes: "text-gray-500") do %>
+              <%= comment_template.title %>
+            <% end %>
+            <% r.with_row_td(additional_classes: "text-gray-500") do %>
+              <%= comment_template.message %>
+            <% end %>
+            <% r.with_row_td(additional_classes: "text-gray-500 text-right") do %>
+              <%= link_to(t("helpers.edit"), edit_collab_comment_template_path(comment_template), class: "text-brand hover:underline", data: {turbo_frame: "_top"}) if policy([:collab, comment_template]).edit? %>
+              <%= link_to(t("helpers.destroy"), collab_comment_template_path(comment_template), class: "text-brand hover:underline", data: {turbo_frame: "_top", turbo_method: :delete, turbo_confirm: t("helpers.are_you_sure")}) if policy([:collab, comment_template]).destroy? %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= render(PaginationComponent.new(pagy: @pagy)) %>
+    <% end %>
+  </div>
+</div>

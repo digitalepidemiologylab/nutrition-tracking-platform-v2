@@ -1,0 +1,14 @@
+---
+fr:
+  activemodel:
+    attributes:
+      barcode:
+        code: Code-barre
+    errors:
+      models:
+        barcode:
+          attributes:
+            code:
+              invalid_checksum: a une somme de contrôle invalide
+              invalid_length: a une longueur invalide
+              invalid_prefix: a un préfixe invalide

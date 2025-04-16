@@ -1,0 +1,92 @@
+<% content_for :content do %>
+  <div class="h-screen flex overflow-hidden bg-gray-100">
+    <%= render(Collab::SidebarComponent.new) do |c| %>
+      <% if policy([:collab, Dish]).index? %>
+        <%= c.with_item(text: t(".pending_annotations"), url: collab_annotations_path_with_query_params, icon: "hourglass", active: current_page?(collab_annotations_path_with_query_params)) %>
+      <% end %>
+      <% if policy([:collab, Cohort]).index? %>
+        <%= c.with_item(text: t(".cohorts"), url: collab_cohorts_path, icon: "users-three", active: current_page?(collab_cohorts_path)) %>
+      <% end %>
+      <% if policy([:collab, Collaborator]).index? %>
+        <%= c.with_item(text: t(".collaborators"), url: collab_collaborators_path, icon: "identification-badge", active: current_page?(collab_collaborators_path)) %>
+      <% end %>
+      <% if policy([:collab, FoodList]).index? %>
+        <%= c.with_item(text: t(".food_lists"), url: collab_food_lists_path, icon: "list", active: current_page?(collab_food_lists_path)) %>
+      <% end %>
+      <% if policy([:collab, FoodSet]).index? %>
+        <%= c.with_item(text: t(".food_sets"), url: collab_food_sets_path, icon: "coffee", active: current_page?(collab_food_sets_path)) %>
+      <% end %>
+      <% if policy([:collab, Food]).index? %>
+        <%= c.with_item(text: t(".foods"), url: collab_foods_path, icon: "pizza", active: current_page?(collab_foods_path)) %>
+      <% end %>
+      <% if policy([:collab, Product]).index? %>
+        <%= c.with_item(text: t(".products"), url: collab_products_path, icon: "barcode", active: current_page?(collab_products_path)) %>
+      <% end %>
+      <% if policy([:collab, :user]).index? %>
+        <%= c.with_item(text: t(".users"), url: collab_users_path, icon: "user", active: current_page?(collab_users_path)) %>
+      <% end %>
+      <% if policy([:collab, :comment_template]).index? %>
+        <%= c.with_item(text: t(".comment_templates"), url: collab_comment_templates_path, icon: "chat-text", active: current_page?(collab_comment_templates_path)) %>
+      <% end %>
+      <% if policy([:collab, :api_documentation]).api_v2? %>
+        <%= c.with_bottom_item(text: t(".api_v2_documentation"), url: api_v2_collab_api_documentation_path, icon: "file-text", active: current_page?(api_v2_collab_api_documentation_path)) %>
+      <% end %>
+      <% if policy([:collab, :api_documentation]).collab_api_v1? %>
+        <%= c.with_bottom_item(text: t(".api_collab_v1_documentation"), url: collab_api_v1_collab_api_documentation_path, icon: "file-text", active: current_page?(collab_api_v1_collab_api_documentation_path)) %>
+      <% end %>
+      <% if policy([:collab, :job_log]).index? %>
+        <%= c.with_bottom_item(text: t(".job_logs"), url: collab_job_logs_path, icon: "clock", active: current_page?(collab_job_logs_path)) %>
+      <% end %>
+      <% if current_collaborator.admin? %>
+        <%= c.with_bottom_item(text: t(".sidekiq"), url: sidekiq_web_path, icon: "wrench", active: current_page?(sidekiq_web_path)) %>
+      <% end %>
+      <% if current_collaborator.admin? %>
+        <%= c.with_bottom_item(text: t(".coverband"), url: "/coverage", icon: "eyeglasses", active: current_page?("/coverage")) %>
+      <% end %>
+      <% if current_collaborator.admin? %>
+        <%= c.with_bottom_item(text: t(".styleguide"), url: lookbook_path, icon: "sparkle", active: current_page?(lookbook_path)) %>
+      <% end %>
+    <% end %>
+    <div class="flex flex-col w-0 flex-1 overflow-hidden">
+      <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+        <%= render(Collab::MobileSidebarButtonComponent.new) %>
+        <div class="flex-1 px-8 flex justify-end">
+          <%= render(Collab::BreadcrumbsComponent.new(crumbs: @breadcrumbs)) %>
+          <div class="ml-4 flex items-center md:ml-6">
+            <%= render(DropdownComponent.new(size: :small, origin: :right)) do |c| %>
+              <%= c.with_icon(:globe, classes: "mr-2 text-xl text-gray-400") %>
+              <%= c.with_text { I18n.locale.to_s.upcase } %>
+              <%=
+                c.with_items(I18n.available_locales.map do |locale|
+                  {
+                    text: t("dropdown_language_component.language_name", locale: locale),
+                    url: url_for(url_for(request.query_parameters.merge(locale: locale))),
+                    active: I18n.locale == locale
+                  }
+                end)
+              %>
+            <% end %>
+            <%= render(DropdownComponent.new(origin: :left)) do |c| %>
+              <%= c.with_icon(:user, classes: "mr-2 text-lg text-gray-400") %>
+              <%= c.with_text { current_collaborator.name } %>
+              <%=
+                c.with_items([
+                  {text: "Your profile", url: collab_profile_path, active: current_page?(collab_profile_path)},
+                  {text: "Sign out", url: destroy_collaborator_session_path, method: :delete}
+                ])
+              %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <main class="flex-1 relative overflow-y-auto focus:outline-none">
+        <% if content_for?(:sub_content) %>
+          <%= yield(:sub_content) %>
+        <% else %>
+          <%= yield %>
+        <% end %>
+      </main>
+    </div>
+  </div>
+<% end %>
+<%= render template: "layouts/application" %>

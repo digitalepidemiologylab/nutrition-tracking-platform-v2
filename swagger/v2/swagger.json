@@ -1,0 +1,2828 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API V2",
+    "version": "v2"
+  },
+  "paths": {
+    "/api/v2/annotations/{id}/comments": {
+      "get": {
+        "summary": "list comments",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "51aec6f6-927e-475d-8fc2-b8b87c5a047f",
+                      "type": "comments",
+                      "attributes": {
+                        "message": "first comment message",
+                        "created_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "b0b5b0e1-0b5b-4b0b-5b0b-0b5b0b5b0b5b"
+                          }
+                        },
+                        "collaborator": {
+                          "data": null
+                        }
+                      }
+                    },
+                    {
+                      "id": "5b7fd99e-342d-4c01-bd85-38b1b608b25e",
+                      "type": "comments",
+                      "attributes": {
+                        "message": "second comment message",
+                        "created_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "b0b5b0e1-0b5b-4b0b-5b0b-0b5b0b5b0b5b"
+                          }
+                        },
+                        "collaborator": {
+                          "data": {
+                            "type": "collaborators",
+                            "id": "c202dec1-93f6-466b-830f-71b53f1235d9"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "included": [
+                    {
+                      "id": "b0b5b0e1-0b5b-4b0b-5b0b-0b5b0b5b0b5b",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "ecb77f17-2f3b-4ea0-a6fc-b9ecd80b79fe"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "95dc69ec-663f-4a0d-a199-31453827758a"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+                            {
+                              "type": "comments",
+                              "id": "51aec6f6-927e-475d-8fc2-b8b87c5a047f"
+                            },
+                            {
+                              "type": "comments",
+                              "id": "5b7fd99e-342d-4c01-bd85-38b1b608b25e"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create an annotation comment",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "2ee3bf6c-f723-4a61-8829-08b679966191",
+                    "type": "comments",
+                    "attributes": {
+                      "message": "Hello World",
+                      "created_at": "2021-12-12T12:12:12.000000Z"
+                    },
+                    "relationships": {
+                      "annotation": {
+                        "data": {
+                          "type": "annotations",
+                          "id": "e7c624f6-46f7-4fc4-8f19-22529460392c"
+                        }
+                      },
+                      "collaborator": {
+                        "data": null
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "e7c624f6-46f7-4fc4-8f19-22529460392c",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "annotatable"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "936d2687-631d-479f-9d86-9c498d1ad612"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "59cb9f64-b22f-44f3-8650-746faaeef055"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+                            {
+                              "type": "comments",
+                              "id": "2ee3bf6c-f723-4a61-8829-08b679966191"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid message",
+                      "detail": "Message can't be blank",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "comments"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "format": "Hello World"
+                          }
+                        },
+                        "required": [
+                          "message"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/direct_uploads": {
+      "post": {
+        "summary": "create a direct_upload",
+        "tags": [
+          "Direct uploads"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWxsWm1GaU5EWmxZeTAwTkRJeUxUUmhNREF0T0dFM1ppMDVOalJoTTJObFpUVTJNVFFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--0df07afb810f933e86e7365808e0c7711569ae92",
+                    "type": "direct_uploads",
+                    "attributes": {
+                      "url": "http://www.example.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhkR2Q1TW5CeWQybG5OamQzWld0b2JIUm9lVFZ5T0hKbFpuZHRjZ1k2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9UWTI5dWRHVnVkRjlzWlc1bmRHaHBBdElFT2cxamFHVmphM04xYlVraURXTm9aV05yYzNWdEJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9nbDBaWE4wIiwiZXhwIjoiMjAyMS0xMi0xNFQxMjoxMjoxMi4wMDBaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--4f2c5172b915b2a19e1929968790aa96d3e44180?locale=en",
+                      "headers": {
+                        "Content-Type": "image/jpeg"
+                      }
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "ActiveStorage::Error",
+                      "detail": "Internal server error"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "direct_uploads"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "filename": {
+                            "type": "string"
+                          },
+                          "byte_size": {
+                            "type": "integer"
+                          },
+                          "checksum": {
+                            "type": "string",
+                            "description": "\n                        Base64-encoded 128-bit MD5 digest,\n                        see https://aws.amazon.com/premiumsupport/knowledge-center/data-integrity-s3/\n                      "
+                          },
+                          "content_type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/dish_forms": {
+      "post": {
+        "summary": "create a dish",
+        "tags": [
+          "Dishes"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`, `annotation.intakes`, `annotation.dish`, `annotation.dish.dish_image`, `annotation.comments`, `annotation.annotation_items`, `annotation.annotation_items.food`, `annotation.annotation_items.product`, `annotation.annotation_items.product.product_images`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "",
+                    "type": "dish_forms",
+                    "relationships": {
+                      "annotation": {
+                        "data": {
+                          "type": "annotations",
+                          "id": "20a1db0c-a620-4229-9b92-d7ada8e4b2d3"
+                        }
+                      },
+                      "dish": {
+                        "data": {
+                          "type": "dishes",
+                          "id": "a603c509-5ca7-42d8-a888-90a5b97dab4e"
+                        }
+                      },
+                      "dish_image": {
+                        "data": {
+                          "type": "dish_images",
+                          "id": "641b29fc-b146-41bf-a547-efad7f056890"
+                        }
+                      },
+                      "intake": {
+                        "data": {
+                          "type": "intakes",
+                          "id": "12d58ade-c5c6-4589-955e-28c7a62ca73f"
+                        }
+                      },
+                      "product": {
+                        "data": {
+                          "type": "products",
+                          "id": "a331dfeb-bd02-4270-81b5-d8d97232b2a6"
+                        }
+                      },
+                      "product_images": {
+                        "data": [
+                          {
+                            "type": "product_images",
+                            "id": "ff3b27a0-5865-4191-b51f-900d5fc498af"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "20a1db0c-a620-4229-9b92-d7ada8e4b2d3",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "a603c509-5ca7-42d8-a888-90a5b97dab4e"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "12d58ade-c5c6-4589-955e-28c7a62ca73f"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+                            {
+                              "type": "annotation_items",
+                              "id": "02580c5d-58b0-4d7d-bbab-7e1758278b71"
+                            }
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "a603c509-5ca7-42d8-a888-90a5b97dab4e",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": "Test description"
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": {
+                            "type": "dish_images",
+                            "id": "641b29fc-b146-41bf-a547-efad7f056890"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "20a1db0c-a620-4229-9b92-d7ada8e4b2d3"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "641b29fc-b146-41bf-a547-efad7f056890",
+                      "type": "dish_images",
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "a603c509-5ca7-42d8-a888-90a5b97dab4e"
+                          }
+                        }
+                      },
+                      "links": {
+                        "self": "https://mfr.localhost/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWsyWXpFMk1tSTNNeTB4TkdZMUxUUmlZalF0T0dZell5MDFaV0V5WkRaaU9EbG1aV1lHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--e811e59c72b67265b3379b256bd49c43d6a6532f/filename?locale=en"
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid base",
+                      "detail": "Dish image data is not an image",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "dish_forms"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "dish": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              "description": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "intake": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              "consumed_at": {
+                                "type": "string",
+                                "format": "date-time"
+                              },
+                              "timezone": {
+                                "type": "string",
+                                "enum": [
+                                  "Asia/Hong_Kong",
+                                  "Etc/UTC"
+                                ]
+                              }
+                            }
+                          },
+                          "dish_image": {
+                            "type": "object",
+                            "properties": {
+                              "data": {
+                                "type": "string",
+                                "enum": [
+                                  "DirectUpload signed_id"
+                                ]
+                              }
+                            }
+                          },
+                          "product": {
+                            "type": "object",
+                            "properties": {
+                              "barcode": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "product_images": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "data": {
+                                  "type": "string",
+                                  "enum": [
+                                    "DirectUpload signed_id"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/intakes": {
+      "get": {
+        "summary": "list intakes",
+        "tags": [
+          "Intakes"
+        ],
+        "description": "List intakes.<br>When successful, the response contains a list of intakes and a meta object with pagination information and a list of destroyed intakes ids. This list can be used to hide displayed destroyed intakes from a client UI.",
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[updated_at_gt]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "description": "Number of items per page (default is 25, max is 100)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`, `annotation.dish`, `annotation.dish.dish_image`, `annotation.comments`, `annotation.annotation_items`, `annotation.annotation_items.food`, `annotation.annotation_items.product`, `annotation.annotation_items.product.product_images`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "58e391f1-b728-4065-a180-6df5a58163f5",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Pacific/Fiji",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "db30cf7a-2e60-40d2-95f4-4236317c9b04"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "024a7030-22be-4a75-a3e0-5acf4904b26d",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Asia/Yerevan",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "6e78fc86-6ec9-4d43-9fc2-8b21a5375a61"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "c5175daf-61b8-4c06-a504-6b8589f3f9a4",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "America/Montevideo",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "e25b2fea-fe55-4367-ae4c-7cfe34668a86"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "54b527a5-0b4a-4317-8d9e-a6c1e2d4dcd7",
+                      "type": "intakes",
+                      "attributes": {
+                        "timezone": "Europe/Warsaw",
+                        "consumed_at": "2021-12-12T12:12:12.000000Z",
+                        "updated_at": "2021-12-12T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "annotation": {
+                          "data": {
+                            "type": "annotations",
+                            "id": "e25b2fea-fe55-4367-ae4c-7cfe34668a86"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "included": [
+                    {
+                      "id": "db30cf7a-2e60-40d2-95f4-4236317c9b04",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "58e391f1-b728-4065-a180-6df5a58163f5"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+                            {
+                              "type": "annotation_items",
+                              "id": "0b025dc9-a617-40b0-9175-ef962670baf6"
+                            },
+                            {
+                              "type": "annotation_items",
+                              "id": "a8d81436-fb7d-47f1-8928-4b9f143e9495"
+                            }
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "6e78fc86-6ec9-4d43-9fc2-8b21a5375a61",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "024a7030-22be-4a75-a3e0-5acf4904b26d"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+                            {
+                              "type": "annotation_items",
+                              "id": "164c9913-dcec-425b-b101-e051280572d6"
+                            },
+                            {
+                              "type": "annotation_items",
+                              "id": "ffc95fba-fe4f-4e41-9522-523fb178bd7e"
+                            }
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "e25b2fea-fe55-4367-ae4c-7cfe34668a86",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "c5175daf-61b8-4c06-a504-6b8589f3f9a4"
+                            },
+                            {
+                              "type": "intakes",
+                              "id": "54b527a5-0b4a-4317-8d9e-a6c1e2d4dcd7"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": {
+                            "type": "dish_images",
+                            "id": "38059602-7321-4463-bc85-0664ab537c99"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "e25b2fea-fe55-4367-ae4c-7cfe34668a86"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "db30cf7a-2e60-40d2-95f4-4236317c9b04"
+                            },
+                            {
+                              "type": "annotations",
+                              "id": "6e78fc86-6ec9-4d43-9fc2-8b21a5375a61"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "38059602-7321-4463-bc85-0664ab537c99",
+                      "type": "dish_images",
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        }
+                      },
+                      "links": {
+                        "self": "https://mfr.localhost/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWsyTmpOalpqazRaaTAyWm1FNUxUUmpaRGN0T1RreE1pMDFPR1JpWXpRMVpUVTJOek1HT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--f2d0c78b69fb69d172b9a716f4d1f0226564cb45/burger.jpg?locale=en"
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1,
+                    "destroyed_intake_ids": [
+                      "7b8066fd-d11f-435b-9f38-d4ec97ce135c"
+                    ]
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "BaseQuery::BadFilterParam",
+                      "detail": "invalid date"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/dishes/{id}/intakes": {
+      "post": {
+        "summary": "create a dish intake",
+        "tags": [
+          "Intakes"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`, `annotation.dish`, `annotation.dish.dish_image`, `annotation.comments`, `annotation.annotation_items`, `annotation.annotation_items.food`, `annotation.annotation_items.product`, `annotation.annotation_items.product.product_images`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "5e4446bc-13bc-4de8-a790-6554bdc347e1",
+                    "type": "intakes",
+                    "attributes": {
+                      "timezone": "Asia/Hong_Kong",
+                      "consumed_at": "2021-12-12T12:12:12.000000Z",
+                      "updated_at": "2021-12-12T12:12:12.000000Z"
+                    },
+                    "relationships": {
+                      "annotation": {
+                        "data": {
+                          "type": "annotations",
+                          "id": "9037e16c-fb8b-4795-bcde-9b73d7383b55"
+                        }
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "9037e16c-fb8b-4795-bcde-9b73d7383b55",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "25048b2d-424b-49ca-b0dc-4acd4c4899a7"
+                            },
+                            {
+                              "type": "intakes",
+                              "id": "ca78cc2e-2442-411b-b83b-376b7b6272e3"
+                            },
+                            {
+                              "type": "intakes",
+                              "id": "5e4446bc-13bc-4de8-a790-6554bdc347e1"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": {
+                            "type": "dish_images",
+                            "id": "c9569639-4e4d-4389-a341-f75aab84530b"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "9037e16c-fb8b-4795-bcde-9b73d7383b55"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "c9569639-4e4d-4389-a341-f75aab84530b",
+                      "type": "dish_images",
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        }
+                      },
+                      "links": {
+                        "self": "https://mfr.localhost/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWswTldRek9HVTNNQzFqTjJNekxUUTNOR0l0T1dNellpMDFNV1ZtTlRFMU9UQmlaRGtHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--6201cd337cd4c5963a11182addd1767ec40afad0/burger.jpg?locale=en"
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid consumed_at",
+                      "detail": "Consumed at can't be blank",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "intakes"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "consumed_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "timezone": {
+                            "type": "string",
+                            "enum": [
+                              "Asia/Hong_Kong",
+                              "Etc/UTC"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "consumed_at",
+                          "timezone"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/intakes/{id}": {
+      "patch": {
+        "summary": "update an intake",
+        "tags": [
+          "Intakes"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `annotation`, `annotation.dish`, `annotation.dish.dish_image`, `annotation.comments`, `annotation.annotation_items`, `annotation.annotation_items.food`, `annotation.annotation_items.product`, `annotation.annotation_items.product.product_images`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "66f66cf5-a2e1-44ca-baa0-b1468de5a434",
+                    "type": "intakes",
+                    "attributes": {
+                      "timezone": "Europe/Vienna",
+                      "consumed_at": "2021-12-12T12:12:12.000000Z",
+                      "updated_at": "2021-12-12T12:12:12.000000Z"
+                    },
+                    "relationships": {
+                      "annotation": {
+                        "data": {
+                          "type": "annotations",
+                          "id": "ae6c24dd-b0e8-4038-b4c3-ebacd0ad503c"
+                        }
+                      }
+                    }
+                  },
+                  "included": [
+                    {
+                      "id": "ae6c24dd-b0e8-4038-b4c3-ebacd0ad503c",
+                      "type": "annotations",
+                      "attributes": {
+                        "status": "initial"
+                      },
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        },
+                        "intakes": {
+                          "data": [
+                            {
+                              "type": "intakes",
+                              "id": "66f66cf5-a2e1-44ca-baa0-b1468de5a434"
+                            },
+                            {
+                              "type": "intakes",
+                              "id": "bbc6cd12-645f-43a6-b316-1fc07ba5b423"
+                            }
+                          ]
+                        },
+                        "annotation_items": {
+                          "data": [
+
+                          ]
+                        },
+                        "comments": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d",
+                      "type": "dishes",
+                      "attributes": {
+                        "description": null
+                      },
+                      "relationships": {
+                        "dish_image": {
+                          "data": {
+                            "type": "dish_images",
+                            "id": "b8c2d57b-1244-41bd-aba9-02437c22abd3"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+                            {
+                              "type": "annotations",
+                              "id": "ae6c24dd-b0e8-4038-b4c3-ebacd0ad503c"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "b8c2d57b-1244-41bd-aba9-02437c22abd3",
+                      "type": "dish_images",
+                      "relationships": {
+                        "dish": {
+                          "data": {
+                            "type": "dishes",
+                            "id": "5ad1aa0e-7463-41bf-b43f-9a0740aaac6d"
+                          }
+                        }
+                      },
+                      "links": {
+                        "self": "https://mfr.localhost/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWswT0dNeU0yTTFZUzB3TVRkakxUUXhaRFV0T0dSbU9TMHpNV0ZqTnpFek1qVXlNbUVHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--6a29f7b4fc4100dd6be9ac4b1bad14f308a1ae1d/burger.jpg?locale=en"
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid consumed_at",
+                      "detail": "Consumed at can't be blank",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "intakes"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "consumed_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete intake",
+        "tags": [
+          "Intakes"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Pundit::NotAuthorizedError",
+                      "detail": "not allowed to destroy? this Intake"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "ActiveRecord::RecordNotFound",
+                      "detail": "Intake not found"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/me": {
+      "get": {
+        "summary": "show me",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "a91d4646-2209-422d-8cc5-431d9f2e06b2",
+                    "type": "users",
+                    "attributes": {
+                      "dishes_private": true,
+                      "email": "vesta_wuckert@bayer.co",
+                      "anonymous": false
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create user with participation key (sign up)",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "8f7ceebc-1a9e-434e-93b2-358d287bdbde",
+                    "type": "users",
+                    "attributes": {
+                      "dishes_private": true,
+                      "email": "8f7ceebc-1a9e-434e-93b2-358d287bdbde@anonymous.myfoodrepo.org",
+                      "anonymous": true
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid key",
+                      "detail": "Key doesn't exist",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "participations"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update user email and/or password",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "c2de1037-654c-4567-9671-25bc6495bb67",
+                    "type": "users",
+                    "attributes": {
+                      "dishes_private": true,
+                      "email": "new_email@myfoodrepo.org",
+                      "anonymous": false
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid base",
+                      "detail": "User: password_confirmation doesn't match Password",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "users"
+                    ]
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "password_confirmation": {
+                        "type": "string"
+                      },
+                      "dishes_private": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete my account",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": null,
+                  "meta": {
+                    "message": "Your personal data has been deleted. Please note that all your dish images have been collected on behalf of a cohort. You must contact the cohort if you want your images and their associated data to be deleted."
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "detail": "Unable to locate account for destruction."
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/participate": {
+      "post": {
+        "summary": "participate to a cohort",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "4c55af60-e9bb-461d-95f1-cd2034994bcb",
+                    "type": "participations",
+                    "attributes": {
+                      "key": "r96wSbSqg",
+                      "started_at": "2021-12-12T12:12:12.000000Z",
+                      "ended_at": null
+                    },
+                    "relationships": {
+                      "cohort": {
+                        "data": {
+                          "type": "cohorts",
+                          "id": "fb55258d-d46c-4fe3-a8c0-1f10fffb85d8"
+                        }
+                      },
+                      "annotations": {
+                        "data": [
+
+                        ]
+                      }
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Pundit::NotAuthorizedError",
+                      "detail": "not allowed to create? this Participation"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "ActiveRecord::RecordNotFound",
+                      "detail": "Participation not found"
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "participations"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/participations": {
+      "get": {
+        "summary": "list participations",
+        "tags": [
+          "Participations"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Included related resources (comma-separated). Nested resources are supported (dot-separated). Permitted values: `cohort`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "d1a81818-0804-4775-8b6e-57baa8533116",
+                      "type": "participations",
+                      "attributes": {
+                        "key": "hqv4DRTub",
+                        "started_at": "2021-12-12T12:12:12.000000Z",
+                        "ended_at": "2021-12-19T12:12:12.000000Z"
+                      },
+                      "relationships": {
+                        "cohort": {
+                          "data": {
+                            "type": "cohorts",
+                            "id": "5c7b1e33-91af-42e1-8934-be5cd556bb70"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "2a9d7656-bf19-4378-8e13-25c327f215e9",
+                      "type": "participations",
+                      "attributes": {
+                        "key": "YoAUeWEke",
+                        "started_at": "2021-12-19T12:13:12.000000Z",
+                        "ended_at": "2021-12-26T12:13:12.000000Z"
+                      },
+                      "relationships": {
+                        "cohort": {
+                          "data": {
+                            "type": "cohorts",
+                            "id": "d5293cda-33da-4e3a-8b0b-36e03624a4c2"
+                          }
+                        },
+                        "annotations": {
+                          "data": [
+
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "included": [
+                    {
+                      "id": "5c7b1e33-91af-42e1-8934-be5cd556bb70",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Macejkovic LLC"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "CH"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "d1a81818-0804-4775-8b6e-57baa8533116"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "id": "d5293cda-33da-4e3a-8b0b-36e03624a4c2",
+                      "type": "cohorts",
+                      "attributes": {
+                        "name": "Dickinson-Berge"
+                      },
+                      "relationships": {
+                        "country": {
+                          "data": {
+                            "type": "countries",
+                            "id": "DE"
+                          }
+                        },
+                        "participations": {
+                          "data": [
+                            {
+                              "type": "participations",
+                              "id": "2a9d7656-bf19-4378-8e13-25c327f215e9"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/me/password": {
+      "post": {
+        "summary": "reset password",
+        "tags": [
+          "Passwords"
+        ],
+        "parameters": [
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Locale",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": null,
+                  "meta": {
+                    "message": "Si votre adresse électronique existe dans notre base de données, vous recevrez un lien de récupération du mot de passe à votre adresse électronique dans quelques minutes."
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "users"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "email": {
+                            "default": "user_1@myfoodrepo.org",
+                            "description": "Email of User to sign in",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "email"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/products": {
+      "get": {
+        "summary": "list products",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "description": "Number of items per page (default is 25, max is 1000)",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "16021c95-f895-44b2-8808-ffd242682e48",
+                      "type": "products",
+                      "attributes": {
+                        "barcode": "7601510082352"
+                      }
+                    },
+                    {
+                      "id": "75697aaf-061f-4e4f-8d53-3e3d10b0eeeb",
+                      "type": "products",
+                      "attributes": {
+                        "barcode": "7603315525706"
+                      }
+                    },
+                    {
+                      "id": "e3f3d971-6371-409f-ab8c-5ce29718138f",
+                      "type": "products",
+                      "attributes": {
+                        "barcode": "7600424018266"
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "prev": null,
+                    "next": null,
+                    "last": 1
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/push_tokens": {
+      "post": {
+        "summary": "create a push token",
+        "tags": [
+          "Push tokens"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "00343e3b-b1fb-4707-a5a5-0ff050f4710d",
+                    "type": "push_tokens",
+                    "attributes": {
+                      "platform": "android",
+                      "token": "1921e65f6682348d6791efbba818ae3efa8e2e739b314373e2f4f7d1521e793f",
+                      "locale": "fr"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "type": "users",
+                          "id": "b107ca0e-4974-4e51-a6e3-d2ed94a5350c"
+                        }
+                      }
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "title": "Invalid base",
+                      "detail": "Pushtoken: platform is not included in the list",
+                      "source": {
+                      }
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "platform": {
+                            "type": "string",
+                            "enum": [
+                              "android",
+                              "ios"
+                            ]
+                          },
+                          "token": {
+                            "type": "string"
+                          },
+                          "locale": {
+                            "type": "string",
+                            "enum": [
+                              "en",
+                              "fr",
+                              "de"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "platform",
+                          "token",
+                          "locale"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/me/sign_in": {
+      "post": {
+        "summary": "create session",
+        "tags": [
+          "Sessions"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "602e9c1a-eb4c-4758-b925-094efb6b5003",
+                    "type": "users",
+                    "attributes": {
+                      "dishes_private": true,
+                      "email": "sachiko@kshlerin.info",
+                      "anonymous": false
+                    }
+                  },
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "detail": "Invalid login credentials. Please try again."
+                    }
+                  ],
+                  "jsonapi": {
+                    "version": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "users"
+                        ]
+                      },
+                      "attributes": {
+                        "type": "object",
+                        "properties": {
+                          "email": {
+                            "default": "user_1@myfoodrepo.org",
+                            "description": "Email of User to sign in",
+                            "type": "string"
+                          },
+                          "password": {
+                            "default": "password",
+                            "description": "Password of User to sign in",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "email",
+                          "password"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "attributes"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/me/sign_out": {
+      "delete": {
+        "summary": "delete session",
+        "tags": [
+          "Sessions"
+        ],
+        "parameters": [
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "Default is `Bearer` (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "Get the value from the response headers of the sign in request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "Current user email (value from the response headers of the sign in request)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "{defaultProtocol}://{defaultHost}:{defaultPort}",
+      "variables": {
+        "defaultProtocol": {
+          "default": "https"
+        },
+        "defaultHost": {
+          "default": "mfr.localhost"
+        },
+        "defaultPort": {
+          "default": "443"
+        }
+      }
+    }
+  ]
+}

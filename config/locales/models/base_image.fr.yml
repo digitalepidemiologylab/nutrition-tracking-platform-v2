@@ -1,0 +1,9 @@
+---
+fr:
+  activerecord:
+    errors:
+      models:
+        base_image:
+          attributes:
+            data:
+              not_image: n'est pas une image

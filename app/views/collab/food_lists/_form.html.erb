@@ -1,0 +1,15 @@
+<%= form_for([:collab, food_list], builder: AppFormBuilder) do |f| %>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 sm:p-6">
+      <div class="grid grid-cols-4 gap-6">
+        <%= f.input :name, input_html: {autofocus: true, required: true} %>
+        <%= f.input :country_id, collection: countries, value_method: :id, text_method: ->(c) { c.name } %>
+        <%= f.input :source %>
+        <%= f.input :version %>
+        <%= f.input :metadata_data, as: :text, label: {text: t(".metadata")} %>
+        <%= f.input(:editable, disabled: Collab::FoodListPolicy.new(current_collaborator, food_list).permitted_attributes.exclude?(:editable)) %>
+      </div>
+    </div>
+    <%= f.submit_input %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= turbo_frame_tag(notable, :note) do %>
+  <%= form_for(note_form, url: [:collab, notable, :note_forms], method: :patch, builder: AppFormBuilder) do |f| %>
+    <%= f.input(:note, as: :text, label: false) %>
+    <%= f.error_text(:base) %>
+    <div class="flex justify-end mt-4 space-x-4">
+      <%=
+        f.submit(
+          t("helpers.submit.update", model: t("activerecord.attributes.user.note")),
+          class: "btn btn-primary"
+        )
+      %>
+      <%= link_to t("helpers.cancel"), collab_user_note_forms_path(notable), class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+<% end %>

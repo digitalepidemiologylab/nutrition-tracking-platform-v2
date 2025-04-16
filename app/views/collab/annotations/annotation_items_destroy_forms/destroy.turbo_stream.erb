@@ -1,0 +1,27 @@
+
+<% @destroyed_annotation_items.each do |destroyed_annotation_item| %>
+  <%= turbo_stream.remove(dom_id(destroyed_annotation_item)) %>
+<% end %>
+<%= turbo_stream.replace(dom_id(@annotation, :totals)) do %>
+  <%= render("collab/annotations/totals", annotation: @annotation) %>
+<% end %>
+<%= turbo_stream.replace(dom_id(@annotation, :canvas)) do %>
+  <%=
+    render(Collab::Annotations::CanvasComponent.new(
+      annotation: @annotation,
+      annotation_items: @annotation.annotation_items.includes(:polygon_set)
+    ))
+  %>
+<% end %>
+<%= turbo_stream.append(dom_id(@annotation)) do %>
+  <template data-controller="focus"></template>
+<% end %>
+<%= turbo_stream.append(dom_id(@annotation)) do %>
+  <template
+    data-controller="annotations--toggle-buttons"
+    data-annotations--toggle-buttons-annotation-outlet="[data-controller='annotation']">
+  </template>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

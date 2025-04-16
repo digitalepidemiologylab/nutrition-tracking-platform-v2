@@ -1,0 +1,6 @@
+.git*
+log/*
+tmp/*
+docker/Dockerfile*
+README.md
+infrastructure

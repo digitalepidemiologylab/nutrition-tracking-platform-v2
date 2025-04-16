@@ -1,0 +1,129 @@
+---
+en:
+  public:
+    static_pages:
+      privacy:
+        text: |
+          ## 1. Who we are and how to contact us
+
+          The mobile application MyFoodRepo (the “App”), the website https://www.myfoodrepo.org/ (the “Website”), and its application programming interface (the “API”), altogether the “Services” are provided by the École Polytechnique Fédérale de Lausanne, Bâtiment CE, 3.316, Station 1, 1015 Lausanne, Switzerland.
+
+          You can contact the data controller by contacting Prof. Marcel Salathé's laboratory:
+
+          Salathé Lab School of Life Sciences SV<br>
+          Global Health Institute<br>
+          Campus Biotech<br>
+          Bâtiment B1.01<br>
+          Ch. des Mines 9<br>
+          CH-1202 Genève<br>
+          Switzerland<br>
+          https://salathelab.epfl.ch<br>
+          marcel.salathe@epfl.ch
+
+          ## 2. Parental consent
+
+          The Services are not directed to children under the age of 13 years old, and you cannot use the Services if you are under the age of 13 years old.
+          Depending on you State of residency, a parental consent is required for children (between 13 and 16 years old). In such case, you can only use the Services with the consent of your parent.
+
+          ## 3. Data we collect
+
+          ### 3.1. Categories of data
+
+          Among the Services, we are notably offering pictures' availability to the public and algorithms that do not process personal data. We are not offering specific features, tools, algorithms, or data that could help third parties to identify you.
+
+          However, in order to be able to provide you with the Services, we need to process your account data (3.2) and metadata (3.3) (altogether “Personal Data”), as well as pictures (3.4).
+
+          ### 3.2. Account data
+
+          For the purposes described in section 4, you provide us with the following personal data:
+
+          * Your email address
+          * Your nickname
+          * Time and timezone when a picture is taken
+
+          ### 3.3. Metadata (Automatically Collected Data)
+
+          Besides the information you will actively provide us, we automatically collect the following data once you accept to use the Services:
+
+          * Usage and log information: IP address, timestamps of access to our Services, credentials (passwords are never stored directly on our servers; they are salted and hashed per industry standard), information about your subscription (such as your consent's proof);
+          * Device and connection information: operating system, device's vendor, and device's name, browser, etc.;
+          * Cookies or similar technologies: Cookies or similar technologies can be useful in many ways to make your visit to our App and Website simpler, more pleasant and more pertinent. Cookies and similar technologies are data files that your browser automatically saves on your device's hard drive when you visit our Website or App.
+
+          Various types of cookies are present on our Website and App:
+
+          * Cookies that are strictly necessary, which are necessary for navigation, along with your authentication token after logging in, and to secure the Website and App;
+          * Analytical cookies, which serve to count the visits in relation with our Services and serve to analyze the sources of traffic and improve our Services;
+          * Functionality cookies, which are collecting some of your surfing preferences such as language preferences.
+
+          ### 3.4. Pictures
+
+          By using the App, you will share with us pictures that you take. According to the Terms of use, you shall not take pictures that includes personal data. You must however understand that we cannot verify each picture.
+
+          You can decide if you want your pictures to be “public” or “private”. If you choose the “public” option, pictures may be made public on the Website. It means that anyone can have access to it and use it for its own purposes, including the personal data potentially contained in it. You agree that we cannot control the use of your pictures by third-parties. Therefore, we cannot be considered as data controller for the processing by third parties.
+
+          For changing the status of your pictures, please go to the profile screen in the App and change the corresponding option. The option applies to all your pictures, and you cannot choose which photo individually you want to share publicly.
+
+          ## 4. Purposes and justification
+
+          ### 4.1. Provision of Services
+
+          We process your Personal Data to provide the Services.
+
+          The processing is necessary for the performance of the contract to which you are a party once you accepted the Terms of use when you first opened the App or first accessed to the Website or the API.
+
+          ### 4.2. Research projects
+
+          We process your Personal Data to conduct research projects.
+
+          The processing is necessary for the performance of our tasks and is carried out in the public interest and according to art. 36c and seq. of the Swiss Federal Act on the Federal Institutes of Technology of 4 October 1991.
+
+          The processing of your Personal Data for research projects include pictures marked as “private”.
+
+          ## 5. How we retain your data
+
+          We store your Personal Data as long as your account exist. You are taking your pictures and entering your personal data usually through the App, and your pictures are saved on our Website's servers.
+
+          When we use your Personal Data for research purposes, we may keep your data for up to 10 years, or even longer if we have a legal obligation to do so.
+
+          We are using an external provider for data storage, namely: Amazon Web Services. The servers we use are based in Frankfurt, Germany (European Union) and we have an agreement with this provider, who guarantees an adequate level of security.
+
+          ## 6. Data Sharing
+
+          We do not share your Personal Data. We only share pictures, depending on your choice:
+
+          * If you choose to mark your pictures as “public”, the pictures are publically available on our Website and every can access and use, all around the world.
+          * If you choose to mark your pictures as “private”, we will only share your pictures with other research institutions for scientific research purposes and with our service provider: AICrowd SA (AICrowd Ltd), EPFL Innovation Park, Bâtiment C, c/o Fondation EPFL Innovation Park, 1015 Lausanne to analyze the Pictures in order to train algorithms (https://www.aicrowd.com/).
+
+          Please note however that the external providers, including their affiliate entities and/or subprocessors, may get the access to your personal data for the purpose of data storage, and these affiliate entities and/or subprocessors may be based outside the European Union, especially in the United States.
+
+          ## 7. Security
+
+          We have put in place appropriate security measures pursuant to the acknowledged rules of the art. This includes in particular an access limitation, as technical and organisational security measures.
+
+          Please note however that we cannot guarantee an absolute security for your Personal Data, to the extent that the Personal Data retention and electronical transmission involves certain risks.
+
+          ## 8. Your Rights
+
+          You have a number of rights according to the data protection legislation. These rights can be limited in particular when they affect rights and freedom of others. We will inform you of applicable exceptions in our answer to your potential request.
+          These rights include:
+
+          * right of access: You have the right to know what personal data we hold about you and to ask, in writing, to see your personal data. You can directly download this information directly in the Website in the menu X. In the section “download your information”, click on the associated button, and you will receive a .csv document with all your personal data.
+          * right to be informed: You have the right to be informed how your personal data will be used. This privacy notice as well as any additional information or notice that is provided to you either at the time you provided your details, or otherwise, is intended to provide you with this information.
+          * right to withdraw consent: Where we process your personal data on the basis of your consent, you can withdraw that consent at any time.
+          * right to object: You also have a right to object to us processing personal data where we are relying on a task carried out in the public interest or our legitimate interests to do so.
+          * right to restrict processing: In certain situations, you have the right to ask for processing of your personal data to be restricted because there is some disagreement about its accuracy or legitimate usage.
+          * right of erasure: In some cases, you have the right to have your personal data to be deleted.
+          * right of rectification: If you believe your personal data is inaccurate you have the right to ask for their update.
+          * right to data portability: Where we are processing your personal data because you have given us your consent to do so or when their processing is necessary for the performance of the contract that binds us to you, you have the right to request that the personal data is transferred from one service provider to another.
+          * right to file a complaint: If you are unhappy with the way in which we have handled your personal data, you have the right to file a complaint with the Federal Data Protection and Information Commissioner (FDPIC) or with the supervisory authority of your country or residency.
+
+          For deleting your account, please go to the profile screen in the App, and then tap on the “Delete My Account” button and confirm. Alternatively, you may request account deletion by email (support@myfoodrepo.org). This will delete all Account Data and metadata on our servers.
+
+          You can delete your pictures one by one from within the App. If you want to delete all your pictures, you may contact us via email (support@myfoodrepo.org). Deleting your account will delete your pictures.
+
+          Please note that search engines (e.g. Google) and other third parties (such as another research institution or company) may still retain copies of your public pictures.
+
+          ## 9. Changes to this Privacy Policy
+
+          We may revise this Privacy Policy from time to time. The most current version of the policy will govern our processing of your personal data and will always be at https://www.myfoodrepo.org/privacy. In case of modifications, we will publish a notice on the Website. Therefore, it is strongly recommended to check the Website regularly. If you disagree to any of the changes to the Privacy Policy, you must stop using our Services and delete your account.
+        title: Privacy Policy

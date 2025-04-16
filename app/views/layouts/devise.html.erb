@@ -1,0 +1,10 @@
+<% content_for :content do %>
+  <div class="min-h-screen flex flex-col justify-between">
+    <div>
+      <%= render "layouts/public_header" %>
+    </div>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+  </div>
+<% end %>
+<%= render template: "layouts/application" %>

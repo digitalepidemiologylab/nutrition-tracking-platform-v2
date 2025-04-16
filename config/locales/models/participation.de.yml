@@ -1,0 +1,25 @@
+---
+de:
+  activerecord:
+    attributes:
+      participation:
+        associated_at: Verbunden
+        cohort: Kohorten
+        created_at: Erstellt am
+        ended_at: Beendet am
+        key: Schlüssel
+        started_at: Angefangen bei
+        updated_at: Aktualisiert am
+        user: Mitarbeiter
+        user_id: Mitarbeiter ID
+    errors:
+      models:
+        participation:
+          attributes:
+            base:
+              intakes_outside_participation: Beteiligung Start- und Enddaten müssen alle Intakes einschließen
+              overlap: Kann nicht mit einer anderen Beteiligung überschneiden
+    models:
+      participation:
+        one: Beteiligung
+        other: Beteiligungen

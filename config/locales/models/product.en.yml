@@ -1,0 +1,18 @@
+---
+en:
+  activerecord:
+    attributes:
+      product:
+        barcode: Barcode
+        fetched_at: Last Fetch
+        id: ID
+        name: Name
+        portion_quantity: Standard portion quantity
+        product_image: Image
+        source: Source
+        status: Status
+        unit: Unit
+    models:
+      product:
+        one: Product
+        other: Products

@@ -1,0 +1,21 @@
+---
+fr:
+  activerecord:
+    attributes:
+      intake:
+        consumed_at: Consommé à
+        consumed_at_in_intake_timezone: Date de consommation dans le fuseau horaire de l'utilisateur
+        consumed_at_in_local_timezone: Date de consommation dans le fuseau horaire local
+        id: ID
+        timezone: Fuseau horaire
+    errors:
+      models:
+        intake:
+          attributes:
+            consumed_at:
+              during_participation: doit être pendant la participation de l'utilisateur
+              less_than_or_equal_to_1_hour_from_now: doit être inférieur ou égal à 1 heure à partir de maintenant
+    models:
+      intake:
+        one: Consommation
+        other: Consommations

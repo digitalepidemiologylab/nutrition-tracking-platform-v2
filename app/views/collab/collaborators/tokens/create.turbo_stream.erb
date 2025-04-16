@@ -1,0 +1,13 @@
+<% if @client && @token %>
+  <%= turbo_stream.append("tokens-tbody") do %>
+    <%= render(Collab::TableComponent::RowComponent.new(id: "token_client_#{@client}")) do |r| %>
+      <%= render "collab/collaborators/tokens/token_row_tds", r: r, collaborator: @collaborator, client: @client, token: @token %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= turbo_stream.append("tokens-table") do %>
+  <template data-controller="table-tbody"></template>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

@@ -1,0 +1,7 @@
+---
+fr:
+  devise_token_auth:
+    passwords:
+      sended_paranoid: Si votre adresse électronique existe dans notre base de données, vous recevrez un lien de récupération du mot de passe à votre adresse électronique dans quelques minutes.
+    registrations:
+      account_with_uid_destroyed: Vos données personnelles ont été supprimées. Veuillez noter que toutes vos images de plat ont été collectées au nom d'une cohorte. Vous devez contacter la cohorte si vous souhaitez que vos images et les données qui y sont associées soient supprimées.

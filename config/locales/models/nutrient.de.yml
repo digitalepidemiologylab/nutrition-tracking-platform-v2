@@ -1,0 +1,13 @@
+---
+de:
+  activerecord:
+    attributes:
+      nutrient:
+        cname: Kanonischer Name
+        id: ID
+        name: Name
+        unit: Maßeinheit
+    models:
+      nutrient:
+        one: Nährstoff
+        other: Nährstoffe

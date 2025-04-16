@@ -1,0 +1,26 @@
+<%= turbo_stream.prepend("annotation_items") do %>
+  <%= render(Collab::AnnotationItems::FormComponent.new(annotation_item: @annotation_item, units: @units, collaborator: current_collaborator, selected: true)) %>
+<% end %>
+<%= turbo_stream.replace(dom_id(@annotation, :canvas)) do %>
+  <%=
+    render(Collab::Annotations::CanvasComponent.new(
+      annotation: @annotation,
+      annotation_item: @annotation_item,
+      annotation_items: @annotation_items
+    ))
+  %>
+<% end %>
+<%= turbo_stream.replace(dom_id(@annotation, :totals)) do %>
+  <%= render("collab/annotations/totals", annotation: @annotation) %>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>
+<%= turbo_stream.append(dom_id(@annotation_item)) do %>
+  <template
+    data-controller="annotation-items--select"
+    data-annotation-items--select-annotation-outlet="[data-controller='annotation']"
+    data-annotation-items--select-id-value="<%= @annotation_item.id %>"
+    data-annotation-items--select-polygon-set-url-value="<%= collab_annotation_item_polygon_set_path(@annotation_item) %>">
+  </template>
+<% end %>

@@ -1,0 +1,3 @@
+<%= render(Collab::TableComponent::RowComponent.new(id: dom_id(participation)), layout: false) do |r| %>
+  <%= render "collab/participations/participation_row_tds", r: r, participation: participation, collaborator: current_collaborator %>
+<% end %>

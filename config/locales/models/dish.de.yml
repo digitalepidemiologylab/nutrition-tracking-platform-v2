@@ -1,0 +1,20 @@
+---
+de:
+  activerecord:
+    attributes:
+      dish:
+        actions: Actions
+        dish_image: Bild
+        eaten: Verbraucht
+        id: ID
+        user: Benutzer
+    errors:
+      models:
+        dish:
+          attributes:
+            base:
+              intake_presence: Ein Gericht muss mindestens eine Aufnahme haben
+    models:
+      dish:
+        one: Gericht
+        other: Gerichte

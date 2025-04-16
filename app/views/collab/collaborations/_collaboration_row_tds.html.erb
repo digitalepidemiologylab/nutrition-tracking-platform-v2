@@ -1,0 +1,31 @@
+<% r.with_row_td(additional_classes: "font-medium text-gray-800") { collaboration.collaborator.name } %>
+<% r.with_row_td(additional_classes: "text-gray-500") do %>
+  <%= collaboration.collaborator.email %>
+  <% if collaboration.collaborator.invited_to_sign_up? %>
+    <%= render(BadgeComponent.new) { t("activerecord.attributes.collaborator.invited_to_sign_up") } %>
+  <% end %>
+  <% if collaboration.deactivated? %>
+    <%= render(BadgeComponent.new) { t("activerecord.attributes.collaboration.deactivated") } %>
+  <% end %>
+<% end %>
+<% r.with_row_td(additional_classes: "text-gray-500") { t(collaboration.role, scope: "roles") } %>
+<% r.with_row_td(additional_classes: "text-right text-gray-500") do %>
+  <% if collaboration.deactivated? && Collab::Collaborations::DeactivationPolicy.new(current_collaborator, collaboration).destroy? %>
+    <%= link_to render(IconComponent.new("play", classes: "text-gray-500")),
+          collab_collaboration_deactivation_path(collaboration),
+          class: "btn btn-secondary",
+          data: {turbo_method: :delete},
+          title: t("collab.collaborations.shared.reactivate_collaboration") %>
+  <% elsif Collab::Collaborations::DeactivationPolicy.new(current_collaborator, collaboration).create? %>
+    <%= link_to render(IconComponent.new("stop", classes: "text-gray-500")),
+          collab_collaboration_deactivation_path(collaboration),
+          class: "btn btn-secondary",
+          data: {turbo_method: :post},
+          title: t("collab.collaborations.shared.deactivate_collaboration") %>
+  <% end %>
+  <% if policy([:collab, collaboration]).edit? %>
+    <%= link_to(edit_collab_collaboration_path(collaboration), class: "btn btn-secondary") do %>
+      <%= render(IconComponent.new("pencil-simple", classes: "text-gray-500")) %>
+    <% end %>
+  <% end %>
+<% end %>

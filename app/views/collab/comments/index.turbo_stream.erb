@@ -1,0 +1,3 @@
+<%= turbo_stream.update(dom_id(@annotation, :comments)) do %>
+  <%= render(Collab::Annotations::CommentComponent.with_collection(@comments, timezone: @timezone)) %>
+<% end %>

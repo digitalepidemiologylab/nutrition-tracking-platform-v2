@@ -1,0 +1,16 @@
+---
+fr:
+  collab:
+    collaborations:
+      deactivations:
+        create:
+          success: La collaboration a été désactivée
+        destroy:
+          success: La collaboration a été réactivée
+      edit:
+        title: Modifiez la collaboration
+      shared:
+        deactivate_collaboration: Désactiver
+        reactivate_collaboration: Réactiver
+      update:
+        success: Collaboration modifiée avec succès

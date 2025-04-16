@@ -1,0 +1,10 @@
+---
+en:
+  activerecord:
+    attributes:
+      food_nutrient:
+        per_hundred: Per 100
+    models:
+      food_nutrient:
+        one: Nutritional Value
+        other: Nutritional Values

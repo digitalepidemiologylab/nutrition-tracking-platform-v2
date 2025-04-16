@@ -1,0 +1,18 @@
+---
+de:
+  activerecord:
+    attributes:
+      collaboration:
+        deactivated: Deaktiviert
+        email: E-Mail Adresse
+        role: Rolle
+    errors:
+      models:
+        collaboration:
+          attributes:
+            collaborator_id:
+              already_in_cohort: ist bereits in der Kohorte
+    models:
+      collaboration:
+        one: Zusammenarbeit
+        other: Zusammenarbeiten

@@ -1,0 +1,6 @@
+---
+en:
+  collab:
+    job_logs:
+      index:
+        title: Executed Scheduled Jobs

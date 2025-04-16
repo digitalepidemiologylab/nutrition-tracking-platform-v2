@@ -1,0 +1,10 @@
+---
+en:
+  collab:
+    collaborators:
+      invitations:
+        create:
+          collaborator_added_successfully: Collaborator %{email} added successfully to the cohort.
+        new:
+          submit: Invite
+          title: New invitation

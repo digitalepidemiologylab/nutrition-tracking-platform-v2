@@ -1,0 +1,8 @@
+<button type="<%= @type %>" class="btn btn-<%= @level %> group relative w-full flex justify-center font-medium <%= @size_classes %>" <%= "autofocus" if @autofocus %>>
+  <% if icon %>
+    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+      <%= icon %>
+    </span>
+  <% end %>
+  <%= content %>
+</button>

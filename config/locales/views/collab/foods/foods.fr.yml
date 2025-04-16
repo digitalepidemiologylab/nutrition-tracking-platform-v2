@@ -1,0 +1,23 @@
+---
+fr:
+  collab:
+    foods:
+      create:
+        success: Aliment créé avec succès
+      destroy:
+        failure: Impossible de supprimer l'aliment
+        success: Aliment supprimé avec succès
+      edit:
+        title: Editer un aliment
+      form:
+        new_nutrient: Ajouter un nutriment
+      index:
+        add_button: Créer un aliment
+        query: Rechercher
+        title: Aliments
+      new:
+        title: Créer un aliment
+      show:
+        details: Détails
+      update:
+        success: Aliment mise à jour avec succès

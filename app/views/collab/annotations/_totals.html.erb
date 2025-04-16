@@ -1,0 +1,10 @@
+<%= turbo_frame_tag(dom_id(annotation, :totals)) do %>
+  <div class="flex justify-end font-semibold text-xl text-gray-600">
+    <%= t(".total_consumed") %>:
+    <span class="whitespace-nowrap ml-2">
+      <%= annotation.total_consumed(:g) %> g
+      <br><%= annotation.total_consumed(:ml) %> ml
+      <br><%= annotation.total_kcal_consumed %> kcal
+    </span>
+  </div>
+<% end %>

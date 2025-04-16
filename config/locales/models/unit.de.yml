@@ -1,0 +1,18 @@
+---
+de:
+  activerecord:
+    attributes:
+      unit:
+        id: ID
+    errors:
+      models:
+        unit:
+          attributes:
+            id:
+              not_changeable: Änderung nicht erlaubt
+          base:
+            not_destroyable: Diese Maßeinheit ist eine Basiseinheit und/oder hat zugehörige Modelle
+    models:
+      unit:
+        one: Maßeinheit
+        other: Maßeinheiten

@@ -1,0 +1,39 @@
+<% if @parent_annotation_item %>
+  <% @merged_annotation_items.each do |merged_annotation_item| %>
+    <%= turbo_stream.remove(dom_id(merged_annotation_item)) %>
+  <% end %>
+  <%= turbo_stream.replace(dom_id(@parent_annotation_item)) do %>
+    <%= render(Collab::AnnotationItems::FormComponent.new(annotation_item: @parent_annotation_item, units: @units, collaborator: current_collaborator, selected: true)) %>
+  <% end %>
+  <%= turbo_stream.replace(dom_id(@annotation, :totals)) do %>
+    <%= render("collab/annotations/totals", annotation: @annotation) %>
+  <% end %>
+  <%= turbo_stream.replace(dom_id(@annotation, :canvas)) do %>
+    <%=
+      render(Collab::Annotations::CanvasComponent.new(
+        annotation: @annotation,
+        annotation_item: @parent_annotation_item,
+        annotation_items: @annotation.annotation_items.includes(:polygon_set)
+      ))
+    %>
+  <% end %>
+  <%= turbo_stream.append(dom_id(@parent_annotation_item)) do %>
+    <template
+      data-controller="annotation-items--select"
+      data-annotation-items--select-annotation-outlet="[data-controller='annotation']"
+      data-annotation-items--select-id-value="<%= @parent_annotation_item.id %>">
+    </template>
+  <% end %>
+  <%= turbo_stream.append(dom_id(@annotation)) do %>
+    <template data-controller="focus"></template>
+  <% end %>
+  <%= turbo_stream.append(dom_id(@annotation)) do %>
+    <template
+      data-controller="annotations--toggle-buttons"
+      data-annotations--toggle-buttons-annotation-outlet="[data-controller='annotation']">
+    </template>
+  <% end %>
+<% end %>
+<%= turbo_stream.update("flash_messages") do %>
+  <%= render(FlashComponent.with_collection(flash.to_a)) %>
+<% end %>

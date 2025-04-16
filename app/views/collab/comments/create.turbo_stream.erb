@@ -1,0 +1,5 @@
+<%# No need to insert the comment as this is done by turbo stream broadcasting %>
+<%= turbo_stream.replace(dom_id(@annotation, :comment_form)) do %>
+  <%= render(Collab::Annotations::CommentFormComponent.new(annotation: @annotation, comment: @comment.persisted? ? Comment.new : @comment)) %>
+<% end %>
+<%= turbo_stream.update("flash_messages") { render(FlashComponent.with_collection(flash.to_a)) } %>

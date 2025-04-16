@@ -1,0 +1,16 @@
+<% tc.with_head_td { t("activerecord.attributes.cohort.name") } %>
+<% tc.with_head_td { t("activerecord.attributes.cohort.id") } %>
+<% tc.with_head_td { t("activerecord.models.segmentation_client", count: 1) } %>
+<% tc.with_head_td(align: :right) { t("activerecord.attributes.cohort.created_at") } %>
+<% cohorts.each do |cohort| %>
+  <% tc.with_row do |r| %>
+    <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+      <%= link_to cohort.name, collab_cohort_path(cohort), class: "text-brand hover:underline" %>
+    <% end %>
+    <% r.with_row_td(additional_classes: "text-gray-500") { cohort.id } %>
+    <% r.with_row_td(additional_classes: "text-gray-500") { cohort.segmentation_client.name } %>
+    <% r.with_row_td(additional_classes: "text-right text-gray-500") do %>
+      <%= t("helpers.time_ago", time_ago_in_words: time_ago_in_words(cohort.created_at)) %>
+    <% end %>
+  <% end %>
+<% end %>

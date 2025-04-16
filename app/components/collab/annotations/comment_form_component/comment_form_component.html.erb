@@ -1,0 +1,46 @@
+<%= turbo_frame_tag(dom_id(@annotation, :comment_form)) do %>
+  <%= form_with model: [:collab, @annotation, @comment], url: collab_annotation_comments_path(annotation_id: @annotation.id), builder: AppFormBuilder, data: {controller: "comment-form"} do |f| %>
+    <div class="py-6 px-5 sm:p-6 border-t border-gray-200">
+      <div class="grid grid-cols-4 gap-6">
+        <div class="col-span-4 sm:col-span-2">
+          <%=
+            select_tag(
+              :comment_template, options_from_collection_for_select(@comment_templates, :message, :title),
+              class: "block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm rounded-md cursor-pointer",
+              prompt: t("collab.annotations.comment_form_component.add_comment_template_placeholder"),
+              data: {action: "comment-form#handleChange"}
+            )
+          %>
+        </div>
+        <div class="col-span-full">
+          <%=
+            f.input(
+              :message,
+              input_html: {
+                rows: 3,
+                placeholder: t("collab.annotations.comment_form_component.add_comment_placeholder"),
+                data: {"comment-form_target": "message"}
+              }
+            )
+          %>
+          <%= f.error_text(:base) %>
+        </div>
+        <div class="col-span-full">
+          <%=
+            f.input(
+              :silent,
+              as: :boolean,
+              label: {
+                text: t("collab.annotations.comment_form_component.silent.label")
+              },
+              class: "focus:ring-brand h-4 w-4 text-brand border-gray-300 rounded"
+            )
+          %>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-7">
+      <%= f.submit_input(t("collab.annotations.comment_form_component.comment_button"), class: "ml-2 btn btn-primary") %>
+    </div>
+  <% end %>
+<% end %>

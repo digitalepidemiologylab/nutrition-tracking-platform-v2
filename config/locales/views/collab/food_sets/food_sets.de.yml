@@ -1,0 +1,22 @@
+---
+de:
+  collab:
+    food_sets:
+      create:
+        success: Lebensmittel-Set erfolgreich erstellt
+      destroy:
+        failure: Lebensmittel-Set kann nicht zerstört werden
+        success: Lebensmittel-Set erfolgreich zerstört
+      edit:
+        title: Bearbeiten eines Lebensmittel-Set
+      index:
+        add_button: Lebensmittel-Set erstellen
+        query: Suche nach Name
+        title: Lebensmittel-Sets
+      new:
+        title: Lebensmittel-Set erstellen
+      show:
+        details: Einzelheiten
+        query: Suche
+      update:
+        success: Lebensmittel-Set erfolgreich aktualisiert

@@ -1,0 +1,13 @@
+---
+en:
+  activerecord:
+    attributes:
+      food_set:
+        associated_foods: Associated foods
+        cname: Canonical Name
+        created_at: Created
+        name: Name
+    models:
+      food_set:
+        one: Food Set
+        other: Food Sets

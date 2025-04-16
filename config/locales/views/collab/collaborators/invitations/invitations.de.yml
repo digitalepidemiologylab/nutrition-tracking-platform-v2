@@ -1,0 +1,10 @@
+---
+de:
+  collab:
+    collaborators:
+      invitations:
+        create:
+          collaborator_added_successfully: Mitarbeiter %{email} erfolgreich zur Kohorte hinzugefügt.
+        new:
+          submit: Einladen
+          title: Neue Einladung

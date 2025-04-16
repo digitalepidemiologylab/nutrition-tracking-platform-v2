@@ -1,0 +1,18 @@
+---
+de:
+  activerecord:
+    attributes:
+      product:
+        barcode: Strichcode
+        fetched_at: Letzte Synchronisation
+        id: ID
+        name: Name
+        portion_quantity: Standard-Portionsgröße
+        product_image: Bild
+        source: Quelle
+        status: Status
+        unit: Einheit
+    models:
+      product:
+        one: Produkt
+        other: Produkten

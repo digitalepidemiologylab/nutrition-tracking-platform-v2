@@ -1,0 +1,28 @@
+---
+en:
+  collab:
+    participations:
+      create_forms:
+        create:
+          success: Participations created successfully
+      destroy:
+        failure: Participation could not be deleted
+        success: Participation deleted successfully
+      edit:
+        destroy:
+          button: Delete this participation
+          help: Once you delete this participation, you will lose all data associated with it.
+          title: Delete this participation
+        title: Edit a participation
+      form:
+        started_at:
+          hint: Set when user associates with participation key
+      index:
+        title: Participations
+      resetters:
+        create:
+          success: Successfully reset association date
+      shared:
+        reset: reset
+      update:
+        success: Association updated successfully

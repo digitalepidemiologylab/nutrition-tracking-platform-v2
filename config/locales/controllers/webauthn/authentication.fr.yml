@@ -1,0 +1,9 @@
+---
+fr:
+  collab:
+    webauthn:
+      authentications:
+        new:
+          authenticate: Authentifier
+          failure: L'authentification a échoué
+          title: Authentification par clé d'accès

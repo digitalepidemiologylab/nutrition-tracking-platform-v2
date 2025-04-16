@@ -1,0 +1,57 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= @food.name %>
+    <% t.with_action { link_to(t("helpers.edit"), edit_collab_food_path(@food), class: "btn btn-secondary") } if policy([:collab, @food]).edit? %>
+    <% t.with_action { link_to(t("helpers.destroy"), collab_food_path(@food), class: "btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: t("helpers.are_you_sure")}) } if policy([:collab, @food]).destroy? %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= render(Collab::DetailsComponent.new) do |t| %>
+      <% t.with_title { t(".details") } %>
+      <% t.with_detail(label: t("activerecord.models.food_list", count: 1), value: @food.food_list.name) %>
+      <% if @food.food_sets.any? %>
+        <% t.with_detail(
+             label: t("activerecord.models.food_set", count: 2),
+             value: safe_join(
+               @food.food_sets.sort_by { |food_set| food_set.name.downcase }.map { |food_set|
+                 link_to(food_set.name, collab_food_set_path(food_set), class: "text-brand hover:underline", data: {turbo_frame: "_top"})
+               },
+               ", "
+             )
+           ) %>
+      <% end %>
+      <% if @food.portion_quantity? %>
+        <% t.with_detail(
+             label: t("activerecord.attributes.food.portion_quantity"),
+             value: number_with_precision(@food.portion_quantity, precision: 6, strip_insignificant_zeros: true)
+           ) %>
+      <% end %>
+      <% t.with_detail(label: t("activerecord.models.unit", count: 1), value: @food.unit.id) %>
+      <% I18n.available_locales.each do |locale| %>
+        <% t.with_detail(label: "#{t("activerecord.attributes.food.name")} #{t(locale, scope: ["locales"])}", value: @food.name(locale: locale)) %>
+      <% end %>
+      <% t.with_detail(label: t("activerecord.attributes.food.fa_ps_ratio"), value: @food.fa_ps_ratio || "NA") %>
+      <% t.with_detail(label: t("activerecord.attributes.food.kcal_min"), value: @food.kcal_min || "NA") %>
+      <% t.with_detail(label: t("activerecord.attributes.food.kcal_max"), value: @food.kcal_max || "NA") %>
+      <% t.with_detail(label: t("activerecord.attributes.food.segmentable"), value: render(BooleanIconComponent.new(@food.segmentable))) %>
+      <% t.with_detail(label: t("activerecord.attributes.food.annotatable"), value: render(BooleanIconComponent.new(@food.annotatable))) %>
+    <% end %>
+    <div class="mt-6">
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_title do |t| %>
+          <%= t("activerecord.models.food_nutrient", count: 2) %>
+        <% end %>
+        <% tc.with_head_td { t("activerecord.models.nutrient", count: 1) } %>
+        <% tc.with_head_td(align: :right) { "#{t("activerecord.attributes.food_nutrient.per_hundred")} #{@food.unit_id}" } %>
+        <% @food_nutrients.each do |food_nutrient| %>
+          <% tc.with_row(id: dom_id(food_nutrient)) do |r| %>
+            <% r.with_row_td(additional_classes: "font-medium text-gray-800") { food_nutrient.nutrient.name } %>
+            <% r.with_row_td(additional_classes: "font-medium text-gray-800 text-right") { "#{food_nutrient.per_hundred} #{food_nutrient.nutrient.unit_id}" } %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="mt-6">
+      <%= render("collab/annotations/annotations", annotations: @annotations, cohorts: @available_cohorts, states: @aasm_states, pagy: @pagy, title: t("activerecord.models.annotation", count: 2)) %>
+    </div>
+  </div>
+</div>

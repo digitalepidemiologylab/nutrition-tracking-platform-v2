@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    polygon_sets:
+      destroy:
+        failure: Unable to destroy polygons
+      update:
+        failure: Unable to update polygons

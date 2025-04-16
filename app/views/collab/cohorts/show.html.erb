@@ -1,0 +1,49 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= @cohort.name %>
+    <% t.with_action { link_to(t("helpers.edit"), edit_collab_cohort_path(@cohort), class: "btn btn-secondary") } if policy([:collab, @cohort]).edit? %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <%= render(Collab::DetailsComponent.new) do |t| %>
+      <% t.with_title { t(".details") } %>
+      <% t.with_detail(label: t("activerecord.attributes.cohort.id"), value: @cohort.id) %>
+      <% t.with_detail(label: t("activerecord.attributes.cohort.name"), value: @cohort.name) %>
+      <% t.with_detail(label: t("activerecord.models.segmentation_client", count: 1), value: @cohort.segmentation_client.name) %>
+      <% t.with_detail(label: t("activerecord.attributes.cohort.created_at"), value: l(@cohort.created_at)) %>
+    <% end %>
+    <div class="mt-6">
+      <%= turbo_frame_tag "food-lists" do %>
+        <%= render(Collab::TableComponent.new) do |tc| %>
+          <% tc.with_title do |t| %>
+            <%= t("activerecord.models.food_list", count: 2) %>
+          <% end %>
+          <%= render "collab/food_lists/table", food_lists: @food_lists, tc: tc %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="mt-6">
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_title do |t| %>
+          <% t.with_additional_element { link_to t(".new_invitation"), new_collaborator_invitation_path(cohort_id: @cohort.id), class: "btn btn-primary max-w-xs" } %>
+          <%= t("activerecord.models.collaborator", count: 2) %>
+        <% end %>
+        <% tc.with_head_td { t("activerecord.attributes.collaborator.name") } %>
+        <% tc.with_head_td { t("activerecord.attributes.collaborator.email") } %>
+        <% tc.with_head_td { t("activerecord.attributes.collaboration.role") } %>
+        <% tc.with_head_td %>
+        <% @collaborations.each do |collaboration| %>
+          <% tc.with_row(id: dom_id(collaboration)) do |r| %>
+            <%= render "collab/collaborations/collaboration_row_tds", r: r, collaboration: collaboration %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <% if policy([:collab, Participation]).index? %>
+      <div class="mt-6">
+        <%= turbo_frame_tag(dom_id(@cohort, :participations), src: collab_cohort_participations_path(@cohort)) do %>
+          <p><%= t("helpers.loading") %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

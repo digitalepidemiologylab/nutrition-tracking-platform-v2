@@ -1,0 +1,15 @@
+---
+en:
+  collab:
+    profiles:
+      edit:
+        subtitle: Edit my profile
+      show:
+        api_tokens: API Tokens
+        client: Client
+        credentials: Passkeys
+        details: Details
+        documents: Documents
+        title: Profile
+        token: Token
+        uid: UID

@@ -1,0 +1,41 @@
+<div class="py-6">
+  <%= render(Collab::TitleComponent.new) do |t| %>
+    <%= t(".title") %>
+    <% t.with_action { link_to t(".add_button"), new_collab_food_set_path, class: "btn btn-primary" } if policy([:collab, FoodSet]).new? %>
+  <% end %>
+  <div class="px-4 sm:px-6 md:px-8">
+    <div class="pb-6">
+      <%= form_with url: "", method: :get, builder: AppFormBuilder, class: "flex justify-between items-center md:justify-end md:space-x-4", data: {controller: "query-form", turbo_frame: "food_sets", turbo_action: "advance"} do |f| %>
+        <div>
+          <%= f.label :items, t("helpers.items"), class: "text-sm font-medium text-gray-700" %>
+          <%= f.select :items, options_for_select([10, 25, 50, 100], selected: params[:items] || Pagy::DEFAULT[:items]), {}, class: "mt-1 w-20 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleCountChange"} %>
+        </div>
+        <div>
+          <%= f.label :query, t(".query"), class: "text-sm font-medium text-gray-700" %>
+          <%= f.search_field :query, value: params[:query], autofocus: true, class: "mt-1 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand focus:border-brand sm:text-sm border-gray-300", data: {action: "query-form#handleSearchChange"} %>
+        </div>
+      <% end %>
+    </div>
+    <%= turbo_frame_tag "food_sets" do %>
+      <%= render(Collab::TableComponent.new) do |tc| %>
+        <% tc.with_head_td(column: :cname, params: params) { t("activerecord.attributes.food_set.cname") } %>
+        <% tc.with_head_td(column: :name, params: params) { t("activerecord.attributes.food_set.name") } %>
+        <% tc.with_head_td(align: :right, column: :created_at, params: params) { t("activerecord.attributes.food_set.created_at") } %>
+        <% @food_sets.each do |food_set| %>
+          <% tc.with_row do |r| %>
+            <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+              <%= link_to food_set.cname, collab_food_set_path(food_set), class: "text-brand hover:underline", data: {turbo_frame: "_top"} %>
+            <% end %>
+            <% r.with_row_td(additional_classes: "font-medium text-gray-800") do %>
+              <%= food_set.name %>
+            <% end %>
+            <% r.with_row_td(additional_classes: "text-right text-gray-500") do %>
+              <%= l(food_set.created_at, format: :long) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= render(PaginationComponent.new(pagy: @pagy)) %>
+    <% end %>
+  </div>
+</div>

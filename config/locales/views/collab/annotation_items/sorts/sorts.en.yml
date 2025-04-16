@@ -1,0 +1,8 @@
+---
+en:
+  collab:
+    annotation_items:
+      sorts:
+        update:
+          failure: Failed to reorder items
+          success: Successfully reordered items

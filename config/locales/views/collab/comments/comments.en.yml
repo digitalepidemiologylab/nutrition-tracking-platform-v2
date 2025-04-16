@@ -1,0 +1,6 @@
+---
+en:
+  collab:
+    comments:
+      create:
+        failure: Unable to create the comment

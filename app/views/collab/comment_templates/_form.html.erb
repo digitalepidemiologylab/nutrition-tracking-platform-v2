@@ -1,0 +1,13 @@
+<%= form_for([:collab, comment_template], builder: AppFormBuilder) do |f| %>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
+      <div class="grid grid-cols-4 gap-6">
+        <% I18n.available_locales.each do |locale| %>
+          <%= f.input "title_#{locale}", label: {text: "#{FoodSet.human_attribute_name(:title)} #{t(locale, scope: "locales")}"}, input_html: {required: true} %>
+          <%= f.input "message_#{locale}", as: :text, label: {text: "#{FoodSet.human_attribute_name(:message)} #{t(locale, scope: "locales")}"}, input_html: {required: true} %>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit_input %>
+  </div>
+<% end %>

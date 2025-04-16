@@ -1,0 +1,7 @@
+---
+en:
+  services:
+    users:
+      destroy:
+        errors:
+          participations_count: User can not be deleted as it has more than one participation

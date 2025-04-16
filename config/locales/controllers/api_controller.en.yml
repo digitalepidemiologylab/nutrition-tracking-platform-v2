@@ -1,0 +1,8 @@
+---
+en:
+  api_controller:
+    bad_include_param: Bad include param (%{bad_includes})
+    internal_server_error: Internal server error
+    record_not_found: "%{model} not found"
+    record_not_unique: Record not unique
+    upgrade_required: Mobile app upgrade required

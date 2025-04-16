@@ -1,0 +1,11 @@
+---
+fr:
+  collab:
+    note_forms:
+      edit:
+        title: Modifier la note
+      show:
+        details: Détails
+        title: Note
+      update:
+        success: Note mise à jour avec succès

@@ -1,0 +1,23 @@
+<div class="py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <%= link_to image_tag("logomark.svg", class: "mx-auto h-14 w-auto", alt: "MyFoodRepo"), root_path %>
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-800">
+      <%= t(".forgot_your_password") %>
+    </h2>
+  </div>
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), builder: AppFormBuilder) do |f| %>
+        <div class="space-y-6">
+          <%= f.input :email, input_html: {autofocus: true, autocomplete: "email", required: true} %>
+          <div>
+            <%= render(ButtonComponent.new(type: :submit)) do |c| %>
+              <% c.with_icon(:lock, classes: "text-lg opacity-60") %>
+              <%= t(".send_me_reset_password_instructions") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@layer components {
+  table.table-striped tbody tr:nth-child(odd) {
+    @apply bg-white;
+  }
+
+  table.table-striped tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+}

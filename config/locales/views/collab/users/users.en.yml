@@ -1,0 +1,25 @@
+---
+en:
+  collab:
+    users:
+      anonymizes:
+        update:
+          failure: User could not be anonymized
+          success: User anonymized successfully
+      destroy:
+        failure: User could not be deleted
+        success: User deleted successfully
+      index:
+        query:
+          label: Search
+          tooltip: Search for users by email, cohort name or participation key
+        title: Users
+      show:
+        anonymize:
+          button: Anonymize this user
+          help: All user data are kept but anonymized. Once anonymized a user wont be able to sign in anymore. This cannot be undone.
+        danger_zone: Danger Zone
+        destroy:
+          button: Delete this user
+          help: Remove the User and **ALL** related data. This cannot be undone. Use, for example, when a User explicitly asks for the destruction of its data.
+        details: Details
